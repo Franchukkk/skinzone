@@ -1,0 +1,32 @@
+@import components/mixins
+
+*
+    margin: 0
+    padding: 0
+
+body
+  margin: 0
+  height: 200vh
+  font-family: "Anton SC", serif
+
+
+.marquee-lines
+  position: relative
+  height: 300px
+  background-color: #282c34
+  overflow: hidden
+
+.marquee-line
+  position: absolute
+  left: 0
+  width: 100%
+  color: white
+  font-size: 24px
+  white-space: nowrap
+  transform: translateX(-320px)
+
+  span
+    display: inline-block
+    padding-right: 50px
+
+

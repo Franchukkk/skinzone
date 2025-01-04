@@ -1,0 +1,121 @@
+mixin header-line()
+    .header-line 
+        .logo 
+        nav 
+            ul 
+                li 
+                    a(href='#') Products
+                li 
+                    a(href='#') Reviews
+                li 
+                    a(href='#') FAQ
+                li 
+                    a(href='#') HELP
+        a(href="#").basket 
+    
+
+                    
+mixin footer()
+    footer 
+
+mixin product-card() 
+    .product-card.col-sm-12.col-md-6.col-lg-4
+        img(src='img/product-card.png', alt='product-card')
+        form(action="").product-card__info 
+            h3 Product Name
+            p Product Price
+            button Add to Cart
+            
+
+mixin reviews()
+    .reviews 
+        h2.text-center REVIEWS
+
+mixin join-block()
+    .join-block 
+        a(href="#").button JOIN
+
+mixin faq()
+    .faq 
+        h2.text-center FAQ
+
+        #accordionFlushExample.accordion.accordion-flush
+            .accordion-item
+                h2.accordion-header
+                button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#flush-collapseOne' aria-expanded='false' aria-controls='flush-collapseOne')
+                    | Accordion Item #1
+                #flush-collapseOne.accordion-collapse.collapse(data-bs-parent='#accordionFlushExample')
+                    .accordion-body
+                        | Placeholder content for this accordion, which is intended to demonstrate the 
+                        code .accordion-flush
+                        |  class. This is the first item&apos;s accordion body.
+            .accordion-item
+                h2.accordion-header
+                button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#flush-collapseTwo' aria-expanded='false' aria-controls='flush-collapseTwo')
+                    | Accordion Item #2
+                #flush-collapseTwo.accordion-collapse.collapse(data-bs-parent='#accordionFlushExample')
+                    .accordion-body
+                        | Placeholder content for this accordion, which is intended to demonstrate the 
+                        code .accordion-flush
+                        |  class. This is the second item&apos;s accordion body. Let&apos;s imagine this being filled with some actual content.
+            .accordion-item
+                h2.accordion-header
+                button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#flush-collapseThree' aria-expanded='false' aria-controls='flush-collapseThree')
+                    | Accordion Item #3
+                #flush-collapseThree.accordion-collapse.collapse(data-bs-parent='#accordionFlushExample')
+                    .accordion-body
+                        | Placeholder content for this accordion, which is intended to demonstrate the 
+                        code .accordion-flush
+                        |  class. This is the third item&apos;s accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.
+
+
+mixin help()
+    .help 
+        h2.text-center Help 
+        form(action="")
+            p 
+                label(for="name") Name
+            input(type="text" id="name" name="userName" placeholder="write...")  
+            p 
+                label(for="name") Email
+            input(type="email" id="email" name="userEmail" placeholder="write...")  
+            p 
+                label(for="name") Message
+            textarea(id="message" name="message", cols="30", rows="10") 
+            button(type="submit") SEND
+
+mixin advantages()
+    .advantages.row 
+        .advantage.col-lg-4.col-md-6.col-sm-12
+            h2 Delivery Title
+            p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque numquam accusantium nostrum aperiam tempora velit excepturi laboriosam magni! Ex fuga illo nemo quisquam unde? Fuga nihil a tenetur dolor ad!
+        .advantage.col-lg-4.col-md-6.col-sm-12
+            h2 Delivery Title
+            p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque numquam accusantium nostrum aperiam tempora velit excepturi laboriosam magni! Ex fuga illo nemo quisquam unde? Fuga nihil a tenetur dolor ad!
+        .advantage.col-lg-4.col-md-6.col-sm-12
+            h2 Delivery Title
+            p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque numquam accusantium nostrum aperiam tempora velit excepturi laboriosam magni! Ex fuga illo nemo quisquam unde? Fuga nihil a tenetur dolor ad!
+
+mixin basket()
+    .basket 
+        .basket-header
+            h3 Your Basket
+        .basket-products 
+            form(action="").basket-product.row 
+                .basket-image.col-4
+                    img(src="", alt="")
+                .basket-description.col-8
+                    .row
+                        .col-8 
+                            strong Name of product
+                            p Lorem ipsum, dolor sit amet consectetur adipisicing.
+                        .col-4
+                            button(type="submit") Delete
+        form(action="").basket-footer
+            p Total Price: 
+                span $120
+            .row 
+                .col-6
+                    button(type="submit") Continue
+                .col-6
+                    button(type="submit") Check out
