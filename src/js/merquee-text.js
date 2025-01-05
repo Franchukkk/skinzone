@@ -23,3 +23,21 @@ document.addEventListener("scroll", () => {
         line.style.transform = `translateX(${newOffset - 320}px)`; // Початковий зсув -300px
     });
 });
+
+const containerTop = document.querySelector(".reviews").getBoundingClientRect().top
+
+document.addEventListener("scroll", () => {
+    const lines = document.querySelectorAll("main .marquee-line");
+    
+    const scrollTop = (window.scrollY - containerTop);
+
+    lines.forEach((line, index) => {
+        if (index % 2 === 0) {
+            line.style.transform = `translateX(${scrollTop - 2000}px)`; // Початковий зсув -300px
+        } else {
+            line.style.transform = `translateX(-${scrollTop + 2000}px)`; // Початковий зсув -300px
+        }
+
+
+    });
+});

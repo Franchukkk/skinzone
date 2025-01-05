@@ -11,10 +11,15 @@ body {
   overflow-x: hidden;
 }
 
+.relative {
+  position: relative;
+}
+
 .wrapper {
-  width: 83.3rem;
+  max-width: 83.3rem;
+  width: 80%;
+  min-width: 300px;
   margin: 0 auto;
-  overflow-x: hidden;
 }
 
 a {
@@ -22,7 +27,11 @@ a {
 }
 
 header {
-  margin-bottom: 3.5rem;
+  margin-bottom: 7.5rem;
+}
+
+header .wrapper {
+  height: 100%;
 }
 
 header .button {
@@ -34,9 +43,16 @@ header .button {
   position: relative;
   height: 100vh;
   background-image: url(../img/header-background.webp);
+  background-attachment: fixed;
   background-size: cover;
+  background-repeat: no-repeat;
   overflow: hidden;
   margin-top: -15px;
+}
+
+main .marquee-lines {
+  max-height: 36.2rem;
+  background-image: url(../../img/mainbg.webp);
 }
 
 .marquee-line {
@@ -83,8 +99,12 @@ header .button {
   padding-top: 2.56rem;
 }
 
-.header-content .header-line {
-  margin-bottom: 60vh;
+header .header-content {
+  padding-top: 75vh;
+}
+
+main .header-content {
+  padding-top: 0;
 }
 
 .basket {
@@ -93,15 +113,17 @@ header .button {
 
 .circle-btn {
   display: inline-block;
-  background: -webkit-gradient(linear, left top, right top, from(#EA8DFF), to(#18E0E3));
-  background: -o-linear-gradient(left, #EA8DFF, #18E0E3);
-  background: linear-gradient(to right, #EA8DFF, #18E0E3);
   border-radius: 50%;
   padding: 1rem;
   margin-right: 1.56rem;
   -webkit-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(234, 141, 255, 0.8)), to(rgba(24, 224, 227, 0.8)));
+  background: -o-linear-gradient(left, rgba(234, 141, 255, 0.8), rgba(24, 224, 227, 0.8));
+  background: linear-gradient(to right, rgba(234, 141, 255, 0.8), rgba(24, 224, 227, 0.8));
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
 
 .circle-btn:hover {
@@ -118,18 +140,33 @@ header .button {
 }
 
 .header-line {
+  position: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  z-index: 10;
+  max-width: 83.3rem;
+  width: 80%;
+  min-width: 300px;
+  top: 1.2rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  z-index: 999;
 }
 
 .header-line nav {
-  background: -webkit-gradient(linear, left top, right top, from(#EA8DFF), to(#18E0E3));
-  background: -o-linear-gradient(left, #EA8DFF, #18E0E3);
-  background: linear-gradient(to right, #EA8DFF, #18E0E3);
+  background: -webkit-gradient(linear, left top, right top, from(rgba(234, 141, 255, 0.75)), to(rgba(24, 224, 227, 0.75)));
+  background: -o-linear-gradient(left, rgba(234, 141, 255, 0.75), rgba(24, 224, 227, 0.75));
+  background: linear-gradient(to right, rgba(234, 141, 255, 0.75), rgba(24, 224, 227, 0.75));
+  padding: 1.56rem 3rem;
+  border-radius: 50px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   padding: 1.56rem 3rem;
   border-radius: 50px;
 }
@@ -227,7 +264,7 @@ header .button {
   background-image: url(../img/banana.webp);
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center bottom;
   bottom: -20px;
   left: 0;
   z-index: -1;
@@ -312,6 +349,7 @@ h2.text-center.title {
   z-index: 2;
   margin-bottom: 4.375rem;
   padding-top: 8.75rem;
+  text-transform: uppercase;
 }
 
 h2.text-center.title span {
@@ -335,21 +373,28 @@ h2.text-center.title span {
 }
 
 .product-card img {
-  display: inline-block;
+  display: block;
+  margin: 0 auto;
   margin-bottom: 0.7rem;
-  width: 100%;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.product-card a {
+  display: block;
 }
 
 .product-card h3 {
   color: #FFF;
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 400;
 }
 
 .product-card p {
   text-align: center;
-  font-size: 1.25rem;
+  font-size: 1.65rem;
   font-weight: 400;
   background: -webkit-gradient(linear, left top, right top, color-stop(44.9%, #EA8BFF), color-stop(56.27%, #18E0E3));
   background: -o-linear-gradient(left, #EA8BFF 44.9%, #18E0E3 56.27%);
@@ -375,7 +420,7 @@ h2.text-center.title span {
   background: -o-linear-gradient(left, #EA8BFF 0%, #18E0E3 100%);
   background: linear-gradient(90deg, #EA8BFF 0%, #18E0E3 100%);
   text-transform: uppercase;
-  padding: 0.5rem 2rem;
+  padding: 0.2rem 2.5rem;
   -webkit-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
@@ -388,4 +433,249 @@ h2.text-center.title span {
 
 .swiper-slide .product-card {
   width: 100%;
+}
+
+@-webkit-keyframes floatParticle {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  50% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatParticle {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  50% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.product-card .particle {
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: #18E0E3;
+  bottom: 40%;
+  right: 1.8rem;
+  -webkit-animation: floatParticle 3s ease-in-out infinite;
+  animation: floatParticle 3s ease-in-out infinite;
+}
+
+.product-card .particle:nth-child(2) {
+  bottom: 45%;
+  right: 0;
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
+
+.product-card .particle:nth-child(3) {
+  bottom: 50%;
+  right: 1.5rem;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+.random .product-card .particle {
+  width: 2rem;
+  height: 2rem;
+  background-color: transparent;
+}
+
+.random .product-card .particle::before {
+  content: "";
+  display: inline-block;
+  width: 2rem;
+  height: 3rem;
+  background-image: url(../img/question.png);
+  background-size: cover;
+}
+
+.search {
+  max-width: 36.25rem;
+  background-color: #fff;
+  border-radius: 40px;
+  margin: 0 auto;
+  margin-bottom: 4.8rem;
+  margin-top: -2rem;
+}
+
+.search input {
+  display: block;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 40px 0 0 40px;
+  padding: 0.625rem 1.625rem;
+}
+
+.search input::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.search input::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.search input:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.search input::-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.search input::placeholder {
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.search-btn {
+  border: none;
+  outline: none;
+  color: #FFF;
+  font-size: 1.5rem;
+  font-weight: 400;
+  border-radius: 2.5rem;
+  background: -webkit-gradient(linear, left top, right top, from(#EA8BFF), to(#18E0E3));
+  background: -o-linear-gradient(left, #EA8BFF 0%, #18E0E3 100%);
+  background: linear-gradient(90deg, #EA8BFF 0%, #18E0E3 100%);
+  padding: 0 4rem;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.search-btn:hover {
+  -webkit-box-shadow: 10px 0px 30px rgba(24, 224, 227, 0.6), -10px 4px 30px rgba(234, 139, 255, 0.6);
+  box-shadow: 10px 0px 30px rgba(24, 224, 227, 0.6), -10px 4px 30px rgba(234, 139, 255, 0.6);
+}
+
+.swiper-wrapper {
+  padding-bottom: 30px;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  background: -webkit-linear-gradient(90deg, #EA8BFF 0%, #18E0E3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bolder;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.swiper-button-prev {
+  left: -2.5rem;
+}
+
+.swiper-button-next {
+  right: -2.5rem;
+}
+
+.swiper-button-prev:hover:after,
+.swiper-button-next:hover:after {
+  -webkit-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  transform: scale(1.3);
+}
+
+.product-card:hover img {
+  -webkit-filter: drop-shadow(10px 0px 10px rgba(24, 224, 227, 0.6));
+  filter: drop-shadow(10px 0px 10px rgba(24, 224, 227, 0.6));
+}
+
+.rate-star {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 1.25rem;
+  border: 2px solid transparent;
+  background: -webkit-gradient(linear, left top, right top, from(#EA8BFF), to(#18E0E3)) border-box;
+  background: -o-linear-gradient(left, #EA8BFF 0%, #18E0E3 100%) border-box;
+  background: linear-gradient(90deg, #EA8BFF 0%, #18E0E3 100%) border-box;
+  -webkit-mask: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff)) padding-box, -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff));
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+}
+
+.rate-star.active {
+  background: -webkit-gradient(linear, left top, right top, from(#EA8BFF), to(#18E0E3));
+  background: -o-linear-gradient(left, #EA8BFF 0%, #18E0E3 100%);
+  background: linear-gradient(90deg, #EA8BFF 0%, #18E0E3 100%);
+  -webkit-mask: none;
+  mask: none;
+  border: none;
+}
+
+.rate {
+  -webkit-column-gap: 5px;
+  -moz-column-gap: 5px;
+  column-gap: 5px;
+}
+
+.quotes span {
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 400;
+  background: -webkit-gradient(linear, left top, right top, from(#EA8BFF), to(#18E0E3));
+  background: -o-linear-gradient(left, #EA8BFF 0%, #18E0E3 100%);
+  background: linear-gradient(90deg, #EA8BFF 0%, #18E0E3 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.review p {
+  color: #FFF;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.review strong {
+  font-size: 2.25rem;
+  font-weight: 400;
+  background: var(--dawdwadaw, linear-gradient(90deg, #EA8BFF 0%, #18E0E3 100%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.author p,
+.author + p {
+  font-size: 1rem;
+}
+
+.reviews .relative {
+  max-width: 58.125rem;
+  margin: 0 auto;
 }

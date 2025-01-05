@@ -1,5 +1,5 @@
 mixin header-line()
-    .header-line 
+    .header-line.d-flex.justify-content-between.w-100
         div
             .logo.circle-btn 
                 img(src="img/logo.png", alt="")
@@ -24,8 +24,12 @@ mixin footer()
 mixin product-card(img, name, price) 
     .product-card.col-sm-12.col-md-6.col-lg-4
         .d-flex.justify-content-center
-            div
-                img(src=img, alt='product-card')
+            div.relative
+                .particle
+                .particle
+                .particle
+                a(href="product-card.html") 
+                    img(src=img, alt='product-card')
                 form(action="").product-card__info 
                     h3= name
                     p= price
@@ -33,15 +37,63 @@ mixin product-card(img, name, price)
 
 mixin reviews()
     .reviews 
-        h2.text-center REVIEWS
+        h2.text-center.title.animate-bottom.hidden REVIEWS
+            span REVIEWS
+        .relative
+            .swiper.reviews-slider
+                .swiper-wrapper
+                    .swiper-slide
+                        +review("Just bought the Ikonik account for 175 euro, and it’s legit! I received around 220 skins, all just like they said. The whole process was super easy, and I'm really satisfied. Definitely recommend it to anyone looking for a good deal!", "Max", "Africa", "Pink Lama", 4)
+                    .swiper-slide
+                        +review("Just bought the Ikonik account for 175 euro, and it’s legit! I received around 220 skins, all just like they said. The whole process was super easy, and I'm really satisfied. Definitely recommend it to anyone looking for a good deal!", "Max", "Africa", "Pink Lama", 4)
+                    .swiper-slide
+                        +review("Just bought the Ikonik account for 175 euro, and it’s legit! I received around 220 skins, all just like they said. The whole process was super easy, and I'm really satisfied. Definitely recommend it to anyone looking for a good deal!", "Max", "Africa", "Pink Lama", 4)
+                    .swiper-slide
+                        +review("Just bought the Ikonik account for 175 euro, and it’s legit! I received around 220 skins, all just like they said. The whole process was super easy, and I'm really satisfied. Definitely recommend it to anyone looking for a good deal!", "Max", "Africa", "Pink Lama", 4)
+                    .swiper-slide
+                        +review("Just bought the Ikonik account for 175 euro, and it’s legit! I received around 220 skins, all just like they said. The whole process was super easy, and I'm really satisfied. Definitely recommend it to anyone looking for a good deal!", "Max", "Africa", "Pink Lama", 4)
+                    .swiper-slide
+                        +review("Just bought the Ikonik account for 175 euro, and it’s legit! I received around 220 skins, all just like they said. The whole process was super easy, and I'm really satisfied. Definitely recommend it to anyone looking for a good deal!", "Max", "Africa", "Pink Lama", 4)
+
+            .swiper-button-prev
+            .swiper-button-next
+
+mixin review(text, author, location, skin, stars)
+    .review
+        .d-flex.justify-content-between 
+            .rate.d-flex.justify-content-between 
+                - for (let i = 0; i < 5; i++)
+                    .rate-star(class=i < stars ? 'active' : '')
+            .quotes 
+                span ""
+        p= text
+        .d-flex.justify-content-between.align-items-center
+            .author 
+                strong= author
+                p= `From ${location}`
+            p= `bot Guaranteed skin: ${skin} | Full Access`
 
 mixin join-block()
-    .join-block 
-        a(href="#").button JOIN
+    .marquee-lines
+        .header-content
+            .wrapper.h-100
+                .hero-second
+                .d-flex.justify-content-center.align-items-center.h-100
+                    a(href="#").button JOIN TELEGRAM
+        - for (let i = 0; i < 30; i++)
+            .marquee-line(style=`top: ${i * 70}px;`)
+                if (i % 2 === 0)
+                    - for (let j = 0; j < 20; j++)
+                        span Join our community
+                else 
+                    - for (let j = 0; j < 27; j++)
+                        span Skin 
+                            b Zone   
 
 mixin faq()
     .faq 
-        h2.text-center FAQ
+        h2.text-center.title.animate-bottom.hidden FAQ
+            span FAQ
 
         #accordionFlushExample.accordion.accordion-flush
             .accordion-item
@@ -75,7 +127,8 @@ mixin faq()
 
 mixin help()
     .help 
-        h2.text-center Help 
+        h2.text-center.title.animate-bottom.hidden Help CEnter
+            span HELP CEnter 
         form(action="")
             p 
                 label(for="name") Name

@@ -23,6 +23,24 @@ document.addEventListener("scroll", () => {
         line.style.transform = `translateX(${newOffset - 320}px)`; // Початковий зсув -300px
     });
 });
+
+const containerTop = document.querySelector(".reviews").getBoundingClientRect().top
+
+document.addEventListener("scroll", () => {
+    const lines = document.querySelectorAll("main .marquee-line");
+    
+    const scrollTop = (window.scrollY - containerTop);
+
+    lines.forEach((line, index) => {
+        if (index % 2 === 0) {
+            line.style.transform = `translateX(${scrollTop - 2000}px)`; // Початковий зсув -300px
+        } else {
+            line.style.transform = `translateX(-${scrollTop + 2000}px)`; // Початковий зсув -300px
+        }
+
+
+    });
+});
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -59,4 +77,30 @@ const discountsSlider = new Swiper('.discounts-slider', {
             spaceBetween: 30
         }
     }
-});   
+});
+
+const reviewsSlider = new Swiper('.reviews-slider', {
+    loop: true,
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+        320: {
+            slidesPerView: 1,
+            spaceBetween: 20
+        },
+        768: {
+            slidesPerView: 1,
+            spaceBetween: 30
+        },
+        1024: {
+            slidesPerView: 1,
+            spaceBetween: 30
+        }
+    }
+});

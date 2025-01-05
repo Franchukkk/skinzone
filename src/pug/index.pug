@@ -19,10 +19,10 @@ html(lang="en")
         +basket()
         header
             
+            +header-line()
             .marquee-lines
                 .header-content
                     .wrapper
-                        +header-line()
                         .hero
                         .d-flex.justify-content-center
                             a(href="#").button SHOP NOW 
@@ -42,33 +42,33 @@ html(lang="en")
                 .discounts 
                     h2.text-center.title.animate-bottom.hidden DISCOUNTS
                         span DISCOUNTS
-                    
-                    .swiper.discounts-slider
-                        .swiper-wrapper
-                            .swiper-slide
-                                +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
-                            .swiper-slide
-                                +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
-                            .swiper-slide
-                                +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
-                            .swiper-slide
-                                +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
-                            .swiper-slide
-                                +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
-                            .swiper-slide
-                                +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
-                            .swiper-slide
-                                +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
-                            .swiper-slide
-                                +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
-                            
+                    .relative
+                        .swiper.discounts-slider
+                            .swiper-wrapper
+                                .swiper-slide
+                                    +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                                .swiper-slide
+                                    +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                                .swiper-slide
+                                    +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                                .swiper-slide
+                                    +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                                .swiper-slide
+                                    +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                                .swiper-slide
+                                    +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                                .swiper-slide
+                                    +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                                .swiper-slide
+                                    +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                                
                         .swiper-button-prev
                         .swiper-button-next
     
                 .products 
                     h2.text-center.title.animate-bottom.hidden Random Skins + Full ACCESS
                         span Random Skins + Full ACCESS
-                    .row.g-5
+                    .row.g-5.random
                         +product-card("img/random.png", "Guaranteed 500+ skins | Full Access", "$110")
                         +product-card("img/random.png", "Guaranteed 500+ skins | Full Access", "$110")
                         +product-card("img/random.png", "Guaranteed 500+ skins | Full Access", "$110")
@@ -79,6 +79,9 @@ html(lang="en")
 
                     h2.text-center.title.animate-bottom.hidden  Guaranted skins | Full Access
                         span  Guaranted skins | Full Access
+                    form.search.d-flex.align-items-stretch
+                        input(type="search" name="" placeholder="Find an item...")
+                        button(type="submit").search-btn SEARCH
                     .row.g-5
                         +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
                         +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
@@ -95,8 +98,8 @@ html(lang="en")
 
                 +reviews()
 
-                +join-block()
-
+            +join-block()
+            .wrapper
                 +faq()
 
                 +help()
