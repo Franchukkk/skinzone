@@ -4,17 +4,37 @@
     margin: 0
     padding: 0
 
+// html
+//   font-size: 16px
+
 body
   margin: 0
   height: 200vh
   font-family: "Anton SC", serif
+  background: #121212
+  overflow-x: hidden
+
+.wrapper
+  width: 83.3rem
+  margin: 0 auto
+  overflow-x: hidden 
+
+a
+  display: inline-block
+
+header
+  margin-bottom: 3.5rem 
+  .button
+    box-shadow: 0 0 100px 50px #121212
 
 
 .marquee-lines
   position: relative
-  height: 300px
-  background-color: #282c34
+  height: 100vh
+  background-image: url(../img/header-background.webp)
+  background-size: cover
   overflow: hidden
+  margin-top: -15px
 
 .marquee-line
   position: absolute
@@ -24,9 +44,232 @@ body
   font-size: 24px
   white-space: nowrap
   transform: translateX(-320px)
+  z-index: 0
 
   span
     display: inline-block
-    padding-right: 50px
+    padding-right: 1.5rem
+
+.marquee-lines .marquee-line:nth-child(even) span
+  color: #FFF
+  font-size: 4.375rem
+  font-weight: 400
+  text-transform: uppercase
+
+.marquee-lines .marquee-line:nth-child(odd) span
+  color: #EA8BFF
+  font-size: 4.375rem
+  font-weight: 400
+  text-transform: uppercase
+  b
+    color: #18E0E3
 
 
+.header-content
+  position: relative
+  z-index: 3
+  background-color: rgba(0, 0, 0, 0.45)
+  height: 100%
+  padding-top: 2.56rem
+
+  .header-line
+    margin-bottom: 60vh
+
+.basket
+  display: none
+
+.circle-btn
+  display: inline-block
+  background: linear-gradient(to right, #EA8DFF, #18E0E3)
+  border-radius: 50%
+  padding: 1rem
+  margin-right: 1.56rem
+  transition: all 0.5s ease
+  &:hover
+    box-shadow: 10px 0px 30px rgba(24, 224, 227, 0.60), -10px 4px 30px rgba(234, 139, 255, 0.60)  
+  img
+    width: 3rem
+    height: 3rem
+    aspect-ratio: 1/1
+    object-fit: contain
+
+.header-line
+  display: flex
+  justify-content: space-between
+
+.header-line nav
+    background: linear-gradient(to right, #EA8DFF, #18E0E3)
+    padding: 1.56rem 3rem
+    border-radius: 50px
+    ul 
+      width: 100%
+      display: flex
+      column-gap: 3.125rem
+      list-style: none
+      padding: 0
+      margin: 0
+      a
+        color: #FFF
+        font-size: 1.25rem
+        font-weight: 400
+        text-decoration: none
+        text-transform: uppercase
+        transition: all 0.5s ease
+        &:hover
+          transform:  scale(1.15)
+
+
+.button
+  display: inline-block
+  border: none
+  border-radius: 2.7rem
+  background: linear-gradient(90deg, #EA8BFF 0%, #18E0E3 100%)
+  padding: 1rem 7.5rem
+  color: #FFF
+  font-size: 2.25rem
+  font-weight: 400
+  text-decoration: none
+  transition:  all 0.5s ease
+  &:hover
+    box-shadow: 10px 0px 30px rgba(24, 224, 227, 0.60), -10px 4px 30px rgba(234, 139, 255, 0.60)
+
+  
+
+
+@keyframes float
+  0%
+    transform: translateY(0)
+  50%
+    transform: translateY(-20px)
+  100%
+    transform: translateY(0)
+
+.hero
+  position: absolute
+  height: 100vh
+  width: 100%
+  background-image: url(../img/banana.webp)
+  background-size: contain
+  background-repeat: no-repeat
+  background-position: center
+  bottom: -20px
+  left: 0
+  z-index: -1
+  animation: float 3s ease-in-out infinite
+
+.advantages
+  column-gap: 5px
+  margin-bottom: 8.75rem
+  
+.advantage
+  width: 30%
+  padding: 1rem
+  border-radius: 1rem
+  border: 2px solid transparent
+  background: linear-gradient(#000, #000) padding-box, linear-gradient(90deg, #EA8BFF, #18E0E3) border-box  
+  box-sizing: border-box
+  min-width: 300px
+  img
+    width: 2.9375rem
+  h2
+    color: #FFF
+    font-size: 2.25rem
+    font-weight: 400
+    margin: 0
+  .d-flex
+    margin-bottom: 0.625rem
+  p
+    color: #FFF
+    font-size: 1.125rem
+    font-weight: 400
+    margin: 0
+
+
+.hidden
+  opacity: 0
+  filter: blur(5px)
+  transform: translateX(-100%)
+  transition: all 1s
+
+.animate-left.show
+    opacity: 1
+    filter: blur(0)
+    transform: translateX(0)
+
+.animate-bottom.hidden
+    transform: translateY(100%)
+
+.animate-bottom.show
+    opacity: 1
+    filter: blur(0)
+    transform: translateY(0)
+.animate-right.hidden
+    transform: translateX(100%)
+.animate-right.show
+    opacity: 1
+    filter: blur(0)
+    transform: translateX(0)
+
+h2.text-center.title
+  position: relative
+  color: #FFF
+  font-size: 3rem
+  font-weight: 400
+  -webkit-text-stroke: 2px transparent
+  z-index: 2
+  margin-bottom: 4.375rem
+  padding-top: 8.75rem
+  span
+    position: absolute
+    font-size: 4rem
+    font-weight: 400
+    background: linear-gradient(90deg, #EA8BFF 0%, #18E0E3 100%)
+    -webkit-background-clip: text
+    color: #121212
+    opacity: .5
+    width: 100%
+    left: 50%
+    top: -1rem
+    padding-top: 8.75rem
+    transform: translateX(-50%)
+    z-index: -1
+
+.product-card
+  img
+    display: inline-block
+    margin-bottom: .7rem
+    width: 100%
+  h3
+    color: #FFF
+    text-align: center
+    font-size: 1rem
+    font-weight: 400
+  p
+    text-align: center
+    font-size: 1.25rem
+    font-weight: 400
+    background: linear-gradient(90deg, #EA8BFF 44.9%, #18E0E3 56.27%)
+    background-clip: text
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+    margin: 0
+    margin-bottom: .5rem
+  button
+    display: block
+    margin: 0 auto
+    outline: none
+    border: none
+    color: #FFF
+    text-align: right
+    font-size: 1.5rem
+    font-weight: 400
+    border-radius: 43.5px
+    background: linear-gradient(90deg, #EA8BFF 0%, #18E0E3 100%)
+    text-transform: uppercase
+    padding: .5rem 2rem
+    transition:  all 0.5s ease
+    &:hover
+      box-shadow: 10px 0px 30px rgba(24, 224, 227, 0.60), -10px 4px 30px rgba(234, 139, 255, 0.60)
+
+.swiper-slide .product-card
+  width: 100%

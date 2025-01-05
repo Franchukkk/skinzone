@@ -1,6 +1,10 @@
 mixin header-line()
     .header-line 
-        .logo 
+        div
+            .logo.circle-btn 
+                img(src="img/logo.png", alt="")
+            a(href="#").basket.circle-btn
+                img(src="img/basket.png", alt="")
         nav 
             ul 
                 li 
@@ -10,22 +14,22 @@ mixin header-line()
                 li 
                     a(href='#') FAQ
                 li 
-                    a(href='#') HELP
-        a(href="#").basket 
+                    a(href='#') HELP CEnter 
     
 
                     
 mixin footer()
     footer 
 
-mixin product-card() 
+mixin product-card(img, name, price) 
     .product-card.col-sm-12.col-md-6.col-lg-4
-        img(src='img/product-card.png', alt='product-card')
-        form(action="").product-card__info 
-            h3 Product Name
-            p Product Price
-            button Add to Cart
-            
+        .d-flex.justify-content-center
+            div
+                img(src=img, alt='product-card')
+                form(action="").product-card__info 
+                    h3= name
+                    p= price
+                    button Buy          
 
 mixin reviews()
     .reviews 
@@ -85,16 +89,23 @@ mixin help()
             button(type="submit") SEND
 
 mixin advantages()
-    .advantages.row 
-        .advantage.col-lg-4.col-md-6.col-sm-12
-            h2 Delivery Title
-            p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque numquam accusantium nostrum aperiam tempora velit excepturi laboriosam magni! Ex fuga illo nemo quisquam unde? Fuga nihil a tenetur dolor ad!
-        .advantage.col-lg-4.col-md-6.col-sm-12
-            h2 Delivery Title
-            p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque numquam accusantium nostrum aperiam tempora velit excepturi laboriosam magni! Ex fuga illo nemo quisquam unde? Fuga nihil a tenetur dolor ad!
-        .advantage.col-lg-4.col-md-6.col-sm-12
-            h2 Delivery Title
-            p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque numquam accusantium nostrum aperiam tempora velit excepturi laboriosam magni! Ex fuga illo nemo quisquam unde? Fuga nihil a tenetur dolor ad!
+    .advantages.d-flex.flex-wrap.justify-content-between
+        .advantage.animate-left.hidden
+            .d-flex.align-items-center
+                img.me-4(src="img/range.webp", alt="")
+                h2 range
+            p Take a look at what we have! Hundreds of accounts and the rarest items. You can buy an account and get random skins, or get an account with a guaranteed item...
+        .advantage.animate-bottom.hidden
+            .d-flex.align-items-center
+                img.me-4(src="img/security.webp", alt="")
+                h2 security
+            p We guarantee the security of your funds and FORTNITE accounts. You will have the opportunity to track your order and contact us!
+        .advantage.animate-right.hidden
+            .d-flex.align-items-center
+                img.me-4(src="img/reputation.webp", alt="")
+                h2 reputation
+            p We have sold  806 accounts, received more than 730 happy customers, and have a lot of feedback. We have a large community and value our reputation!
+
 
 mixin basket()
     .basket 

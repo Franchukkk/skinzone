@@ -10,169 +10,88 @@ html(lang="en")
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Anton+SC&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
         link(rel="stylesheet", href="css/styles.css")
 
     body
         include components/mixins
         +basket()
         header
-            .wrapper
-                +header-line()
+            
             .marquee-lines
-                .marquee-line(style='top: 20px;')
-                    span Say no to default skins
-                    span Say no to default skins
-                    span Say no to default skins
-                    span Say no to default skins
-                    span Say no to default skins
-                    span Say no to default skins
-                    span Say no to default skins
-                    span Say no to default skins
-                    span Say no to default skins
-                    span Say no to default skins
-                    span Say no to default skins
-                    span Say no to default skins
-                    span Say no to default skins
-                    span Say no to default skins
-                    span Say no to default skins
-                    span Say no to default skins
-                .marquee-line(style='top: 70px;')
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                .marquee-line(style='top: 120px;')
-                    span Say no to default skins
-                    span Say no to default skins
-                    span Say no to default skins
-                    span Say no to default skins
-                    span Say no to default skins
-                    span Say no to default skins
-                    span Say no to default skins
-                    span Say no to default skins
-                    span Say no to default skins
-                    span Say no to default skins
-                    span Say no to default skins
-                    span Say no to default skins
-                    span Say no to default skins
-                    span Say no to default skins
-                    span Say no to default skins
-                    span Say no to default skins
-                .marquee-line(style='top: 170px;')
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                    span Skin Zone
-                .marquee-line(style='top: 220px;')
-                    span Say no to default skins
-                    span Say no to default skins
-                    span Say no to default skins
-                    span Say no to default skins
-                    span Say no to default skins
-                    span Say no to default skins
-                    span Say no to default skins
-                    span Say no to default skins
-                    span Say no to default skins
-                    span Say no to default skins
-                    span Say no to default skins
-                    span Say no to default skins
-                    span Say no to default skins
-                    span Say no to default skins
-                    span Say no to default skins
-                    span Say no to default skins
-                    span Say no to default skins
-                    span Say no to default skins
-                    span Say no to default skins
-                    span Say no to default skins
-            .wrapper
-                a(href="#").button SHOP NOW 
+                .header-content
+                    .wrapper
+                        +header-line()
+                        .hero
+                        .d-flex.justify-content-center
+                            a(href="#").button SHOP NOW 
+                - for (let i = 0; i < 30; i++)
+                    .marquee-line(style=`top: ${i * 70}px;`)
+                        if (i % 2 === 0)
+                            - for (let j = 0; j < 20; j++)
+                                span Say no to default skins
+                        else 
+                            - for (let j = 0; j < 27; j++)
+                                span Skin 
+                                    b Zone            
 
         main
             .wrapper
                 +advantages()
                 .discounts 
-                    h2.text-center DISCOUNTS
-                
+                    h2.text-center.title.animate-right.hidden DISCOUNTS
+                        span DISCOUNTS
+                    
+                    .swiper.discounts-slider
+                        .swiper-wrapper
+                            .swiper-slide
+                                +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                            .swiper-slide
+                                +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                            .swiper-slide
+                                +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                            .swiper-slide
+                                +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                            .swiper-slide
+                                +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                            .swiper-slide
+                                +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                            .swiper-slide
+                                +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                            .swiper-slide
+                                +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                            
+                        .swiper-button-prev
+                        .swiper-button-next
+    
                 .products 
-                    h2.text-center Skins + Full ACCESS
-                    .row
-                        +product-card()
-                        +product-card()
-                        +product-card()
-                        +product-card()
-                        +product-card()
-                        +product-card()
+                    h2.text-center.title.animate-left.hidden Random Skins + Full ACCESS
+                        span Random Skins + Full ACCESS
+                    .row.g-5
+                        +product-card("img/random.png", "Guaranteed 500+ skins | Full Access", "$110")
+                        +product-card("img/random.png", "Guaranteed 500+ skins | Full Access", "$110")
+                        +product-card("img/random.png", "Guaranteed 500+ skins | Full Access", "$110")
+                        +product-card("img/random.png", "Guaranteed 500+ skins | Full Access", "$110")
+                        +product-card("img/random.png", "Guaranteed 500+ skins | Full Access", "$110")
+                        +product-card("img/random.png", "Guaranteed 500+ skins | Full Access", "$110")
+                        
 
-                    h2.text-center Guaranted + Full ACCESS
-                    .row
-                        +product-card()
-                        +product-card()
-                        +product-card()
-                        +product-card()
-                        +product-card()
-                        +product-card()
-                        +product-card()
-                        +product-card()
-                        +product-card()
-                        +product-card()
-                        +product-card()
-                        +product-card()
+                    h2.text-center.title.animate-right.hidden  Guaranted skins | Full Access
+                        span  Guaranted skins | Full Access
+                    .row.g-5
+                        +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                        +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                        +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                        +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                        +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                        +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                        +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                        +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                        +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                        .d-flex.justify-content-center
+                            button(type="submit").button MORE
+                        
 
                 +reviews()
 
@@ -183,6 +102,8 @@ html(lang="en")
                 +help()
         +footer()
 
+
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
         script(src="js/scripts.js")    
