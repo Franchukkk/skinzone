@@ -239,7 +239,6 @@ header .button {
   -webkit-column-gap: 5px;
   -moz-column-gap: 5px;
   column-gap: 5px;
-  margin-bottom: 8.75rem;
 }
 
 .advantage {
@@ -289,15 +288,6 @@ header .button {
   transition: all 1s;
 }
 
-.animate-left.show {
-  opacity: 1;
-  -webkit-filter: blur(0);
-  filter: blur(0);
-  -webkit-transform: translateX(0);
-  -ms-transform: translateX(0);
-  transform: translateX(0);
-}
-
 .animate-bottom.hidden {
   -webkit-transform: translateY(100%);
   -ms-transform: translateY(100%);
@@ -311,21 +301,6 @@ header .button {
   -webkit-transform: translateY(0);
   -ms-transform: translateY(0);
   transform: translateY(0);
-}
-
-.animate-right.hidden {
-  -webkit-transform: translateX(100%);
-  -ms-transform: translateX(100%);
-  transform: translateX(100%);
-}
-
-.animate-right.show {
-  opacity: 1;
-  -webkit-filter: blur(0);
-  filter: blur(0);
-  -webkit-transform: translateX(0);
-  -ms-transform: translateX(0);
-  transform: translateX(0);
 }
 
 h2.text-center.title {
