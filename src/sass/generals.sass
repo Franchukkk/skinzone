@@ -44,6 +44,9 @@ header
   overflow: hidden
   margin-top: -15px
 
+main
+  margin-bottom: 5.625rem
+
 main .marquee-lines
   max-height: 36.2rem
   background-image: url(../../img/mainbg.webp)
@@ -80,7 +83,7 @@ main .marquee-lines
 .header-content
   position: relative
   z-index: 3
-  background-color: rgba(0, 0, 0, 0.45)
+  background-color: rgba(0, 0, 0, 0.7)
   height: 100%
   padding-top: 2.56rem
 
@@ -189,6 +192,38 @@ main .header-content
   z-index: -1
   animation: float 3s ease-in-out infinite
 
+.hero-second
+  position: absolute
+  height: 38.2rem
+  width: 100%
+
+  background-image: url(../img/bananaTG.webp)
+  background-size: contain
+  background-repeat: no-repeat
+  background-position: right bottom 
+  bottom: -25px
+  right: -100px
+  z-index: -1
+  animation: float 3s ease-in-out infinite
+
+.hero-second.reversed
+  background-position-x: left
+  transform: scale(1, -1)
+
+.join-btn-container
+  height: 36.2rem
+
+.join-btn-container
+  a
+    width: 21rem
+    padding: 1rem
+    text-align: center
+    &:first-child
+      background: #3DB6FD
+      margin-bottom: 2.8rem
+    &:last-child
+      background: #446FFD
+
 .advantages
   column-gap: 5px
   
@@ -256,15 +291,22 @@ h2.text-center.title
     transform: translateX(-50%)
     z-index: -1
 
+.random
+  .product-card img
+    height: 18rem
+
 .product-card
   img
     display: block
     margin: 0 auto
+    height: 21rem
+    object-fit: contain
     margin-bottom: .7rem
     transition: all 0.5s ease
 
   a
     display: block
+    text-decoration: none
   
   h3
     color: #FFF
@@ -300,6 +342,16 @@ h2.text-center.title
 
 .swiper-slide .product-card
   width: 100%
+
+.product-card .mini-banner
+  position: absolute
+  min-width: 200px
+  font-size: 2rem
+  border-radius: 1rem
+  z-index: -1
+  left: 50%
+  bottom: 0
+  transform: translateX(-50%)
 
 @keyframes floatParticle
   0%
@@ -397,8 +449,17 @@ h2.text-center.title
 
 
 .product-card:hover 
-  img
-    filter: drop-shadow(10px 0px 10px rgba(24, 224, 227, 0.60))
+  .mini-banner
+    box-shadow: -10px 4px 30px 3px rgba(234, 139, 255, 0.60), 10px 0px 30px 3px rgba(24, 224, 227, 0.60)
+
+.custom-shape-container
+  display: none
+
+.random .custom-shape-container
+  display: block
+
+.random .mini-banner
+  display: none
 
 .rate-star
   width: 2.5rem
@@ -428,6 +489,13 @@ h2.text-center.title
   -webkit-text-fill-color: transparent
 
 .review 
+  border: 2px solid transparent
+  background-image: linear-gradient(#000, #000), linear-gradient(90deg, #EA8BFF 0%, #18E0E3 100%)
+  background-origin: border-box
+  background-clip: padding-box, border-box
+  border-radius: 1rem
+  padding: 2.5rem
+  box-sizing: border-box
   p
     color: #FFF
     font-size: 1.5rem
@@ -442,7 +510,118 @@ h2.text-center.title
 
 .author p, .author + p
   font-size: 1rem
+  margin-bottom: 0
 
 .reviews .relative
   max-width: 58.125rem
   margin: 0 auto
+
+
+
+.custom-shape-container
+  position: absolute
+  bottom: 0
+  left: 0
+  width: 258px
+  height: 231px
+  background: linear-gradient(135deg, #18E0E3, #EA8BFF)
+  border-radius: 50% 50% 0px 60px
+  box-shadow: 10px 0 15px rgba(24, 224, 227, 0.6), -10px 4px 15px rgba(234, 139, 255, 0.6)
+  z-index: -1
+
+.accordion-button
+  color: #FFF
+  font-size: 1.5rem
+  font-weight: 400
+  border-radius: 1rem
+  background: linear-gradient(90deg, #EA8BFF 0%, #18E0E3 100%)
+
+.accordion-item
+  background-color: transparent
+  border-radius: 1rem 1rem 0 0 !important
+  margin-bottom: 1rem
+  border: none
+
+
+.accordion-collapse
+  padding: 0 10px
+
+.accordion-body
+  margin-top: -3px
+  border: 2px solid transparent
+  background-image: linear-gradient(#000, #000), linear-gradient(90deg, #EA8BFF 0%, #18E0E3 100%)
+  background-origin: border-box
+  background-clip: padding-box, border-box
+  border-radius: 0px 0px 15px 15px
+  color: #FFF
+  font-size: 1.25rem
+  font-weight: 400
+  
+
+.accordion-button:not(.collapsed)
+  color: #FFF
+
+.accordion-button::after
+  background-image: url(../img/arrow.svg)
+
+.accordion-button:not(.collapsed)::after
+  background-image: url(../img/arrow.svg)
+
+.wrapper-sm
+  min-width: 270px
+  max-width: 46.875rem
+  margin: 0 auto
+
+.help
+  h3
+    color: #FFF
+    font-size: 2.25rem
+    font-weight: 400
+    margin-bottom: 1rem
+
+  .form-part
+    border-radius: 1rem
+    border: 2px solid transparent
+    background-image: linear-gradient(#000, #000), linear-gradient(90deg, #EA8BFF 0%, #18E0E3 100%)
+    background-origin: border-box
+    background-clip: padding-box, border-box
+    padding: 2rem
+    margin-bottom: 2rem
+
+    label
+      font-size: 1.25rem
+      font-weight: 400
+      background: var(--dawdwadaw, linear-gradient(90deg, #EA8BFF 0%, #18E0E3 100%))
+      background-clip: text
+      -webkit-background-clip: text
+      -webkit-text-fill-color: transparent
+
+    input
+      display: block
+      width: 100%
+      border-radius: 2.5rem
+      background: #FFF
+      padding: 0.7rem 1.4rem
+      border: none
+      outline: none
+
+  button
+    font-size: 2rem
+    padding: .5rem 5rem
+.name-input
+  margin-bottom: 1rem
+
+.payment-systems img
+  height: 2.5rem
+
+.payment-systems
+  column-gap: 1rem
+
+footer
+  background: #292929
+  padding: 2rem 0
+  p
+    color: #FFF
+    font-size: 1rem
+    font-weight: 400
+    margin: 0

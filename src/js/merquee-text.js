@@ -24,7 +24,9 @@ document.addEventListener("scroll", () => {
     });
 });
 
-const containerTop = document.querySelector(".reviews").getBoundingClientRect().top
+const containerTop = document.querySelector(".reviews").offsetTop;
+
+console.log(containerTop);
 
 document.addEventListener("scroll", () => {
     const lines = document.querySelectorAll("main .marquee-line");

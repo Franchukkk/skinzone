@@ -23,12 +23,14 @@ mixin footer()
 
 mixin product-card(img, name, price) 
     .product-card.col-sm-12.col-md-6.col-lg-4
-        .d-flex.justify-content-center
-            div.relative
+        .d-flex.justify-content-center.relative
+            div
                 .particle
                 .particle
                 .particle
-                a(href="product-card.html") 
+                a(href="product-card.html").relative
+                    button.mini-banner SKIN ZONE
+                    .custom-shape-container
                     img(src=img, alt='product-card')
                 form(action="").product-card__info 
                     h3= name
@@ -36,7 +38,7 @@ mixin product-card(img, name, price)
                     button Buy          
 
 mixin reviews()
-    .reviews 
+    .reviews.animate-bottom
         h2.text-center.title.animate-bottom.hidden REVIEWS
             span REVIEWS
         .relative
@@ -59,13 +61,13 @@ mixin reviews()
             .swiper-button-next
 
 mixin review(text, author, location, skin, stars)
-    .review
+    .review.wrapper-sm
         .d-flex.justify-content-between 
             .rate.d-flex.justify-content-between 
                 - for (let i = 0; i < 5; i++)
                     .rate-star(class=i < stars ? 'active' : '')
             .quotes 
-                span ""
+                span “”
         p= text
         .d-flex.justify-content-between.align-items-center
             .author 
@@ -74,12 +76,19 @@ mixin review(text, author, location, skin, stars)
             p= `bot Guaranteed skin: ${skin} | Full Access`
 
 mixin join-block()
-    .marquee-lines
+    .marquee-lines.animate-bottom
         .header-content
             .wrapper.h-100
-                .hero-second
-                .d-flex.justify-content-center.align-items-center.h-100
-                    a(href="#").button JOIN TELEGRAM
+                .row 
+                    .col-8
+                        .join-btn-container.d-flex.justify-content-center.align-items-center
+                            div.w-100
+                                a(href="#").button JOIN TELEGRAM
+                                br
+                                a(href="#").button JOIN DISCORD
+                    .col-4
+                        .hero-second
+
         - for (let i = 0; i < 30; i++)
             .marquee-line(style=`top: ${i * 70}px;`)
                 if (i % 2 === 0)
@@ -91,7 +100,7 @@ mixin join-block()
                             b Zone   
 
 mixin faq()
-    .faq 
+    .faq.wrapper-sm.animate-bottom
         h2.text-center.title.animate-bottom.hidden FAQ
             span FAQ
 
@@ -99,50 +108,62 @@ mixin faq()
             .accordion-item
                 h2.accordion-header
                 button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#flush-collapseOne' aria-expanded='false' aria-controls='flush-collapseOne')
-                    | Accordion Item #1
+                    | produkt warranty
                 #flush-collapseOne.accordion-collapse.collapse(data-bs-parent='#accordionFlushExample')
                     .accordion-body
-                        | Placeholder content for this accordion, which is intended to demonstrate the 
-                        code .accordion-flush
-                        |  class. This is the first item&apos;s accordion body.
+                        | Just bought the Ikonik account for 175 euro, and it's legit! I received around 220 skins, all just like they said. The whole process was super easy, and I'm really satisfied. Definitely recommend it to anyone looking for a good deal!
             .accordion-item
                 h2.accordion-header
                 button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#flush-collapseTwo' aria-expanded='false' aria-controls='flush-collapseTwo')
-                    | Accordion Item #2
+                    | produkt warranty
                 #flush-collapseTwo.accordion-collapse.collapse(data-bs-parent='#accordionFlushExample')
                     .accordion-body
-                        | Placeholder content for this accordion, which is intended to demonstrate the 
-                        code .accordion-flush
-                        |  class. This is the second item&apos;s accordion body. Let&apos;s imagine this being filled with some actual content.
+                        |  Just bought the Ikonik account for 175 euro, and it's legit! I received around 220 skins, all just like they said. The whole process was super easy, and I'm really satisfied. Definitely recommend it to anyone looking for a good deal!
             .accordion-item
                 h2.accordion-header
                 button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#flush-collapseThree' aria-expanded='false' aria-controls='flush-collapseThree')
-                    | Accordion Item #3
+                    | produkt warranty
                 #flush-collapseThree.accordion-collapse.collapse(data-bs-parent='#accordionFlushExample')
                     .accordion-body
-                        | Placeholder content for this accordion, which is intended to demonstrate the 
-                        code .accordion-flush
-                        |  class. This is the third item&apos;s accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.
-
-
+                        |  Just bought the Ikonik account for 175 euro, and it's legit! I received around 220 skins, all just like they said. The whole process was super easy, and I'm really satisfied. Definitely recommend it to anyone looking for a good deal!
+            .accordion-item
+                h2.accordion-header
+                button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#flush-collapseFour' aria-expanded='false' aria-controls='flush-collapseFour')
+                    | produkt warranty
+                #flush-collapseFour.accordion-collapse.collapse(data-bs-parent='#accordionFlushExample')
+                    .accordion-body
+                        |  Just bought the Ikonik account for 175 euro, and it's legit! I received around 220 skins, all just like they said. The whole process was super easy, and I'm really satisfied. Definitely recommend it to anyone looking for a good deal!
 mixin help()
-    .help 
+    .help.wrapper-sm.animate-bottom
         h2.text-center.title.animate-bottom.hidden Help CEnter
             span HELP CEnter 
+        h3 sent message
         form(action="")
-            p 
-                label(for="name") Name
-            input(type="text" id="name" name="userName" placeholder="write...")  
-            p 
-                label(for="name") Email
-            input(type="email" id="email" name="userEmail" placeholder="write...")  
-            p 
-                label(for="name") Message
-            textarea(id="message" name="message", cols="30", rows="10") 
-            button(type="submit") SEND
+            .form-part
+                p 
+                    label(for="name") Your Name
+                input(type="text" id="name" name="userName" placeholder="Your name...").name-input
+                p 
+                    label(for="name") Your Email
+                input(type="email" id="email" name="userEmail" placeholder="Your email...")  
+            .form-part
+                p 
+                    label(for="name") Your Message
+                input(id="message" name="message", type="text", placeholder="Your message...") 
+            .d-flex.justify-content-center
+                button(type="submit").button SEND
+        h3 track order
+        form(action="")
+            .form-part
+                p 
+                    label(for="name") Your order number
+                input(type="text" id="name" name="userName" placeholder="Your order number...").name-input
+
+            .d-flex.justify-content-center
+                button(type="submit").button SEND
 
 mixin advantages()
-    .advantages.d-flex.flex-wrap.justify-content-between
+    .advantages.d-flex.flex-wrap.justify-content-between.animate-bottom
         .advantage.animate-bottom.hidden
             .d-flex.align-items-center
                 img.me-4(src="img/range.webp", alt="")
@@ -183,3 +204,14 @@ mixin basket()
                     button(type="submit") Continue
                 .col-6
                     button(type="submit") Check out
+
+mixin footer()
+    footer
+        .wrapper.d-flex.justify-content-between.align-items-center.flex-wrap
+            .payment-systems.d-flex
+                img(src="img/coinpayments.png", alt="")
+                img(src="img/webmoney.png", alt="")
+            p Fortnite is a registered trademark of Epic Games, Inc. ©
+            .payment-systems.d-flex
+                img(src="img/paypal.png", alt="")
+                img(src="img/visamastercard.png", alt="")
