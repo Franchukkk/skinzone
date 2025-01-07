@@ -21,6 +21,12 @@ html(lang="en")
         .circle
         .circle
         .circle
+        .circle
+        .circle
+        .circle
+        .circle
+        .circle
+        .circle
         include components/mixins
         +basket()
         //- .float-circles
@@ -45,7 +51,7 @@ html(lang="en")
         main
             .wrapper
                 +advantages()
-                .discounts.animate-bottom
+                .discounts.animate-bottom#products
                     h2.text-center.title.animate-bottom.hidden DISCOUNTS
                         span DISCOUNTS
                     .relative
@@ -68,8 +74,8 @@ html(lang="en")
                                 .swiper-slide
                                     +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
                                 
-                        .swiper-button-prev
-                        .swiper-button-next
+                        .swiper-button-prev.products-button-prev
+                        .swiper-button-next.products-button-next
     
                 .products.animate-bottom
                     h2.text-center.title.animate-bottom.hidden Random Skins + Full ACCESS

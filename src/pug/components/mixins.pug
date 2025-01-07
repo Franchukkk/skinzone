@@ -1,21 +1,20 @@
 mixin header-line()
     .header-line.d-flex.justify-content-between.w-100
         div
-            .logo.circle-btn 
+            a(href="index.html").logo.circle-btn 
                 img(src="img/logo.png", alt="")
             a(href="#").basket.circle-btn
                 img(src="img/basket.png", alt="")
         nav 
             ul 
                 li 
-                    a(href='#') Products
+                    a(href='index.html#products' data-section="products") Products
                 li 
-                    a(href='#') Reviews
+                    a(href='index.html#reviews' data-section="reviews") Reviews
                 li 
-                    a(href='#') FAQ
+                    a(href='index.html#faq' data-section="faq") FAQ
                 li 
-                    a(href='#') HELP CEnter 
-    
+                    a(href='index.html#help' data-section="help") HELP CEnter    
 
                     
 mixin footer()
@@ -35,10 +34,10 @@ mixin product-card(img, name, price)
                 form(action="").product-card__info 
                     h3= name
                     p= price
-                    button Buy          
+                    button Buy
 
 mixin reviews()
-    .reviews.animate-bottom
+    .reviews.animate-bottom#reviews
         h2.text-center.title.animate-bottom.hidden REVIEWS
             span REVIEWS
         .relative
@@ -57,8 +56,8 @@ mixin reviews()
                     .swiper-slide
                         +review("Just bought the Ikonik account for 175 euro, and it’s legit! I received around 220 skins, all just like they said. The whole process was super easy, and I'm really satisfied. Definitely recommend it to anyone looking for a good deal!", "Max", "Africa", "Pink Lama", 4)
 
-            .swiper-button-prev
-            .swiper-button-next
+            .swiper-button-prev.next-rev
+            .swiper-button-next.next-rev
 
 mixin review(text, author, location, skin, stars)
     .review.wrapper-sm
@@ -78,7 +77,7 @@ mixin review(text, author, location, skin, stars)
 mixin join-block()
     .marquee-lines.animate-bottom
         .header-content
-            .wrapper.h-100
+            .wrapper.h-100.relative
                 .row 
                     .col-8
                         .join-btn-container.d-flex.justify-content-center.align-items-center
@@ -88,19 +87,19 @@ mixin join-block()
                                 a(href="#").button JOIN DISCORD
                     .col-4
                         .hero-second
-
-        - for (let i = 0; i < 30; i++)
-            .marquee-line(style=`top: ${i * 70}px;`)
-                if (i % 2 === 0)
-                    - for (let j = 0; j < 20; j++)
-                        span Join our community
-                else 
-                    - for (let j = 0; j < 27; j++)
-                        span Skin 
-                            b Zone   
+        .lines-top
+            - for (let i = -1; i < 30; i++)
+                .marquee-line(style=`top: ${i * 70}px;`)
+                    if (i % 2 === 0)
+                        - for (let j = 0; j < 20; j++)
+                            span Join our community
+                    else 
+                        - for (let j = 0; j < 27; j++)
+                            span Skin 
+                                b Zone   
 
 mixin faq()
-    .faq.wrapper-sm.animate-bottom
+    .faq.wrapper-sm.animate-bottom#faq
         h2.text-center.title.animate-bottom.hidden FAQ
             span FAQ
 
@@ -134,7 +133,7 @@ mixin faq()
                     .accordion-body
                         |  Just bought the Ikonik account for 175 euro, and it's legit! I received around 220 skins, all just like they said. The whole process was super easy, and I'm really satisfied. Definitely recommend it to anyone looking for a good deal!
 mixin help()
-    .help.wrapper-sm.animate-bottom
+    .help.wrapper-sm.animate-bottom#help
         h2.text-center.title.animate-bottom.hidden Help CEnter
             span HELP CEnter 
         h3 sent message

@@ -4,8 +4,10 @@
     margin: 0
     padding: 0
 
-// html
-//   font-size: 16px
+html
+  font-size: 16px
+  +media(2000)
+    font-size: 22px
 
 body
   margin: 0
@@ -67,13 +69,13 @@ main .marquee-lines
 
 .marquee-lines .marquee-line:nth-child(even) span
   color: #FFF
-  font-size: 4.375rem
+  font-size: 70px
   font-weight: 400
   text-transform: uppercase
 
 .marquee-lines .marquee-line:nth-child(odd) span
   color: #EA8BFF
-  font-size: 4.375rem
+  font-size: 70px
   font-weight: 400
   text-transform: uppercase
   b
@@ -127,6 +129,8 @@ main .header-content
   left: 50%
   transform:  translateX(-50%)
   z-index: 999
+  a.active
+    transform: scale(1.2)
 
 
 .header-line nav
@@ -209,6 +213,9 @@ main .header-content
 .hero-second.reversed
   background-position-x: left
   transform: scale(1, -1)
+
+.lines-top
+  margin-top: -50px
 
 .join-btn-container
   height: 36.2rem
@@ -345,7 +352,7 @@ h2.text-center.title
 
 .product-card .mini-banner
   position: absolute
-  min-width: 200px
+  min-width: 12.5rem
   font-size: 2rem
   border-radius: 1rem
   z-index: -1
@@ -367,6 +374,24 @@ h2.text-center.title
   height: 1rem
   border-radius: 50%
   background: #18E0E3
+  bottom: 50%
+  right: 25%
+  animation: floatParticle 3s ease-in-out infinite
+  &:nth-child(2)
+    bottom: 55%
+    right: 30%
+    animation-delay: 0.5s
+  &:nth-child(3)
+    bottom: 56%
+    right: 23%
+    animation-delay: 1s
+
+.random .product-card .particle
+  width: 2rem
+  height: 2rem
+  background-color: transparent
+  position: absolute
+
   bottom: 40%
   right: 1.8rem
   animation: floatParticle 3s ease-in-out infinite
@@ -378,11 +403,6 @@ h2.text-center.title
     bottom: 50%
     right: 1.5rem
     animation-delay: 1s
-
-.random .product-card .particle
-  width: 2rem
-  height: 2rem
-  background-color: transparent
   &::before
     content: ''
     display: inline-block
@@ -440,7 +460,7 @@ h2.text-center.title
   right: -2.5rem
 
 .swiper-button-prev:hover:after, .swiper-button-next:hover:after
-
+  filter: drop-shadow(10px 0 15px rgba(24, 224, 227, 0.6)) drop-shadow(-10px 4px 15px rgba(234, 139, 255, 0.6))
   transform: scale(1.3)
 
 
@@ -449,11 +469,18 @@ h2.text-center.title
 
 
 .product-card:hover 
+  .custom-shape-container
+    box-shadow: 10px 0 15px rgba(24, 224, 227, 0.6), -10px 4px 15px rgba(234, 139, 255, 0.6)
   .mini-banner
     box-shadow: -10px 4px 30px 3px rgba(234, 139, 255, 0.60), 10px 0px 30px 3px rgba(24, 224, 227, 0.60)
 
+
+
+
+
 .custom-shape-container
   display: none
+  transition: all .5s ease
 
 .random .custom-shape-container
   display: block
@@ -512,6 +539,9 @@ h2.text-center.title
   font-size: 1rem
   margin-bottom: 0
 
+.reviews
+  margin-bottom: 6rem
+
 .reviews .relative
   max-width: 58.125rem
   margin: 0 auto
@@ -526,7 +556,6 @@ h2.text-center.title
   height: 231px
   background: linear-gradient(135deg, #18E0E3, #EA8BFF)
   border-radius: 50% 50% 0px 60px
-  box-shadow: 10px 0 15px rgba(24, 224, 227, 0.6), -10px 4px 15px rgba(234, 139, 255, 0.6)
   z-index: -1
 
 .accordion-button
@@ -641,6 +670,78 @@ footer
 
 
 
+.product-about h2
+  color: #FFF
+  font-size: 2rem
+  font-weight: 400
 
-// напиши js скрипт, щоб ці шаріки-сніжинки плавно падали , на екрані завжди має бути 5-6 шаріків, якщо хоча б один шарік виходив за екран , то одрузу же зверху цей шарік клонувався і зверху заново падав. Ці шаріки мають position absolute
+.availability
+  color: #98F89B
+  font-size: 1rem
+  font-weight: 400
 
+span.price
+  font-size: 3rem
+  font-weight: 400
+  background: linear-gradient(90deg, #EA8BFF 44.9%, #18E0E3 56.27%)
+  background-clip: text
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent
+
+.product-about .button
+  font-size: 2rem
+  padding: 0.5rem 4rem
+  margin-bottom: 2rem
+
+.pay-platforms
+  column-gap: 0.9rem
+  img
+    height: 2.5rem
+
+.card-header
+  padding-top: 10rem
+  margin-bottom: 7.8rem
+
+
+.product-about 
+  margin-bottom: 8rem
+  .particle
+    bottom: 30%
+    right: 25%
+    &:nth-child(2)
+      bottom: 35%
+      right: 30%
+    &:nth-child(3)
+      bottom: 36%
+      right: 23%
+  .product-card img
+    height: 32rem
+  .mini-banner
+    font-size: 3rem
+    width: 280px
+    padding: 0.5rem 0
+    text-align: center
+
+.product-description
+  padding: 2.5rem
+  border: 2px solid transparent
+  border-radius: 2rem
+  background-image: linear-gradient(#000, #000), linear-gradient(90deg, #EA8BFF 0%, #18E0E3 100%)
+  background-origin: border-box
+  background-clip: padding-box, border-box
+
+  h2
+    color: #FFF
+    font-size: 2rem
+    font-weight: 400
+
+  h3, li
+    color: #FFF
+    font-size: 1rem
+    font-weight: 400
+
+  h3
+    margin-bottom: 1rem
+
+  ul
+    margin-bottom: 0

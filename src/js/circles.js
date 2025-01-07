@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
       circle.className = "circle";
       container.appendChild(circle);
       circles.push(circle);
-      const size = getRandom(10, 50);
+      const size = getRandom(10, 20);
       circle.style.width = `${size}px`;
       circle.style.height = `${size}px`;
       circle.style.left = `${getRandom(0, screenWidth - size)}px`;
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   
     function resetCirclePosition(circle) {
-      const size = getRandom(10, 30);
+      const size = getRandom(10, 20);
       circle.style.width = `${size}px`;
       circle.style.height = `${size}px`;
       circle.style.left = `${getRandom(0, screenWidth - size)}px`;
@@ -57,5 +57,5 @@ document.addEventListener("DOMContentLoaded", () => {
     initCircles();
     animate();
     
-    setInterval(createNewCircle, 10000);
+    setInterval(createNewCircle, 5000);
   });

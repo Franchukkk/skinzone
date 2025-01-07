@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+html {
+  font-size: 16px;
+}
+
 body {
   margin: 0;
   height: 200vh;
@@ -79,14 +83,14 @@ main .marquee-lines {
 
 .marquee-lines .marquee-line:nth-child(even) span {
   color: #FFF;
-  font-size: 4.375rem;
+  font-size: 70px;
   font-weight: 400;
   text-transform: uppercase;
 }
 
 .marquee-lines .marquee-line:nth-child(odd) span {
   color: #EA8BFF;
-  font-size: 4.375rem;
+  font-size: 70px;
   font-weight: 400;
   text-transform: uppercase;
 }
@@ -161,6 +165,12 @@ main .header-content {
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
   z-index: 999;
+}
+
+.header-line a.active {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 .header-line nav {
@@ -296,6 +306,10 @@ main .header-content {
   -webkit-transform: scale(1, -1);
   -ms-transform: scale(1, -1);
   transform: scale(1, -1);
+}
+
+.lines-top {
+  margin-top: -50px;
 }
 
 .join-btn-container {
@@ -490,7 +504,7 @@ h2.text-center.title span {
 
 .product-card .mini-banner {
   position: absolute;
-  min-width: 200px;
+  min-width: 12.5rem;
   font-size: 2rem;
   border-radius: 1rem;
   z-index: -1;
@@ -541,22 +555,22 @@ h2.text-center.title span {
   height: 1rem;
   border-radius: 50%;
   background: #18E0E3;
-  bottom: 40%;
-  right: 1.8rem;
+  bottom: 50%;
+  right: 25%;
   -webkit-animation: floatParticle 3s ease-in-out infinite;
   animation: floatParticle 3s ease-in-out infinite;
 }
 
 .product-card .particle:nth-child(2) {
-  bottom: 45%;
-  right: 0;
+  bottom: 55%;
+  right: 30%;
   -webkit-animation-delay: 0.5s;
   animation-delay: 0.5s;
 }
 
 .product-card .particle:nth-child(3) {
-  bottom: 50%;
-  right: 1.5rem;
+  bottom: 56%;
+  right: 23%;
   -webkit-animation-delay: 1s;
   animation-delay: 1s;
 }
@@ -565,6 +579,25 @@ h2.text-center.title span {
   width: 2rem;
   height: 2rem;
   background-color: transparent;
+  position: absolute;
+  bottom: 40%;
+  right: 1.8rem;
+  -webkit-animation: floatParticle 3s ease-in-out infinite;
+  animation: floatParticle 3s ease-in-out infinite;
+}
+
+.random .product-card .particle:nth-child(2) {
+  bottom: 45%;
+  right: 0;
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
+
+.random .product-card .particle:nth-child(3) {
+  bottom: 50%;
+  right: 1.5rem;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
 }
 
 .random .product-card .particle::before {
@@ -670,9 +703,16 @@ h2.text-center.title span {
 
 .swiper-button-prev:hover:after,
 .swiper-button-next:hover:after {
+  -webkit-filter: drop-shadow(10px 0 15px rgba(24, 224, 227, 0.6)) drop-shadow(-10px 4px 15px rgba(234, 139, 255, 0.6));
+  filter: drop-shadow(10px 0 15px rgba(24, 224, 227, 0.6)) drop-shadow(-10px 4px 15px rgba(234, 139, 255, 0.6));
   -webkit-transform: scale(1.3);
   -ms-transform: scale(1.3);
   transform: scale(1.3);
+}
+
+.product-card:hover .custom-shape-container {
+  -webkit-box-shadow: 10px 0 15px rgba(24, 224, 227, 0.6), -10px 4px 15px rgba(234, 139, 255, 0.6);
+  box-shadow: 10px 0 15px rgba(24, 224, 227, 0.6), -10px 4px 15px rgba(234, 139, 255, 0.6);
 }
 
 .product-card:hover .mini-banner {
@@ -682,6 +722,9 @@ h2.text-center.title span {
 
 .custom-shape-container {
   display: none;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .random .custom-shape-container {
@@ -767,6 +810,10 @@ h2.text-center.title span {
   margin-bottom: 0;
 }
 
+.reviews {
+  margin-bottom: 6rem;
+}
+
 .reviews .relative {
   max-width: 58.125rem;
   margin: 0 auto;
@@ -781,8 +828,6 @@ h2.text-center.title span {
   background: -o-linear-gradient(315deg, #18E0E3, #EA8BFF);
   background: linear-gradient(135deg, #18E0E3, #EA8BFF);
   border-radius: 50% 50% 0px 60px;
-  -webkit-box-shadow: 10px 0 15px rgba(24, 224, 227, 0.6), -10px 4px 15px rgba(234, 139, 255, 0.6);
-  box-shadow: 10px 0 15px rgba(24, 224, 227, 0.6), -10px 4px 15px rgba(234, 139, 255, 0.6);
   z-index: -1;
 }
 
@@ -921,4 +966,116 @@ footer p {
   border-radius: 50%;
   background: #EA8BFF;
   z-index: -1;
+}
+
+.product-about h2 {
+  color: #FFF;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.availability {
+  color: #98F89B;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+span.price {
+  font-size: 3rem;
+  font-weight: 400;
+  background: -webkit-gradient(linear, left top, right top, color-stop(44.9%, #EA8BFF), color-stop(56.27%, #18E0E3));
+  background: -o-linear-gradient(left, #EA8BFF 44.9%, #18E0E3 56.27%);
+  background: linear-gradient(90deg, #EA8BFF 44.9%, #18E0E3 56.27%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.product-about .button {
+  font-size: 2rem;
+  padding: 0.5rem 4rem;
+  margin-bottom: 2rem;
+}
+
+.pay-platforms {
+  -webkit-column-gap: 0.9rem;
+  -moz-column-gap: 0.9rem;
+  column-gap: 0.9rem;
+}
+
+.pay-platforms img {
+  height: 2.5rem;
+}
+
+.card-header {
+  padding-top: 10rem;
+  margin-bottom: 7.8rem;
+}
+
+.product-about {
+  margin-bottom: 8rem;
+}
+
+.product-about .particle {
+  bottom: 30%;
+  right: 25%;
+}
+
+.product-about .particle:nth-child(2) {
+  bottom: 35%;
+  right: 30%;
+}
+
+.product-about .particle:nth-child(3) {
+  bottom: 36%;
+  right: 23%;
+}
+
+.product-about .product-card img {
+  height: 32rem;
+}
+
+.product-about .mini-banner {
+  font-size: 3rem;
+  width: 280px;
+  padding: 0.5rem 0;
+  text-align: center;
+}
+
+.product-description {
+  padding: 2.5rem;
+  border: 2px solid transparent;
+  border-radius: 2rem;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#000), to(#000)), -webkit-gradient(linear, left top, right top, from(#EA8BFF), to(#18E0E3));
+  background-image: -o-linear-gradient(#000, #000), -o-linear-gradient(left, #EA8BFF 0%, #18E0E3 100%);
+  background-image: linear-gradient(#000, #000), linear-gradient(90deg, #EA8BFF 0%, #18E0E3 100%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.product-description h2 {
+  color: #FFF;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.product-description h3,
+.product-description li {
+  color: #FFF;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.product-description h3 {
+  margin-bottom: 1rem;
+}
+
+.product-description ul {
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 2000px) {
+  html {
+    font-size: 22px;
+  }
 }

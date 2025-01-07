@@ -13,55 +13,87 @@ html(lang="en")
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
         link(rel="stylesheet", href="css/styles.css")
-    body
+    body.relative
+        .circle
+        .circle
+        .circle
+        .circle
+        .circle
+        .circle
+  
         include components/mixins
         +basket()
-        header
+        header.card-header
             .wrapper
                 +header-line()
-                .product-about.row
+                .product-about.row.align-items-center
                     .image-block.col-sm-12.col-md-6 
-                        img(src="", alt="")
+                        .product-card.w-100
+                            .d-flex.justify-content-center.relative.w-100
+                                div.w-100
+                                    .particle
+                                    .particle
+                                    .particle
+                                    .relative
+                                        button.mini-banner SKIN ZONE
+                                        .custom-shape-container
+                                        img(src="img/skinexample.png", alt='product-card')
                     form(action="").text-block.col-sm-12.col-md-6 
-                        h2 100-200 Skins + Full ACCESS
-                        span.price $120
-                        p.availability В наявності
-                        button(type="submit") В кошик
-                        .platforms 
-                            p will work on
-                            .row 
-                                .col-4
-                                    img(src="", alt="")
-                                .col-4
-                                    img(src="", alt="")
-                                .col-4
-                                    img(src="", alt="")
+                        h2 Guaranteed 500+ skins | Full Access
+                        p.availability IN STOK
+                        p 
+                            span.price $110
+                        button(type="submit").button BUY
+                        .pay-platforms.d-flex.align-items-center.flex-wrap
+                            img(src="img/visamastercard.png", alt="")
+                            img(src="img/paypal.png", alt="")
+                            img(src="img/coinpayments.png", alt="")
+                            img(src="img/webmoney.png", alt="")
                 +advantages()
         main
-            .wrapper
-                .product-description 
-                    h2 100-200 Skins + Full ACCESS
+            .wrapper-sm
+                .product-description.animate-bottom.hidden
+                    h2 description
+                    h3 🔥 Get Instant Access to:
                     ul
-                        li
-                            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque vel qui soluta blanditiis culpa nostrum alias molestiae modi maiores sapiente, molestias nobis vero voluptatem animi placeat maxime quis dignissimos dolore.
-                        li
-                            p Consequuntur aspernatur nulla possimus, voluptatum ab alias expedita voluptatibus nemo vel quos sint sit eveniet aliquid autem. Officia dicta autem tempora suscipit voluptate quia voluptas, aliquam voluptatum maiores numquam placeat.
-                        li
-                            p Quam vero itaque, exercitationem pariatur id expedita nam possimus, quo animi earum iusto qui commodi nesciunt, non illo nobis sunt inventore molestias consectetur. Temporibus quasi perspiciatis, atque repellendus assumenda voluptatum?
-                        li
-                            p Possimus consequuntur laboriosam aspernatur dolore, cupiditate molestiae illum error nobis repellat repudiandae qui delectus explicabo libero quis sequi voluptatem officiis reiciendis fuga dolores autem facilis earum eius harum? Voluptate, officia!
-                        li
-                            p Quis consequatur itaque nisi id illum obcaecati eos tempore? Maxime modi sit dignissimos perspiciatis animi at nostrum odio, corrupti suscipit magnam laborum, quaerat natus dolorem voluptas optio ratione eum? Repudiandae!
-                +reviews()
-                .products 
-                    h2.text-center Also we have
-                    .row
-                        +product-card()
-                        +product-card()
-                        +product-card()
-                        +product-card()
-                        +product-card()
-                        +product-card()
+                        li 🎮 120-400 Skins: Boost your collection with a variety of skins
+                        li ✨ Chance for Legendary Skins: Unlock rare skins that stand out in the game
+                        li 🏆 Random Level & Wins: Boost your account with a random level and extra wins
+                        li 🪓 Random Pickaxe Skins: Customize your gear with unique pickaxe skins
+                        li 📧 Instant Delivery: Receive all details directly in your email—no waiting!
+                    h3 🔒 100% Control & Privacy:
+                    ul
+                        li ✅ You can easily change both your account and email passwords after receiving the info
+                        li 📥 Receive both LOGIN/PASSWORD for the account and email for seamless access
+                    h3 💥 Fast & Secure: Get premium skins and boost your gaming now with FortniteAccs!
+            .wrapper
+                
+                .products
+                    h2.text-center.title.animate-bottom.hidden Also we have
+                        span Also we have
+                    .relative
+                        .swiper.discounts-slider
+                            .swiper-wrapper
+                                .swiper-slide
+                                    +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                                .swiper-slide
+                                    +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                                .swiper-slide
+                                    +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                                .swiper-slide
+                                    +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                                .swiper-slide
+                                    +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                                .swiper-slide
+                                    +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                                .swiper-slide
+                                    +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                                .swiper-slide
+                                    +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                                
+                        .swiper-button-prev.products-button-prev
+                        .swiper-button-next.products-button-next
+            +reviews()
             +join-block()
             .wrapper
                 +faq()

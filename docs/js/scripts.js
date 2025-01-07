@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
       circle.className = "circle";
       container.appendChild(circle);
       circles.push(circle);
-      const size = getRandom(10, 50);
+      const size = getRandom(10, 20);
       circle.style.width = `${size}px`;
       circle.style.height = `${size}px`;
       circle.style.left = `${getRandom(0, screenWidth - size)}px`;
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   
     function resetCirclePosition(circle) {
-      const size = getRandom(10, 50);
+      const size = getRandom(10, 20);
       circle.style.width = `${size}px`;
       circle.style.height = `${size}px`;
       circle.style.left = `${getRandom(0, screenWidth - size)}px`;
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initCircles();
     animate();
     
-    setInterval(createNewCircle, 10000);
+    setInterval(createNewCircle, 5000);
   });
 document.addEventListener("scroll", () => {
     const lines = document.querySelectorAll(".marquee-line");
@@ -115,7 +115,6 @@ const observer = new IntersectionObserver((entries) => {
 const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((el) => observer.observe(el));
 
-
 const discountsSlider = new Swiper('.discounts-slider', {
     loop: true,
     pagination: {
@@ -123,8 +122,8 @@ const discountsSlider = new Swiper('.discounts-slider', {
         clickable: true
     },
     navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.products-button-next',
+        prevEl: '.products-button-prev',
     },
     breakpoints: {
         320: {
@@ -149,8 +148,8 @@ const reviewsSlider = new Swiper('.reviews-slider', {
         clickable: true
     },
     navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.next-rev',
+        prevEl: '.next-rev',
     },
     breakpoints: {
         320: {
@@ -166,5 +165,22 @@ const reviewsSlider = new Swiper('.reviews-slider', {
             spaceBetween: 30
         }
     }
+});
+
+document.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('#products, #reviews, #faq, #help');
+    const navLinks = document.querySelectorAll('nav ul li a');
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        const scrollPosition = window.scrollY;
+        
+        if (scrollPosition >= sectionTop - 100 && scrollPosition < sectionTop + sectionHeight - 100) {
+            const targetLink = document.querySelector(`nav ul li a[data-section="${section.id}"]`);
+            navLinks.forEach(link => link.classList.remove('active'));
+            targetLink.classList.add('active');
+        }
+    });
 });
 

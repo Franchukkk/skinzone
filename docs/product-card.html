@@ -11,7 +11,13 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="css/styles.css">
   </head>
-  <body>
+  <body class="relative">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
         <div class="basket"> 
           <div class="basket-header">
             <h3>Your Basket</h3>
@@ -43,35 +49,41 @@
             </div>
           </form>
         </div>
-    <header>
+    <header class="card-header">
       <div class="wrapper">
             <div class="header-line d-flex justify-content-between w-100">
-              <div>
-                <div class="logo circle-btn"> <img src="img/logo.png" alt=""></div><a class="basket circle-btn" href="#"><img src="img/basket.png" alt=""></a>
-              </div>
+              <div><a class="logo circle-btn" href="index.html"> <img src="img/logo.png" alt=""></a><a class="basket circle-btn" href="#"><img src="img/basket.png" alt=""></a></div>
               <nav> 
                 <ul> 
-                  <li> <a href="#">Products</a></li>
-                  <li> <a href="#">Reviews</a></li>
-                  <li> <a href="#">FAQ</a></li>
-                  <li> <a href="#">HELP CEnter </a></li>
+                  <li> <a href="index.html#products" data-section="products">Products</a></li>
+                  <li> <a href="index.html#reviews" data-section="reviews">Reviews</a></li>
+                  <li> <a href="index.html#faq" data-section="faq">FAQ</a></li>
+                  <li> <a href="index.html#help" data-section="help">HELP CEnter    </a></li>
                 </ul>
               </nav>
             </div>
-        <div class="product-about row">
-          <div class="image-block col-sm-12 col-md-6"> <img src="" alt=""></div>
-          <form class="text-block col-sm-12 col-md-6" action=""> 
-            <h2>100-200 Skins + Full ACCESS</h2><span class="price">$120</span>
-            <p class="availability">В наявності</p>
-            <button type="submit">В кошик</button>
-            <div class="platforms"> 
-              <p>will work on</p>
-              <div class="row"> 
-                <div class="col-4"><img src="" alt=""></div>
-                <div class="col-4"><img src="" alt=""></div>
-                <div class="col-4"><img src="" alt=""></div>
+        <div class="product-about row align-items-center">
+          <div class="image-block col-sm-12 col-md-6"> 
+            <div class="product-card w-100">
+              <div class="d-flex justify-content-center relative w-100">
+                <div class="w-100">
+                  <div class="particle"></div>
+                  <div class="particle"></div>
+                  <div class="particle"></div>
+                  <div class="relative">
+                    <button class="mini-banner">SKIN ZONE</button>
+                    <div class="custom-shape-container"></div><img src="img/skinexample.png" alt="product-card">
+                  </div>
+                </div>
               </div>
             </div>
+          </div>
+          <form class="text-block col-sm-12 col-md-6" action=""> 
+            <h2>Guaranteed 500+ skins | Full Access</h2>
+            <p class="availability">IN STOK</p>
+            <p> <span class="price">$110</span></p>
+            <button class="button" type="submit">BUY</button>
+            <div class="pay-platforms d-flex align-items-center flex-wrap"><img src="img/visamastercard.png" alt=""><img src="img/paypal.png" alt=""><img src="img/coinpayments.png" alt=""><img src="img/webmoney.png" alt=""></div>
           </form>
         </div>
             <div class="advantages d-flex flex-wrap justify-content-between animate-bottom">
@@ -97,269 +109,322 @@
       </div>
     </header>
     <main>
-      <div class="wrapper">
-        <div class="product-description"> 
-          <h2>100-200 Skins + Full ACCESS</h2>
+      <div class="wrapper-sm">
+        <div class="product-description animate-bottom hidden">
+          <h2>description</h2>
+          <h3>🔥 Get Instant Access to:</h3>
           <ul>
-            <li>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque vel qui soluta blanditiis culpa nostrum alias molestiae modi maiores sapiente, molestias nobis vero voluptatem animi placeat maxime quis dignissimos dolore.</p>
-            </li>
-            <li>
-              <p>Consequuntur aspernatur nulla possimus, voluptatum ab alias expedita voluptatibus nemo vel quos sint sit eveniet aliquid autem. Officia dicta autem tempora suscipit voluptate quia voluptas, aliquam voluptatum maiores numquam placeat.</p>
-            </li>
-            <li>
-              <p>Quam vero itaque, exercitationem pariatur id expedita nam possimus, quo animi earum iusto qui commodi nesciunt, non illo nobis sunt inventore molestias consectetur. Temporibus quasi perspiciatis, atque repellendus assumenda voluptatum?</p>
-            </li>
-            <li>
-              <p>Possimus consequuntur laboriosam aspernatur dolore, cupiditate molestiae illum error nobis repellat repudiandae qui delectus explicabo libero quis sequi voluptatem officiis reiciendis fuga dolores autem facilis earum eius harum? Voluptate, officia!</p>
-            </li>
-            <li>
-              <p>Quis consequatur itaque nisi id illum obcaecati eos tempore? Maxime modi sit dignissimos perspiciatis animi at nostrum odio, corrupti suscipit magnam laborum, quaerat natus dolorem voluptas optio ratione eum? Repudiandae!</p>
-            </li>
+            <li>🎮 120-400 Skins: Boost your collection with a variety of skins</li>
+            <li>✨ Chance for Legendary Skins: Unlock rare skins that stand out in the game</li>
+            <li>🏆 Random Level & Wins: Boost your account with a random level and extra wins</li>
+            <li>🪓 Random Pickaxe Skins: Customize your gear with unique pickaxe skins</li>
+            <li>📧 Instant Delivery: Receive all details directly in your email—no waiting!</li>
           </ul>
+          <h3>🔒 100% Control & Privacy:</h3>
+          <ul>
+            <li>✅ You can easily change both your account and email passwords after receiving the info</li>
+            <li>📥 Receive both LOGIN/PASSWORD for the account and email for seamless access</li>
+          </ul>
+          <h3>💥 Fast & Secure: Get premium skins and boost your gaming now with FortniteAccs!</h3>
         </div>
-            <div class="reviews animate-bottom">
-              <h2 class="text-center title animate-bottom hidden">REVIEWS<span>REVIEWS</span></h2>
-              <div class="relative">
-                <div class="swiper reviews-slider">
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                          <div class="review wrapper-sm">
-                            <div class="d-flex justify-content-between"> 
-                              <div class="rate d-flex justify-content-between"> 
-                                <div class="rate-star active"></div>
-                                <div class="rate-star active"></div>
-                                <div class="rate-star active"></div>
-                                <div class="rate-star active"></div>
-                                <div class="rate-star"></div>
-                              </div>
-                              <div class="quotes"> <span>“”</span></div>
-                            </div>
-                            <p>Just bought the Ikonik account for 175 euro, and it’s legit! I received around 220 skins, all just like they said. The whole process was super easy, and I'm really satisfied. Definitely recommend it to anyone looking for a good deal!</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                              <div class="author"> <strong>Max</strong>
-                                <p>From Africa</p>
-                              </div>
-                              <p>bot Guaranteed skin: Pink Lama | Full Access</p>
-                            </div>
+      </div>
+      <div class="wrapper">
+        <div class="products">
+          <h2 class="text-center title animate-bottom hidden">Also we have<span>Also we have</span></h2>
+          <div class="relative">
+            <div class="swiper discounts-slider">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                      <div class="product-card col-sm-12 col-md-6 col-lg-4">
+                        <div class="d-flex justify-content-center relative">
+                          <div>
+                            <div class="particle"></div>
+                            <div class="particle"></div>
+                            <div class="particle"></div><a class="relative" href="product-card.html">
+                              <button class="mini-banner">SKIN ZONE</button>
+                              <div class="custom-shape-container"></div><img src="img/skinexample.png" alt="product-card"></a>
+                            <form class="product-card__info" action=""> 
+                              <h3>Guaranteed skin: Pink Lama | Full Access</h3>
+                              <p>$110</p>
+                              <button>Buy</button>
+                            </form>
                           </div>
-                    </div>
-                    <div class="swiper-slide">
-                          <div class="review wrapper-sm">
-                            <div class="d-flex justify-content-between"> 
-                              <div class="rate d-flex justify-content-between"> 
-                                <div class="rate-star active"></div>
-                                <div class="rate-star active"></div>
-                                <div class="rate-star active"></div>
-                                <div class="rate-star active"></div>
-                                <div class="rate-star"></div>
-                              </div>
-                              <div class="quotes"> <span>“”</span></div>
-                            </div>
-                            <p>Just bought the Ikonik account for 175 euro, and it’s legit! I received around 220 skins, all just like they said. The whole process was super easy, and I'm really satisfied. Definitely recommend it to anyone looking for a good deal!</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                              <div class="author"> <strong>Max</strong>
-                                <p>From Africa</p>
-                              </div>
-                              <p>bot Guaranteed skin: Pink Lama | Full Access</p>
-                            </div>
-                          </div>
-                    </div>
-                    <div class="swiper-slide">
-                          <div class="review wrapper-sm">
-                            <div class="d-flex justify-content-between"> 
-                              <div class="rate d-flex justify-content-between"> 
-                                <div class="rate-star active"></div>
-                                <div class="rate-star active"></div>
-                                <div class="rate-star active"></div>
-                                <div class="rate-star active"></div>
-                                <div class="rate-star"></div>
-                              </div>
-                              <div class="quotes"> <span>“”</span></div>
-                            </div>
-                            <p>Just bought the Ikonik account for 175 euro, and it’s legit! I received around 220 skins, all just like they said. The whole process was super easy, and I'm really satisfied. Definitely recommend it to anyone looking for a good deal!</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                              <div class="author"> <strong>Max</strong>
-                                <p>From Africa</p>
-                              </div>
-                              <p>bot Guaranteed skin: Pink Lama | Full Access</p>
-                            </div>
-                          </div>
-                    </div>
-                    <div class="swiper-slide">
-                          <div class="review wrapper-sm">
-                            <div class="d-flex justify-content-between"> 
-                              <div class="rate d-flex justify-content-between"> 
-                                <div class="rate-star active"></div>
-                                <div class="rate-star active"></div>
-                                <div class="rate-star active"></div>
-                                <div class="rate-star active"></div>
-                                <div class="rate-star"></div>
-                              </div>
-                              <div class="quotes"> <span>“”</span></div>
-                            </div>
-                            <p>Just bought the Ikonik account for 175 euro, and it’s legit! I received around 220 skins, all just like they said. The whole process was super easy, and I'm really satisfied. Definitely recommend it to anyone looking for a good deal!</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                              <div class="author"> <strong>Max</strong>
-                                <p>From Africa</p>
-                              </div>
-                              <p>bot Guaranteed skin: Pink Lama | Full Access</p>
-                            </div>
-                          </div>
-                    </div>
-                    <div class="swiper-slide">
-                          <div class="review wrapper-sm">
-                            <div class="d-flex justify-content-between"> 
-                              <div class="rate d-flex justify-content-between"> 
-                                <div class="rate-star active"></div>
-                                <div class="rate-star active"></div>
-                                <div class="rate-star active"></div>
-                                <div class="rate-star active"></div>
-                                <div class="rate-star"></div>
-                              </div>
-                              <div class="quotes"> <span>“”</span></div>
-                            </div>
-                            <p>Just bought the Ikonik account for 175 euro, and it’s legit! I received around 220 skins, all just like they said. The whole process was super easy, and I'm really satisfied. Definitely recommend it to anyone looking for a good deal!</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                              <div class="author"> <strong>Max</strong>
-                                <p>From Africa</p>
-                              </div>
-                              <p>bot Guaranteed skin: Pink Lama | Full Access</p>
-                            </div>
-                          </div>
-                    </div>
-                    <div class="swiper-slide">
-                          <div class="review wrapper-sm">
-                            <div class="d-flex justify-content-between"> 
-                              <div class="rate d-flex justify-content-between"> 
-                                <div class="rate-star active"></div>
-                                <div class="rate-star active"></div>
-                                <div class="rate-star active"></div>
-                                <div class="rate-star active"></div>
-                                <div class="rate-star"></div>
-                              </div>
-                              <div class="quotes"> <span>“”</span></div>
-                            </div>
-                            <p>Just bought the Ikonik account for 175 euro, and it’s legit! I received around 220 skins, all just like they said. The whole process was super easy, and I'm really satisfied. Definitely recommend it to anyone looking for a good deal!</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                              <div class="author"> <strong>Max</strong>
-                                <p>From Africa</p>
-                              </div>
-                              <p>bot Guaranteed skin: Pink Lama | Full Access</p>
-                            </div>
-                          </div>
-                    </div>
-                  </div>
+                        </div>
+                      </div>
                 </div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+                <div class="swiper-slide">
+                      <div class="product-card col-sm-12 col-md-6 col-lg-4">
+                        <div class="d-flex justify-content-center relative">
+                          <div>
+                            <div class="particle"></div>
+                            <div class="particle"></div>
+                            <div class="particle"></div><a class="relative" href="product-card.html">
+                              <button class="mini-banner">SKIN ZONE</button>
+                              <div class="custom-shape-container"></div><img src="img/skinexample.png" alt="product-card"></a>
+                            <form class="product-card__info" action=""> 
+                              <h3>Guaranteed skin: Pink Lama | Full Access</h3>
+                              <p>$110</p>
+                              <button>Buy</button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="swiper-slide">
+                      <div class="product-card col-sm-12 col-md-6 col-lg-4">
+                        <div class="d-flex justify-content-center relative">
+                          <div>
+                            <div class="particle"></div>
+                            <div class="particle"></div>
+                            <div class="particle"></div><a class="relative" href="product-card.html">
+                              <button class="mini-banner">SKIN ZONE</button>
+                              <div class="custom-shape-container"></div><img src="img/skinexample.png" alt="product-card"></a>
+                            <form class="product-card__info" action=""> 
+                              <h3>Guaranteed skin: Pink Lama | Full Access</h3>
+                              <p>$110</p>
+                              <button>Buy</button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="swiper-slide">
+                      <div class="product-card col-sm-12 col-md-6 col-lg-4">
+                        <div class="d-flex justify-content-center relative">
+                          <div>
+                            <div class="particle"></div>
+                            <div class="particle"></div>
+                            <div class="particle"></div><a class="relative" href="product-card.html">
+                              <button class="mini-banner">SKIN ZONE</button>
+                              <div class="custom-shape-container"></div><img src="img/skinexample.png" alt="product-card"></a>
+                            <form class="product-card__info" action=""> 
+                              <h3>Guaranteed skin: Pink Lama | Full Access</h3>
+                              <p>$110</p>
+                              <button>Buy</button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="swiper-slide">
+                      <div class="product-card col-sm-12 col-md-6 col-lg-4">
+                        <div class="d-flex justify-content-center relative">
+                          <div>
+                            <div class="particle"></div>
+                            <div class="particle"></div>
+                            <div class="particle"></div><a class="relative" href="product-card.html">
+                              <button class="mini-banner">SKIN ZONE</button>
+                              <div class="custom-shape-container"></div><img src="img/skinexample.png" alt="product-card"></a>
+                            <form class="product-card__info" action=""> 
+                              <h3>Guaranteed skin: Pink Lama | Full Access</h3>
+                              <p>$110</p>
+                              <button>Buy</button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="swiper-slide">
+                      <div class="product-card col-sm-12 col-md-6 col-lg-4">
+                        <div class="d-flex justify-content-center relative">
+                          <div>
+                            <div class="particle"></div>
+                            <div class="particle"></div>
+                            <div class="particle"></div><a class="relative" href="product-card.html">
+                              <button class="mini-banner">SKIN ZONE</button>
+                              <div class="custom-shape-container"></div><img src="img/skinexample.png" alt="product-card"></a>
+                            <form class="product-card__info" action=""> 
+                              <h3>Guaranteed skin: Pink Lama | Full Access</h3>
+                              <p>$110</p>
+                              <button>Buy</button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="swiper-slide">
+                      <div class="product-card col-sm-12 col-md-6 col-lg-4">
+                        <div class="d-flex justify-content-center relative">
+                          <div>
+                            <div class="particle"></div>
+                            <div class="particle"></div>
+                            <div class="particle"></div><a class="relative" href="product-card.html">
+                              <button class="mini-banner">SKIN ZONE</button>
+                              <div class="custom-shape-container"></div><img src="img/skinexample.png" alt="product-card"></a>
+                            <form class="product-card__info" action=""> 
+                              <h3>Guaranteed skin: Pink Lama | Full Access</h3>
+                              <p>$110</p>
+                              <button>Buy</button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="swiper-slide">
+                      <div class="product-card col-sm-12 col-md-6 col-lg-4">
+                        <div class="d-flex justify-content-center relative">
+                          <div>
+                            <div class="particle"></div>
+                            <div class="particle"></div>
+                            <div class="particle"></div><a class="relative" href="product-card.html">
+                              <button class="mini-banner">SKIN ZONE</button>
+                              <div class="custom-shape-container"></div><img src="img/skinexample.png" alt="product-card"></a>
+                            <form class="product-card__info" action=""> 
+                              <h3>Guaranteed skin: Pink Lama | Full Access</h3>
+                              <p>$110</p>
+                              <button>Buy</button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                </div>
               </div>
             </div>
-        <div class="products"> 
-          <h2 class="text-center">Also we have</h2>
-          <div class="row">
-                <div class="product-card col-sm-12 col-md-6 col-lg-4">
-                  <div class="d-flex justify-content-center relative">
-                    <div>
-                      <div class="particle"></div>
-                      <div class="particle"></div>
-                      <div class="particle"></div><a class="relative" href="product-card.html">
-                        <button class="mini-banner">SKIN ZONE</button>
-                        <div class="custom-shape-container"></div><img alt="product-card"></a>
-                      <form class="product-card__info" action=""> 
-                        <h3></h3>
-                        <p></p>
-                        <button>Buy          </button>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-                <div class="product-card col-sm-12 col-md-6 col-lg-4">
-                  <div class="d-flex justify-content-center relative">
-                    <div>
-                      <div class="particle"></div>
-                      <div class="particle"></div>
-                      <div class="particle"></div><a class="relative" href="product-card.html">
-                        <button class="mini-banner">SKIN ZONE</button>
-                        <div class="custom-shape-container"></div><img alt="product-card"></a>
-                      <form class="product-card__info" action=""> 
-                        <h3></h3>
-                        <p></p>
-                        <button>Buy          </button>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-                <div class="product-card col-sm-12 col-md-6 col-lg-4">
-                  <div class="d-flex justify-content-center relative">
-                    <div>
-                      <div class="particle"></div>
-                      <div class="particle"></div>
-                      <div class="particle"></div><a class="relative" href="product-card.html">
-                        <button class="mini-banner">SKIN ZONE</button>
-                        <div class="custom-shape-container"></div><img alt="product-card"></a>
-                      <form class="product-card__info" action=""> 
-                        <h3></h3>
-                        <p></p>
-                        <button>Buy          </button>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-                <div class="product-card col-sm-12 col-md-6 col-lg-4">
-                  <div class="d-flex justify-content-center relative">
-                    <div>
-                      <div class="particle"></div>
-                      <div class="particle"></div>
-                      <div class="particle"></div><a class="relative" href="product-card.html">
-                        <button class="mini-banner">SKIN ZONE</button>
-                        <div class="custom-shape-container"></div><img alt="product-card"></a>
-                      <form class="product-card__info" action=""> 
-                        <h3></h3>
-                        <p></p>
-                        <button>Buy          </button>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-                <div class="product-card col-sm-12 col-md-6 col-lg-4">
-                  <div class="d-flex justify-content-center relative">
-                    <div>
-                      <div class="particle"></div>
-                      <div class="particle"></div>
-                      <div class="particle"></div><a class="relative" href="product-card.html">
-                        <button class="mini-banner">SKIN ZONE</button>
-                        <div class="custom-shape-container"></div><img alt="product-card"></a>
-                      <form class="product-card__info" action=""> 
-                        <h3></h3>
-                        <p></p>
-                        <button>Buy          </button>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-                <div class="product-card col-sm-12 col-md-6 col-lg-4">
-                  <div class="d-flex justify-content-center relative">
-                    <div>
-                      <div class="particle"></div>
-                      <div class="particle"></div>
-                      <div class="particle"></div><a class="relative" href="product-card.html">
-                        <button class="mini-banner">SKIN ZONE</button>
-                        <div class="custom-shape-container"></div><img alt="product-card"></a>
-                      <form class="product-card__info" action=""> 
-                        <h3></h3>
-                        <p></p>
-                        <button>Buy          </button>
-                      </form>
-                    </div>
-                  </div>
-                </div>
+            <div class="swiper-button-prev products-button-prev"></div>
+            <div class="swiper-button-next products-button-next"></div>
           </div>
         </div>
       </div>
+          <div class="reviews animate-bottom" id="reviews">
+            <h2 class="text-center title animate-bottom hidden">REVIEWS<span>REVIEWS</span></h2>
+            <div class="relative">
+              <div class="swiper reviews-slider">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                        <div class="review wrapper-sm">
+                          <div class="d-flex justify-content-between"> 
+                            <div class="rate d-flex justify-content-between"> 
+                              <div class="rate-star active"></div>
+                              <div class="rate-star active"></div>
+                              <div class="rate-star active"></div>
+                              <div class="rate-star active"></div>
+                              <div class="rate-star"></div>
+                            </div>
+                            <div class="quotes"> <span>“”</span></div>
+                          </div>
+                          <p>Just bought the Ikonik account for 175 euro, and it’s legit! I received around 220 skins, all just like they said. The whole process was super easy, and I'm really satisfied. Definitely recommend it to anyone looking for a good deal!</p>
+                          <div class="d-flex justify-content-between align-items-center">
+                            <div class="author"> <strong>Max</strong>
+                              <p>From Africa</p>
+                            </div>
+                            <p>bot Guaranteed skin: Pink Lama | Full Access</p>
+                          </div>
+                        </div>
+                  </div>
+                  <div class="swiper-slide">
+                        <div class="review wrapper-sm">
+                          <div class="d-flex justify-content-between"> 
+                            <div class="rate d-flex justify-content-between"> 
+                              <div class="rate-star active"></div>
+                              <div class="rate-star active"></div>
+                              <div class="rate-star active"></div>
+                              <div class="rate-star active"></div>
+                              <div class="rate-star"></div>
+                            </div>
+                            <div class="quotes"> <span>“”</span></div>
+                          </div>
+                          <p>Just bought the Ikonik account for 175 euro, and it’s legit! I received around 220 skins, all just like they said. The whole process was super easy, and I'm really satisfied. Definitely recommend it to anyone looking for a good deal!</p>
+                          <div class="d-flex justify-content-between align-items-center">
+                            <div class="author"> <strong>Max</strong>
+                              <p>From Africa</p>
+                            </div>
+                            <p>bot Guaranteed skin: Pink Lama | Full Access</p>
+                          </div>
+                        </div>
+                  </div>
+                  <div class="swiper-slide">
+                        <div class="review wrapper-sm">
+                          <div class="d-flex justify-content-between"> 
+                            <div class="rate d-flex justify-content-between"> 
+                              <div class="rate-star active"></div>
+                              <div class="rate-star active"></div>
+                              <div class="rate-star active"></div>
+                              <div class="rate-star active"></div>
+                              <div class="rate-star"></div>
+                            </div>
+                            <div class="quotes"> <span>“”</span></div>
+                          </div>
+                          <p>Just bought the Ikonik account for 175 euro, and it’s legit! I received around 220 skins, all just like they said. The whole process was super easy, and I'm really satisfied. Definitely recommend it to anyone looking for a good deal!</p>
+                          <div class="d-flex justify-content-between align-items-center">
+                            <div class="author"> <strong>Max</strong>
+                              <p>From Africa</p>
+                            </div>
+                            <p>bot Guaranteed skin: Pink Lama | Full Access</p>
+                          </div>
+                        </div>
+                  </div>
+                  <div class="swiper-slide">
+                        <div class="review wrapper-sm">
+                          <div class="d-flex justify-content-between"> 
+                            <div class="rate d-flex justify-content-between"> 
+                              <div class="rate-star active"></div>
+                              <div class="rate-star active"></div>
+                              <div class="rate-star active"></div>
+                              <div class="rate-star active"></div>
+                              <div class="rate-star"></div>
+                            </div>
+                            <div class="quotes"> <span>“”</span></div>
+                          </div>
+                          <p>Just bought the Ikonik account for 175 euro, and it’s legit! I received around 220 skins, all just like they said. The whole process was super easy, and I'm really satisfied. Definitely recommend it to anyone looking for a good deal!</p>
+                          <div class="d-flex justify-content-between align-items-center">
+                            <div class="author"> <strong>Max</strong>
+                              <p>From Africa</p>
+                            </div>
+                            <p>bot Guaranteed skin: Pink Lama | Full Access</p>
+                          </div>
+                        </div>
+                  </div>
+                  <div class="swiper-slide">
+                        <div class="review wrapper-sm">
+                          <div class="d-flex justify-content-between"> 
+                            <div class="rate d-flex justify-content-between"> 
+                              <div class="rate-star active"></div>
+                              <div class="rate-star active"></div>
+                              <div class="rate-star active"></div>
+                              <div class="rate-star active"></div>
+                              <div class="rate-star"></div>
+                            </div>
+                            <div class="quotes"> <span>“”</span></div>
+                          </div>
+                          <p>Just bought the Ikonik account for 175 euro, and it’s legit! I received around 220 skins, all just like they said. The whole process was super easy, and I'm really satisfied. Definitely recommend it to anyone looking for a good deal!</p>
+                          <div class="d-flex justify-content-between align-items-center">
+                            <div class="author"> <strong>Max</strong>
+                              <p>From Africa</p>
+                            </div>
+                            <p>bot Guaranteed skin: Pink Lama | Full Access</p>
+                          </div>
+                        </div>
+                  </div>
+                  <div class="swiper-slide">
+                        <div class="review wrapper-sm">
+                          <div class="d-flex justify-content-between"> 
+                            <div class="rate d-flex justify-content-between"> 
+                              <div class="rate-star active"></div>
+                              <div class="rate-star active"></div>
+                              <div class="rate-star active"></div>
+                              <div class="rate-star active"></div>
+                              <div class="rate-star"></div>
+                            </div>
+                            <div class="quotes"> <span>“”</span></div>
+                          </div>
+                          <p>Just bought the Ikonik account for 175 euro, and it’s legit! I received around 220 skins, all just like they said. The whole process was super easy, and I'm really satisfied. Definitely recommend it to anyone looking for a good deal!</p>
+                          <div class="d-flex justify-content-between align-items-center">
+                            <div class="author"> <strong>Max</strong>
+                              <p>From Africa</p>
+                            </div>
+                            <p>bot Guaranteed skin: Pink Lama | Full Access</p>
+                          </div>
+                        </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-button-prev next-rev"></div>
+              <div class="swiper-button-next next-rev"></div>
+            </div>
+          </div>
           <div class="marquee-lines animate-bottom">
             <div class="header-content">
-              <div class="wrapper h-100">
+              <div class="wrapper h-100 relative">
                 <div class="row"> 
                   <div class="col-8">
                     <div class="join-btn-container d-flex justify-content-center align-items-center">
@@ -372,69 +437,73 @@
                 </div>
               </div>
             </div>
-            <div class="marquee-line" style="top: 0px;"><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span>
-            </div>
-            <div class="marquee-line" style="top: 70px;"><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span>
-            </div>
-            <div class="marquee-line" style="top: 140px;"><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span>
-            </div>
-            <div class="marquee-line" style="top: 210px;"><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span>
-            </div>
-            <div class="marquee-line" style="top: 280px;"><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span>
-            </div>
-            <div class="marquee-line" style="top: 350px;"><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span>
-            </div>
-            <div class="marquee-line" style="top: 420px;"><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span>
-            </div>
-            <div class="marquee-line" style="top: 490px;"><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span>
-            </div>
-            <div class="marquee-line" style="top: 560px;"><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span>
-            </div>
-            <div class="marquee-line" style="top: 630px;"><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span>
-            </div>
-            <div class="marquee-line" style="top: 700px;"><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span>
-            </div>
-            <div class="marquee-line" style="top: 770px;"><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span>
-            </div>
-            <div class="marquee-line" style="top: 840px;"><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span>
-            </div>
-            <div class="marquee-line" style="top: 910px;"><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span>
-            </div>
-            <div class="marquee-line" style="top: 980px;"><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span>
-            </div>
-            <div class="marquee-line" style="top: 1050px;"><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span>
-            </div>
-            <div class="marquee-line" style="top: 1120px;"><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span>
-            </div>
-            <div class="marquee-line" style="top: 1190px;"><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span>
-            </div>
-            <div class="marquee-line" style="top: 1260px;"><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span>
-            </div>
-            <div class="marquee-line" style="top: 1330px;"><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span>
-            </div>
-            <div class="marquee-line" style="top: 1400px;"><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span>
-            </div>
-            <div class="marquee-line" style="top: 1470px;"><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span>
-            </div>
-            <div class="marquee-line" style="top: 1540px;"><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span>
-            </div>
-            <div class="marquee-line" style="top: 1610px;"><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span>
-            </div>
-            <div class="marquee-line" style="top: 1680px;"><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span>
-            </div>
-            <div class="marquee-line" style="top: 1750px;"><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span>
-            </div>
-            <div class="marquee-line" style="top: 1820px;"><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span>
-            </div>
-            <div class="marquee-line" style="top: 1890px;"><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span>
-            </div>
-            <div class="marquee-line" style="top: 1960px;"><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span>
-            </div>
-            <div class="marquee-line" style="top: 2030px;"><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span>
+            <div class="lines-top">
+              <div class="marquee-line" style="top: -70px;"><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span>
+              </div>
+              <div class="marquee-line" style="top: 0px;"><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span>
+              </div>
+              <div class="marquee-line" style="top: 70px;"><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span>
+              </div>
+              <div class="marquee-line" style="top: 140px;"><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span>
+              </div>
+              <div class="marquee-line" style="top: 210px;"><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span>
+              </div>
+              <div class="marquee-line" style="top: 280px;"><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span>
+              </div>
+              <div class="marquee-line" style="top: 350px;"><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span>
+              </div>
+              <div class="marquee-line" style="top: 420px;"><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span>
+              </div>
+              <div class="marquee-line" style="top: 490px;"><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span>
+              </div>
+              <div class="marquee-line" style="top: 560px;"><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span>
+              </div>
+              <div class="marquee-line" style="top: 630px;"><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span>
+              </div>
+              <div class="marquee-line" style="top: 700px;"><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span>
+              </div>
+              <div class="marquee-line" style="top: 770px;"><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span>
+              </div>
+              <div class="marquee-line" style="top: 840px;"><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span>
+              </div>
+              <div class="marquee-line" style="top: 910px;"><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span>
+              </div>
+              <div class="marquee-line" style="top: 980px;"><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span>
+              </div>
+              <div class="marquee-line" style="top: 1050px;"><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span>
+              </div>
+              <div class="marquee-line" style="top: 1120px;"><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span>
+              </div>
+              <div class="marquee-line" style="top: 1190px;"><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span>
+              </div>
+              <div class="marquee-line" style="top: 1260px;"><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span>
+              </div>
+              <div class="marquee-line" style="top: 1330px;"><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span>
+              </div>
+              <div class="marquee-line" style="top: 1400px;"><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span>
+              </div>
+              <div class="marquee-line" style="top: 1470px;"><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span>
+              </div>
+              <div class="marquee-line" style="top: 1540px;"><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span>
+              </div>
+              <div class="marquee-line" style="top: 1610px;"><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span>
+              </div>
+              <div class="marquee-line" style="top: 1680px;"><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span>
+              </div>
+              <div class="marquee-line" style="top: 1750px;"><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span>
+              </div>
+              <div class="marquee-line" style="top: 1820px;"><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span>
+              </div>
+              <div class="marquee-line" style="top: 1890px;"><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span>
+              </div>
+              <div class="marquee-line" style="top: 1960px;"><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span><span>Join our community</span>
+              </div>
+              <div class="marquee-line" style="top: 2030px;"><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span><span>Skin <b>Zone   </b></span>
+              </div>
             </div>
           </div>
       <div class="wrapper">
-            <div class="faq wrapper-sm animate-bottom">
+            <div class="faq wrapper-sm animate-bottom" id="faq">
               <h2 class="text-center title animate-bottom hidden">FAQ<span>FAQ</span></h2>
               <div class="accordion accordion-flush" id="accordionFlushExample">
                 <div class="accordion-item">
@@ -467,7 +536,7 @@
                 </div>
               </div>
             </div>
-            <div class="help wrapper-sm animate-bottom">
+            <div class="help wrapper-sm animate-bottom" id="help">
               <h2 class="text-center title animate-bottom hidden">Help CEnter<span>HELP CEnter </span></h2>
               <h3>sent message</h3>
               <form action="">
