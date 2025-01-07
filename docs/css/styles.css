@@ -907,3 +907,18 @@ footer p {
   font-weight: 400;
   margin: 0;
 }
+
+.track {
+  padding-top: 2rem;
+}
+
+.circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: #EA8BFF;
+  z-index: -1;
+}

@@ -14,11 +14,17 @@ html(lang="en")
 
         link(rel="stylesheet", href="css/styles.css")
 
-    body
+    body.relative
+        .circle
+        .circle
+        .circle
+        .circle
+        .circle
+        .circle
         include components/mixins
         +basket()
+        //- .float-circles
         header
-            
             +header-line()
             .marquee-lines
                 .header-content
@@ -39,7 +45,7 @@ html(lang="en")
         main
             .wrapper
                 +advantages()
-                .discounts 
+                .discounts.animate-bottom
                     h2.text-center.title.animate-bottom.hidden DISCOUNTS
                         span DISCOUNTS
                     .relative
@@ -65,7 +71,7 @@ html(lang="en")
                         .swiper-button-prev
                         .swiper-button-next
     
-                .products 
+                .products.animate-bottom
                     h2.text-center.title.animate-bottom.hidden Random Skins + Full ACCESS
                         span Random Skins + Full ACCESS
                     .row.g-5.random
