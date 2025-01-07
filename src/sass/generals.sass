@@ -13,7 +13,7 @@ body
   margin: 0
   height: 200vh
   font-family: "Anton SC", serif
-  background: #121212
+  background: #000
   overflow-x: hidden
 
 .relative
@@ -51,7 +51,7 @@ main
 
 main .marquee-lines
   max-height: 36.2rem
-  background-image: url(../../img/mainbg.webp)
+  background-image: url(../img/mainbg.webp)
 
 .marquee-line
   position: absolute
@@ -100,6 +100,109 @@ main .header-content
 
 .basket
   display: none
+  position: fixed
+  left: 0
+  top: 0
+  height: 100vh
+  max-width: 32.2rem
+  min-width: 250px
+  z-index: 1000
+  background: #292929
+
+
+.basket-header
+  padding: 1rem 0
+  border-bottom: 2px solid transparent
+  background-image: linear-gradient(#292929, #292929), linear-gradient(90deg, #EA8BFF 0%, #18E0E3 100%)
+  background-origin: border-box
+  background-clip: padding-box, border-box
+  box-sizing: border-box
+  h3
+    color: #FFF
+    font-size: 2rem
+    font-weight: 400
+
+.basket-main
+  padding: 0 3.25rem
+
+.basket-product
+  border-bottom: 2px solid transparent
+  background-image: linear-gradient(#292929, #292929), linear-gradient(90deg, #EA8BFF 0%, #18E0E3 100%)
+  background-origin: border-box
+  background-clip: padding-box, border-box
+  
+  box-sizing: border-box
+
+  strong
+    display: block
+    color: #FFF
+    text-align: center
+    font-size: 1rem
+    font-weight: 400
+    margin-bottom: 0.5rem
+
+  img
+    
+    position: relative
+    z-index: 1
+
+  b
+    text-align: center
+    font-size: 1.25rem
+    font-weight: 400
+    background: linear-gradient(90deg, #EA8BFF 44.9%, #18E0E3 56.27%)
+    background-clip: text
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+
+  button
+    background-color: transparent
+    border: none
+    img
+      width: 2rem
+
+.basket-products .basket-image
+  .product-card img
+      height: 7.5rem
+      min-width: 7.5rem
+
+  .custom-shape-container
+    width: 5rem
+    height: 5rem
+    border-radius: 50% 50% 0px 20px
+
+  .product-card .mini-banner
+    z-index: 0
+    font-size: 0.75rem
+    min-width: 5rem
+    padding: .3rem 0
+    text-align: center
+
+
+.basket-product .custom-shape-container
+  z-index: 0
+
+
+.basket-footer
+  padding-top: 1rem
+  p
+    color: #FFF
+    font-size: 1.5rem
+    font-weight: 400
+    span
+      font-size: 2rem
+      background: linear-gradient(90deg, #EA8BFF 44.9%, #18E0E3 56.27%)
+      background-clip: text
+      -webkit-background-clip: text
+      -webkit-text-fill-color: transparent
+
+  .button
+    width: 20rem
+    font-size: 1.5rem
+    padding: 0.5rem 0
+    margin-bottom: 1rem
+
+
 
 .circle-btn
   display: inline-block
@@ -169,6 +272,7 @@ main .header-content
   font-weight: 400
   text-decoration: none
   transition:  all 0.5s ease
+  text-transform: uppercase
   &:hover
     box-shadow: 10px 0px 30px rgba(24, 224, 227, 0.60), -10px 4px 30px rgba(234, 139, 255, 0.60)
 

@@ -3,7 +3,7 @@ mixin header-line()
         div
             a(href="index.html").logo.circle-btn 
                 img(src="img/logo.png", alt="")
-            a(href="#").basket.circle-btn
+            a(href="#").circle-btn
                 img(src="img/basket.png", alt="")
         nav 
             ul 
@@ -182,27 +182,88 @@ mixin advantages()
 
 mixin basket()
     .basket 
-        .basket-header
-            h3 Your Basket
-        .basket-products 
-            form(action="").basket-product.row 
-                .basket-image.col-4
-                    img(src="", alt="")
-                .basket-description.col-8
-                    .row
-                        .col-8 
-                            strong Name of product
-                            p Lorem ipsum, dolor sit amet consectetur adipisicing.
-                        .col-4
-                            button(type="submit") Delete
-        form(action="").basket-footer
-            p Total Price: 
+        .basket-header.relative.text-center
+            h3 Your Cart
+            .cross
+        .basket-main
+            .basket-products 
+                form(action="").basket-product.d-flex.align-items-center
+                    .basket-image.relative
+                        .random
+                            .product-card.w-100
+                                .d-flex.justify-content-between.relative.w-100
+                                    div.w-100
+                                        .relative
+                                            button.mini-banner SKIN ZONE
+                                            .custom-shape-container
+                                            img(src="img/random.png", alt='product-card')
+                    .basket-description
+                        .row.d-flex.align-items-center
+                            .col-8 
+                                strong Guaranteed skin: Pink Lama | Full Access
+                                b $110
+                            .col-4
+                                button(type="submit") 
+                                    img(src="img/basketIcon.png", alt="")
+                form(action="").basket-product.d-flex.align-items-center
+                    .basket-image.relative
+                        .product-card.w-100
+                            .d-flex.justify-content-between.relative.w-100
+                                div.w-100
+                                    .relative
+                                        button.mini-banner SKIN ZONE
+                                        .custom-shape-container
+                                        img(src="img/skinexample.png", alt='product-card')
+                    .basket-description
+                        .row.d-flex.align-items-center
+                            .col-8 
+                                strong Guaranteed skin: Pink Lama | Full Access
+                                b $110
+                            .col-4
+                                button(type="submit") 
+                                    img(src="img/basketIcon.png", alt="")
+                form(action="").basket-product.d-flex.align-items-center
+                    .basket-image.relative
+                        .random
+                            .product-card.w-100
+                                .d-flex.justify-content-between.relative.w-100
+                                    div.w-100
+                                        .relative
+                                            button.mini-banner SKIN ZONE
+                                            .custom-shape-container
+                                            img(src="img/random.png", alt='product-card')
+                    .basket-description
+                        .row.d-flex.align-items-center
+                            .col-8 
+                                strong Guaranteed skin: Pink Lama | Full Access
+                                b $110
+                            .col-4
+                                button(type="submit") 
+                                    img(src="img/basketIcon.png", alt="")
+                form(action="").basket-product.d-flex.align-items-center
+                    .basket-image.relative
+                        .product-card.w-100
+                            .d-flex.justify-content-between.relative.w-100
+                                div.w-100
+                                    .relative
+                                        button.mini-banner SKIN ZONE
+                                        .custom-shape-container
+                                        img(src="img/skinexample.png", alt='product-card')
+                    .basket-description
+                        .row.d-flex.align-items-center
+                            .col-8 
+                                strong Guaranteed skin: Pink Lama | Full Access
+                                b $110
+                            .col-4
+                                button(type="submit") 
+                                    img(src="img/basketIcon.png", alt="")
+        form(action="").basket-footer.text-center
+            p Total: 
                 span $120
-            .row 
-                .col-6
-                    button(type="submit") Continue
-                .col-6
-                    button(type="submit") Check out
+
+            button(type="submit").button Back to shopping
+
+            button(type="submit").button Check out
 
 mixin footer()
     footer
