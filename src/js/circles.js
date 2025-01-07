@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   
     function resetCirclePosition(circle) {
-      const size = getRandom(10, 50);
+      const size = getRandom(10, 30);
       circle.style.width = `${size}px`;
       circle.style.height = `${size}px`;
       circle.style.left = `${getRandom(0, screenWidth - size)}px`;
