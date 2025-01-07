@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const container = document.querySelector("body");
     const circles = Array.from(container.querySelectorAll(".circle"));
     const screenWidth = window.innerWidth;
-    const screenHeight = document.innerHeight;
+    const screenHeight = document.documentElement.scrollHeight;
   
     function getRandom(min, max) {
       return Math.random() * (max - min) + min;
@@ -32,9 +32,11 @@ document.addEventListener("DOMContentLoaded", () => {
   
     function updateCirclePosition(circle) {
       const top = parseFloat(circle.style.top);
+
       circle.style.top = `${top + circle.speed}px`;
   
       if (top > screenHeight) {
+        console.log(1);
         resetCirclePosition(circle);
       }
     }
@@ -165,3 +167,4 @@ const reviewsSlider = new Swiper('.reviews-slider', {
         }
     }
 });
+
