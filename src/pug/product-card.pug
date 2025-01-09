@@ -14,12 +14,7 @@ html(lang="en")
 
         link(rel="stylesheet", href="css/styles.css")
     body.relative
-        .circle
-        .circle
-        .circle
-        .circle
-        .circle
-        .circle
+        .snow-container
   
         include components/mixins
         +basket()
@@ -44,11 +39,25 @@ html(lang="en")
                         p 
                             span.price $110
                         button(type="submit").button BUY
-                        .pay-platforms.d-flex.align-items-center.flex-wrap
-                            img(src="img/visamastercard.png", alt="")
-                            img(src="img/paypal.png", alt="")
-                            img(src="img/coinpayments.png", alt="")
-                            img(src="img/webmoney.png", alt="")
+                        .pay-platforms.swiper.payment-slider
+                            .swiper-wrapper
+                                .swiper-slide
+                                    img(src="img/visamastercard.png", alt="")
+                                .swiper-slide
+                                    img(src="img/paypal.png", alt="")
+                                .swiper-slide
+                                    img(src="img/coinpayments.png", alt="")
+                                .swiper-slide
+                                    img(src="img/webmoney.png", alt="")
+                                .swiper-slide
+                                    img(src="img/visamastercard.png", alt="")
+                                .swiper-slide
+                                    img(src="img/paypal.png", alt="")
+                                .swiper-slide
+                                    img(src="img/coinpayments.png", alt="")
+                                .swiper-slide
+                                    img(src="img/webmoney.png", alt="")
+
                 +advantages()
         main
             .wrapper-sm

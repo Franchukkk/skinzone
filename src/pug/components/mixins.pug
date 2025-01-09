@@ -56,7 +56,7 @@ mixin reviews()
                     .swiper-slide
                         +review("Just bought the Ikonik account for 175 euro, and it’s legit! I received around 220 skins, all just like they said. The whole process was super easy, and I'm really satisfied. Definitely recommend it to anyone looking for a good deal!", "Max", "Africa", "Pink Lama", 4)
 
-            .swiper-button-prev.next-rev
+            .swiper-button-prev.prev-rev
             .swiper-button-next.next-rev
 
 mixin review(text, author, location, skin, stars)
@@ -78,23 +78,23 @@ mixin join-block()
     .marquee-lines.animate-bottom
         .header-content
             .wrapper.h-100.relative
-                .row 
+
                     .col-8
                         .join-btn-container.d-flex.justify-content-center.align-items-center
-                            div.w-100
+                            div
                                 a(href="#").button JOIN TELEGRAM
                                 br
                                 a(href="#").button JOIN DISCORD
                     .col-4
                         .hero-second
         .lines-top
-            - for (let i = -1; i < 30; i++)
+            - for (let i = -1; i < 50; i++)
                 .marquee-line(style=`top: ${i * 70}px;`)
                     if (i % 2 === 0)
-                        - for (let j = 0; j < 20; j++)
+                        - for (let j = 0; j < 40; j++)
                             span Join our community
                     else 
-                        - for (let j = 0; j < 27; j++)
+                        - for (let j = 0; j < 54; j++)
                             span Skin 
                                 b Zone   
 

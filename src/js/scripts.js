@@ -43,7 +43,7 @@ const reviewsSlider = new Swiper('.reviews-slider', {
     },
     navigation: {
         nextEl: '.next-rev',
-        prevEl: '.next-rev',
+        prevEl: '.prev-rev',
     },
     breakpoints: {
         320: {
