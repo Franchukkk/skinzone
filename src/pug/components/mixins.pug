@@ -37,7 +37,7 @@ mixin product-card(img, name, price)
                     button Buy
 
 mixin reviews()
-    .reviews.animate-bottom#reviews
+    .reviews.animate-bottom#reviews.block-hidden
         h2.text-center.title.animate-bottom.hidden REVIEWS
             span REVIEWS
         .relative
@@ -103,7 +103,7 @@ mixin faq()
         h2.text-center.title.animate-bottom.hidden FAQ
             span FAQ
 
-        #accordionFlushExample.accordion.accordion-flush
+        #accordionFlushExample.accordion.accordion-flush.block-hidden
             .accordion-item
                 h2.accordion-header
                 button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#flush-collapseOne' aria-expanded='false' aria-controls='flush-collapseOne')
@@ -137,7 +137,7 @@ mixin help()
         h2.text-center.title.animate-bottom.hidden Help CEnter
             span HELP CEnter 
         h3 sent message
-        form(action="")
+        form(action="").block-hidden
             .form-part
                 p 
                     label(for="name") Your Name
@@ -152,7 +152,7 @@ mixin help()
             .d-flex.justify-content-center
                 button(type="submit").button SEND
         h3.track track order
-        form(action="")
+        form(action="").block-hidden
             .form-part
                 p 
                     label(for="name") Your order number
@@ -162,7 +162,7 @@ mixin help()
                 button(type="submit").button SEND
 
 mixin advantages()
-    .advantages.d-flex.flex-wrap.justify-content-between.animate-bottom
+    .advantages.d-flex.flex-wrap.justify-content-between.animate-bottom.block-hidden
         .advantage.animate-bottom.hidden
             .d-flex.align-items-center
                 img.me-4(src="img/range.webp", alt="")

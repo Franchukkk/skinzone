@@ -989,3 +989,13 @@ span.price
 
 .button.more-btn
   padding: 0.2rem 4rem
+
+.block-hidden
+  opacity: 0
+  filter: blur(5px)
+  transform: translateX(100%)
+  transition: all 1s
+.block-hidden.active
+  transform: translateX(0%)
+  opacity: 1
+  filter: blur(0)

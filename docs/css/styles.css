@@ -1437,6 +1437,27 @@ span.price {
   padding: 0.2rem 4rem;
 }
 
+.block-hidden {
+  opacity: 0;
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+  -webkit-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  transform: translateX(100%);
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+
+.block-hidden.active {
+  -webkit-transform: translateX(0%);
+  -ms-transform: translateX(0%);
+  transform: translateX(0%);
+  opacity: 1;
+  -webkit-filter: blur(0);
+  filter: blur(0);
+}
+
 @media screen and (min-width: 1300px) {
   .header-line {
     padding: 0;

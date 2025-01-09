@@ -91,3 +91,21 @@ document.querySelector('.close-basket').addEventListener('click', (e) => {
     document.querySelector('.basket').classList.remove('active');
 });
 
+
+window.addEventListener('scroll', () => {
+    const blocks = document.querySelectorAll('.block-hidden');
+
+    blocks.forEach(block => {
+
+        const blockTop = block.getBoundingClientRect().top;
+        const viewportHeight = window.innerHeight;
+
+
+        if (blockTop - viewportHeight <= 100) {
+            block.classList.add('active');
+        } else {
+            block.classList.remove('active');
+        }
+    });
+});
+
