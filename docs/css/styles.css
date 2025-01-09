@@ -43,11 +43,71 @@ header .marquee-lines .button {
   box-shadow: 0 0 100px 50px #000;
 }
 
+header .button {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  -webkit-transform: translate(-50%, 50%);
+  -ms-transform: translate(-50%, 50%);
+  transform: translate(-50%, 50%);
+  z-index: 999;
+}
+
+.cart-header-content {
+  -webkit-column-gap: 1rem;
+  -moz-column-gap: 1rem;
+  column-gap: 1rem;
+}
+
+.close-basket {
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.close-basket:hover {
+  -webkit-transform: translateY(-50%) scale(1.2);
+  -ms-transform: translateY(-50%) scale(1.2);
+  transform: translateY(-50%) scale(1.2);
+}
+
+.close-basket::before,
+.close-basket::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 3px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.close-basket::before {
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+  -ms-transform: translate(-50%, -50%) rotate(45deg);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.close-basket::after {
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+  -ms-transform: translate(-50%, -50%) rotate(-45deg);
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
 .marquee-lines {
   position: relative;
-  height: 100vh;
+  height: 90vh;
   background-image: url(../img/header-background.webp);
-  background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
   overflow: hidden;
@@ -102,7 +162,6 @@ main .marquee-lines {
 .header-content {
   position: relative;
   z-index: 3;
-  background-color: rgba(0, 0, 0, 0.7);
   height: 100%;
   padding-top: 2.56rem;
 }
@@ -116,27 +175,35 @@ main .header-content {
 }
 
 .basket {
-  display: none;
   position: fixed;
-  left: 0;
+  left: -100%;
   top: 0;
   height: 100vh;
+  overflow-y: scroll;
   max-width: 32.2rem;
   min-width: 250px;
   z-index: 1000;
   background: #292929;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.basket.active {
+  left: 0;
 }
 
 .basket-header {
   padding: 1rem 0;
   border-bottom: 2px solid transparent;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#292929), to(#292929)), -webkit-gradient(linear, left top, right top, from(#EA8BFF), to(#18E0E3));
-  background-image: -o-linear-gradient(#292929, #292929), -o-linear-gradient(left, #EA8BFF 0%, #18E0E3 100%);
-  background-image: linear-gradient(#292929, #292929), linear-gradient(90deg, #EA8BFF 0%, #18E0E3 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#292929), to(#292929)) padding-box, -webkit-gradient(linear, left top, right top, from(#7D2E89), color-stop(20%, #DA50EF), color-stop(47.72%, #DA50EF), color-stop(53.89%, #2B92FE), color-stop(80%, #2B92FE), to(#1C5C9E)) border-box;
+  background: -o-linear-gradient(#292929, #292929) padding-box, -o-linear-gradient(left, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%) border-box;
+  background: linear-gradient(#292929, #292929) padding-box, linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%) border-box;
   background-origin: border-box;
   background-clip: padding-box, border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  margin-bottom: 2rem;
 }
 
 .basket-header h3 {
@@ -149,15 +216,20 @@ main .header-content {
   padding: 0 3.25rem;
 }
 
+hr {
+  display: block;
+  height: 3px;
+  opacity: 1;
+  background: -webkit-gradient(linear, left top, right top, from(#7D2E89), color-stop(20%, #DA50EF), color-stop(47.72%, #DA50EF), color-stop(53.89%, #2B92FE), color-stop(80%, #2B92FE), to(#1C5C9E));
+  background: -o-linear-gradient(left, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%);
+  background: linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%);
+}
+
 .basket-product {
-  border-bottom: 2px solid transparent;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#292929), to(#292929)), -webkit-gradient(linear, left top, right top, from(#EA8BFF), to(#18E0E3));
-  background-image: -o-linear-gradient(#292929, #292929), -o-linear-gradient(left, #EA8BFF 0%, #18E0E3 100%);
-  background-image: linear-gradient(#292929, #292929), linear-gradient(90deg, #EA8BFF 0%, #18E0E3 100%);
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+  -webkit-column-gap: 1rem;
+  -moz-column-gap: 1rem;
+  column-gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .basket-product strong {
@@ -178,9 +250,9 @@ main .header-content {
   text-align: center;
   font-size: 1.25rem;
   font-weight: 400;
-  background: -webkit-gradient(linear, left top, right top, color-stop(44.9%, #EA8BFF), color-stop(56.27%, #18E0E3));
-  background: -o-linear-gradient(left, #EA8BFF 44.9%, #18E0E3 56.27%);
-  background: linear-gradient(90deg, #EA8BFF 44.9%, #18E0E3 56.27%);
+  background: -webkit-gradient(linear, left top, right top, from(#7D2E89), color-stop(20%, #DA50EF), color-stop(47.72%, #DA50EF), color-stop(53.89%, #2B92FE), color-stop(80%, #2B92FE), to(#1C5C9E));
+  background: -o-linear-gradient(left, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%);
+  background: linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -193,6 +265,14 @@ main .header-content {
 
 .basket-product button img {
   width: 2rem;
+}
+
+.w-80 {
+  width: 80%;
+}
+
+.w-20 {
+  width: 20%;
 }
 
 .basket-products .basket-image .product-card img {
@@ -220,6 +300,7 @@ main .header-content {
 
 .basket-footer {
   padding-top: 1rem;
+  padding-bottom: 1.5rem;
 }
 
 .basket-footer p {
@@ -230,9 +311,9 @@ main .header-content {
 
 .basket-footer p span {
   font-size: 2rem;
-  background: -webkit-gradient(linear, left top, right top, color-stop(44.9%, #EA8BFF), color-stop(56.27%, #18E0E3));
-  background: -o-linear-gradient(left, #EA8BFF 44.9%, #18E0E3 56.27%);
-  background: linear-gradient(90deg, #EA8BFF 44.9%, #18E0E3 56.27%);
+  background: -webkit-gradient(linear, left top, right top, from(#7D2E89), color-stop(20%, #DA50EF), color-stop(47.72%, #DA50EF), color-stop(53.89%, #2B92FE), color-stop(80%, #2B92FE), to(#1C5C9E));
+  background: -o-linear-gradient(left, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%);
+  background: linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -253,9 +334,9 @@ main .header-content {
   -webkit-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  background: -webkit-gradient(linear, left top, right top, from(rgba(234, 141, 255, 0.8)), to(rgba(24, 224, 227, 0.8)));
-  background: -o-linear-gradient(left, rgba(234, 141, 255, 0.8), rgba(24, 224, 227, 0.8));
-  background: linear-gradient(to right, rgba(234, 141, 255, 0.8), rgba(24, 224, 227, 0.8));
+  background: -webkit-gradient(linear, left top, right top, color-stop(20%, rgba(218, 80, 239, 0.85)), color-stop(47.72%, rgba(218, 80, 239, 0.85)), color-stop(47.72%, rgba(218, 80, 239, 0.85)), color-stop(53.89%, rgba(43, 146, 254, 0.85)), color-stop(80%, rgba(43, 146, 254, 0.85)));
+  background: -o-linear-gradient(left, rgba(218, 80, 239, 0.85) 20%, rgba(218, 80, 239, 0.85) 47.72%, rgba(218, 80, 239, 0.85) 47.72%, rgba(43, 146, 254, 0.85) 53.89%, rgba(43, 146, 254, 0.85) 80%);
+  background: linear-gradient(90deg, rgba(218, 80, 239, 0.85) 20%, rgba(218, 80, 239, 0.85) 47.72%, rgba(218, 80, 239, 0.85) 47.72%, rgba(43, 146, 254, 0.85) 53.89%, rgba(43, 146, 254, 0.85) 80%);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
@@ -301,9 +382,9 @@ main .header-content {
 }
 
 .header-line nav {
-  background: -webkit-gradient(linear, left top, right top, from(rgba(234, 141, 255, 0.75)), to(rgba(24, 224, 227, 0.75)));
-  background: -o-linear-gradient(left, rgba(234, 141, 255, 0.75), rgba(24, 224, 227, 0.75));
-  background: linear-gradient(to right, rgba(234, 141, 255, 0.75), rgba(24, 224, 227, 0.75));
+  background: -webkit-gradient(linear, left top, right top, color-stop(20%, rgba(218, 80, 239, 0.85)), color-stop(47.72%, rgba(218, 80, 239, 0.85)), color-stop(47.72%, rgba(218, 80, 239, 0.85)), color-stop(53.89%, rgba(43, 146, 254, 0.85)), color-stop(80%, rgba(43, 146, 254, 0.85)));
+  background: -o-linear-gradient(left, rgba(218, 80, 239, 0.85) 20%, rgba(218, 80, 239, 0.85) 47.72%, rgba(218, 80, 239, 0.85) 47.72%, rgba(43, 146, 254, 0.85) 53.89%, rgba(43, 146, 254, 0.85) 80%);
+  background: linear-gradient(90deg, rgba(218, 80, 239, 0.85) 20%, rgba(218, 80, 239, 0.85) 47.72%, rgba(218, 80, 239, 0.85) 47.72%, rgba(43, 146, 254, 0.85) 53.89%, rgba(43, 146, 254, 0.85) 80%);
   padding: 1.56rem 3rem;
   border-radius: 50px;
   -webkit-backdrop-filter: blur(10px);
@@ -346,12 +427,12 @@ main .header-content {
   display: inline-block;
   border: none;
   border-radius: 2.7rem;
-  background: -webkit-gradient(linear, left top, right top, from(#EA8BFF), to(#18E0E3));
-  background: -o-linear-gradient(left, #EA8BFF 0%, #18E0E3 100%);
-  background: linear-gradient(90deg, #EA8BFF 0%, #18E0E3 100%);
-  padding: 1rem 7.5rem;
+  background: -webkit-gradient(linear, left top, right top, from(#7D2E89), color-stop(20%, #DA50EF), color-stop(47.72%, #DA50EF), color-stop(53.89%, #2B92FE), color-stop(80%, #2B92FE), to(#1C5C9E));
+  background: -o-linear-gradient(left, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%);
+  background: linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%);
+  padding: 0.5rem 6rem;
   color: #FFF;
-  font-size: 2.25rem;
+  font-size: 3rem;
   font-weight: 400;
   text-decoration: none;
   -webkit-transition: all 0.5s ease;
@@ -372,8 +453,8 @@ main .header-content {
   }
 
   50% {
-    -webkit-transform: translateY(-20px);
-    transform: translateY(-20px);
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
   }
 
   100% {
@@ -389,8 +470,8 @@ main .header-content {
   }
 
   50% {
-    -webkit-transform: translateY(-20px);
-    transform: translateY(-20px);
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
   }
 
   100% {
@@ -401,17 +482,60 @@ main .header-content {
 
 .hero {
   position: absolute;
-  height: 100vh;
+  height: 70vh;
   width: 100%;
-  background-image: url(../img/banana.webp);
+  background: url(../img/banana.webp), -o-radial-gradient(53.65% 44.34%, 37.21% 37.21%, #FFF 0%, rgba(0, 0, 0, 0) 100%);
+  background: url(../img/banana.webp), radial-gradient(37.21% 37.21% at 53.65% 44.34%, #FFF 0%, rgba(0, 0, 0, 0) 100%);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center bottom;
-  bottom: -20px;
+  bottom: 30px;
   left: 0;
   z-index: -1;
   -webkit-animation: float 3s ease-in-out infinite;
   animation: float 3s ease-in-out infinite;
+}
+
+.header-btn-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: end;
+  padding-bottom: 1rem;
+}
+
+.mini-advantage {
+  position: absolute;
+  top: 47%;
+  left: -3.75rem;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.mini-advantage p {
+  text-shadow: 0 0 100px #000;
+  color: #FFF;
+  font-size: 4rem;
+  font-weight: 400;
+  line-height: 1em;
+  margin: 0;
+  margin-bottom: 0.7rem;
+}
+
+.second-advantage {
+  left: auto;
+  right: -3.75rem;
+}
+
+p.count-block {
+  font-size: 4.3rem;
+  color: #EA8BFF;
 }
 
 .hero-second {
@@ -470,9 +594,9 @@ main .header-content {
   padding: 1rem;
   border-radius: 1rem;
   border: 2px solid transparent;
-  background: -webkit-gradient(linear, left top, left bottom, from(#000), to(#000)) padding-box, -webkit-gradient(linear, left top, right top, from(#EA8BFF), to(#18E0E3)) border-box;
-  background: -o-linear-gradient(#000, #000) padding-box, -o-linear-gradient(left, #EA8BFF, #18E0E3) border-box;
-  background: linear-gradient(#000, #000) padding-box, linear-gradient(90deg, #EA8BFF, #18E0E3) border-box;
+  background: -webkit-gradient(linear, left top, left bottom, from(#000), to(#000)) padding-box, -webkit-gradient(linear, left top, right top, from(#7D2E89), color-stop(20%, #DA50EF), color-stop(47.72%, #DA50EF), color-stop(53.89%, #2B92FE), color-stop(80%, #2B92FE), to(#1C5C9E)) border-box;
+  background: -o-linear-gradient(#000, #000) padding-box, -o-linear-gradient(left, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%) border-box;
+  background: linear-gradient(#000, #000) padding-box, linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%) border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   min-width: 300px;
@@ -543,9 +667,9 @@ h2.text-center.title span {
   position: absolute;
   font-size: 4rem;
   font-weight: 400;
-  background: -webkit-gradient(linear, left top, right top, from(#EA8BFF), to(#18E0E3));
-  background: -o-linear-gradient(left, #EA8BFF 0%, #18E0E3 100%);
-  background: linear-gradient(90deg, #EA8BFF 0%, #18E0E3 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#7D2E89), color-stop(20%, #DA50EF), color-stop(47.72%, #DA50EF), color-stop(53.89%, #2B92FE), color-stop(80%, #2B92FE), to(#1C5C9E));
+  background: -o-linear-gradient(left, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%);
+  background: linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%);
   -webkit-background-clip: text;
   color: #000;
   opacity: 0.5;
@@ -591,9 +715,9 @@ h2.text-center.title span {
   text-align: center;
   font-size: 1.65rem;
   font-weight: 400;
-  background: -webkit-gradient(linear, left top, right top, color-stop(44.9%, #EA8BFF), color-stop(56.27%, #18E0E3));
-  background: -o-linear-gradient(left, #EA8BFF 44.9%, #18E0E3 56.27%);
-  background: linear-gradient(90deg, #EA8BFF 44.9%, #18E0E3 56.27%);
+  background: -webkit-gradient(linear, left top, right top, from(#7D2E89), color-stop(20%, #DA50EF), color-stop(47.72%, #DA50EF), color-stop(53.89%, #2B92FE), color-stop(80%, #2B92FE), to(#1C5C9E));
+  background: -o-linear-gradient(left, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%);
+  background: linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -611,9 +735,9 @@ h2.text-center.title span {
   font-size: 1.5rem;
   font-weight: 400;
   border-radius: 43.5px;
-  background: -webkit-gradient(linear, left top, right top, from(#EA8BFF), to(#18E0E3));
-  background: -o-linear-gradient(left, #EA8BFF 0%, #18E0E3 100%);
-  background: linear-gradient(90deg, #EA8BFF 0%, #18E0E3 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#7D2E89), color-stop(20%, #DA50EF), color-stop(47.72%, #DA50EF), color-stop(53.89%, #2B92FE), color-stop(80%, #2B92FE), to(#1C5C9E));
+  background: -o-linear-gradient(left, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%);
+  background: linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%);
   text-transform: uppercase;
   padding: 0.2rem 2.5rem;
   -webkit-transition: all 0.5s ease;
@@ -792,9 +916,9 @@ h2.text-center.title span {
   font-size: 1.5rem;
   font-weight: 400;
   border-radius: 2.5rem;
-  background: -webkit-gradient(linear, left top, right top, from(#EA8BFF), to(#18E0E3));
-  background: -o-linear-gradient(left, #EA8BFF 0%, #18E0E3 100%);
-  background: linear-gradient(90deg, #EA8BFF 0%, #18E0E3 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#7D2E89), color-stop(20%, #DA50EF), color-stop(47.72%, #DA50EF), color-stop(53.89%, #2B92FE), color-stop(80%, #2B92FE), to(#1C5C9E));
+  background: -o-linear-gradient(left, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%);
+  background: linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%);
   padding: 0 4rem;
   -webkit-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
@@ -812,7 +936,9 @@ h2.text-center.title span {
 
 .swiper-button-next:after,
 .swiper-button-prev:after {
-  background: -webkit-linear-gradient(90deg, #EA8BFF 0%, #18E0E3 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#7D2E89), color-stop(20%, #DA50EF), color-stop(47.72%, #DA50EF), color-stop(53.89%, #2B92FE), color-stop(80%, #2B92FE), to(#1C5C9E));
+  background: -o-linear-gradient(left, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%);
+  background: linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bolder;
@@ -868,9 +994,9 @@ h2.text-center.title span {
   height: 2.5rem;
   border-radius: 1.25rem;
   border: 2px solid transparent;
-  background: -webkit-gradient(linear, left top, right top, from(#EA8BFF), to(#18E0E3)) border-box;
-  background: -o-linear-gradient(left, #EA8BFF 0%, #18E0E3 100%) border-box;
-  background: linear-gradient(90deg, #EA8BFF 0%, #18E0E3 100%) border-box;
+  background: -webkit-gradient(linear, left top, right top, from(#7D2E89), color-stop(20%, #DA50EF), color-stop(47.72%, #DA50EF), color-stop(53.89%, #2B92FE), color-stop(80%, #2B92FE), to(#1C5C9E)) border-box;
+  background: -o-linear-gradient(left, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%) border-box;
+  background: linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%) border-box;
   -webkit-mask: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff)) padding-box, -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff));
   -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: destination-out;
@@ -878,9 +1004,9 @@ h2.text-center.title span {
 }
 
 .rate-star.active {
-  background: -webkit-gradient(linear, left top, right top, from(#EA8BFF), to(#18E0E3));
-  background: -o-linear-gradient(left, #EA8BFF 0%, #18E0E3 100%);
-  background: linear-gradient(90deg, #EA8BFF 0%, #18E0E3 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#7D2E89), color-stop(20%, #DA50EF), color-stop(47.72%, #DA50EF), color-stop(53.89%, #2B92FE), color-stop(80%, #2B92FE), to(#1C5C9E));
+  background: -o-linear-gradient(left, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%);
+  background: linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%);
   -webkit-mask: none;
   mask: none;
   border: none;
@@ -896,9 +1022,9 @@ h2.text-center.title span {
   font-size: 3rem;
   font-style: normal;
   font-weight: 400;
-  background: -webkit-gradient(linear, left top, right top, from(#EA8BFF), to(#18E0E3));
-  background: -o-linear-gradient(left, #EA8BFF 0%, #18E0E3 100%);
-  background: linear-gradient(90deg, #EA8BFF 0%, #18E0E3 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#7D2E89), color-stop(20%, #DA50EF), color-stop(47.72%, #DA50EF), color-stop(53.89%, #2B92FE), color-stop(80%, #2B92FE), to(#1C5C9E));
+  background: -o-linear-gradient(left, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%);
+  background: linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -906,9 +1032,9 @@ h2.text-center.title span {
 
 .review {
   border: 2px solid transparent;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#000), to(#000)), -webkit-gradient(linear, left top, right top, from(#EA8BFF), to(#18E0E3));
-  background-image: -o-linear-gradient(#000, #000), -o-linear-gradient(left, #EA8BFF 0%, #18E0E3 100%);
-  background-image: linear-gradient(#000, #000), linear-gradient(90deg, #EA8BFF 0%, #18E0E3 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#000), to(#000)), -webkit-gradient(linear, left top, right top, from(#7D2E89), color-stop(20%, #DA50EF), color-stop(47.72%, #DA50EF), color-stop(53.89%, #2B92FE), color-stop(80%, #2B92FE), to(#1C5C9E));
+  background-image: -o-linear-gradient(#000, #000), -o-linear-gradient(left, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%);
+  background-image: linear-gradient(#000, #000), linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%);
   background-origin: border-box;
   background-clip: padding-box, border-box;
   border-radius: 1rem;
@@ -926,7 +1052,9 @@ h2.text-center.title span {
 .review strong {
   font-size: 2.25rem;
   font-weight: 400;
-  background: var(--dawdwadaw, linear-gradient(90deg, #EA8BFF 0%, #18E0E3 100%));
+  background: -webkit-gradient(linear, left top, right top, from(#7D2E89), color-stop(20%, #DA50EF), color-stop(47.72%, #DA50EF), color-stop(53.89%, #2B92FE), color-stop(80%, #2B92FE), to(#1C5C9E));
+  background: -o-linear-gradient(left, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%);
+  background: linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -953,8 +1081,9 @@ h2.text-center.title span {
   left: 0;
   width: 16.125rem;
   height: 14.437rem;
-  background: -o-linear-gradient(315deg, #18E0E3, #EA8BFF);
-  background: linear-gradient(135deg, #18E0E3, #EA8BFF);
+  background: -webkit-gradient(linear, left top, right top, from(#7D2E89), color-stop(20%, #DA50EF), color-stop(47.72%, #DA50EF), color-stop(53.89%, #2B92FE), color-stop(80%, #2B92FE), to(#1C5C9E));
+  background: -o-linear-gradient(left, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%);
+  background: linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%);
   border-radius: 50% 50% 0px 60px;
   z-index: -1;
 }
@@ -964,9 +1093,9 @@ h2.text-center.title span {
   font-size: 1.5rem;
   font-weight: 400;
   border-radius: 1rem;
-  background: -webkit-gradient(linear, left top, right top, from(#EA8BFF), to(#18E0E3));
-  background: -o-linear-gradient(left, #EA8BFF 0%, #18E0E3 100%);
-  background: linear-gradient(90deg, #EA8BFF 0%, #18E0E3 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#7D2E89), color-stop(20%, #DA50EF), color-stop(47.72%, #DA50EF), color-stop(53.89%, #2B92FE), color-stop(80%, #2B92FE), to(#1C5C9E));
+  background: -o-linear-gradient(left, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%);
+  background: linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%);
 }
 
 .accordion-item {
@@ -983,15 +1112,24 @@ h2.text-center.title span {
 .accordion-body {
   margin-top: -3px;
   border: 2px solid transparent;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#000), to(#000)), -webkit-gradient(linear, left top, right top, from(#EA8BFF), to(#18E0E3));
-  background-image: -o-linear-gradient(#000, #000), -o-linear-gradient(left, #EA8BFF 0%, #18E0E3 100%);
-  background-image: linear-gradient(#000, #000), linear-gradient(90deg, #EA8BFF 0%, #18E0E3 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#000), to(#000)), -webkit-gradient(linear, left top, right top, from(#7D2E89), color-stop(20%, #DA50EF), color-stop(47.72%, #DA50EF), color-stop(53.89%, #2B92FE), color-stop(80%, #2B92FE), to(#1C5C9E));
+  background-image: -o-linear-gradient(#000, #000), -o-linear-gradient(left, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%);
+  background-image: linear-gradient(#000, #000), linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%);
   background-origin: border-box;
   background-clip: padding-box, border-box;
   border-radius: 0px 0px 15px 15px;
   color: #FFF;
   font-size: 1.25rem;
   font-weight: 400;
+}
+
+.accordion-button:not(.collapsed) {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.black-bg {
+  background: rgba(0, 0, 0, 0.7);
 }
 
 .accordion-button:not(.collapsed) {
@@ -1022,9 +1160,9 @@ h2.text-center.title span {
 .help .form-part {
   border-radius: 1rem;
   border: 2px solid transparent;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#000), to(#000)), -webkit-gradient(linear, left top, right top, from(#EA8BFF), to(#18E0E3));
-  background-image: -o-linear-gradient(#000, #000), -o-linear-gradient(left, #EA8BFF 0%, #18E0E3 100%);
-  background-image: linear-gradient(#000, #000), linear-gradient(90deg, #EA8BFF 0%, #18E0E3 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#000), to(#000)), -webkit-gradient(linear, left top, right top, from(#7D2E89), color-stop(20%, #DA50EF), color-stop(47.72%, #DA50EF), color-stop(53.89%, #2B92FE), color-stop(80%, #2B92FE), to(#1C5C9E));
+  background-image: -o-linear-gradient(#000, #000), -o-linear-gradient(left, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%);
+  background-image: linear-gradient(#000, #000), linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%);
   background-origin: border-box;
   background-clip: padding-box, border-box;
   padding: 2rem;
@@ -1034,7 +1172,9 @@ h2.text-center.title span {
 .help .form-part label {
   font-size: 1.25rem;
   font-weight: 400;
-  background: var(--dawdwadaw, linear-gradient(90deg, #EA8BFF 0%, #18E0E3 100%));
+  background: -webkit-gradient(linear, left top, right top, from(#7D2E89), color-stop(20%, #DA50EF), color-stop(47.72%, #DA50EF), color-stop(53.89%, #2B92FE), color-stop(80%, #2B92FE), to(#1C5C9E));
+  background: -o-linear-gradient(left, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%);
+  background: linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1111,9 +1251,9 @@ footer p {
 span.price {
   font-size: 3rem;
   font-weight: 400;
-  background: -webkit-gradient(linear, left top, right top, color-stop(44.9%, #EA8BFF), color-stop(56.27%, #18E0E3));
-  background: -o-linear-gradient(left, #EA8BFF 44.9%, #18E0E3 56.27%);
-  background: linear-gradient(90deg, #EA8BFF 44.9%, #18E0E3 56.27%);
+  background: -webkit-gradient(linear, left top, right top, from(#7D2E89), color-stop(20%, #DA50EF), color-stop(47.72%, #DA50EF), color-stop(53.89%, #2B92FE), color-stop(80%, #2B92FE), to(#1C5C9E));
+  background: -o-linear-gradient(left, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%);
+  background: linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1174,9 +1314,9 @@ span.price {
   padding: 2.5rem;
   border: 2px solid transparent;
   border-radius: 2rem;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#000), to(#000)), -webkit-gradient(linear, left top, right top, from(#EA8BFF), to(#18E0E3));
-  background-image: -o-linear-gradient(#000, #000), -o-linear-gradient(left, #EA8BFF 0%, #18E0E3 100%);
-  background-image: linear-gradient(#000, #000), linear-gradient(90deg, #EA8BFF 0%, #18E0E3 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#000), to(#000)), -webkit-gradient(linear, left top, right top, from(#7D2E89), color-stop(20%, #DA50EF), color-stop(47.72%, #DA50EF), color-stop(53.89%, #2B92FE), color-stop(80%, #2B92FE), to(#1C5C9E));
+  background-image: -o-linear-gradient(#000, #000), -o-linear-gradient(left, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%);
+  background-image: linear-gradient(#000, #000), linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%);
   background-origin: border-box;
   background-clip: padding-box, border-box;
 }
@@ -1294,7 +1434,7 @@ span.price {
 }
 
 .button.more-btn {
-  padding: 0.7rem 5rem;
+  padding: 0.2rem 4rem;
 }
 
 @media screen and (min-width: 1300px) {

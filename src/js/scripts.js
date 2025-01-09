@@ -2,6 +2,8 @@ const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('show');
+        } else {
+            entry.target.classList.remove('show');
         }
     });
 });
@@ -76,5 +78,16 @@ document.addEventListener('scroll', () => {
             targetLink.classList.add('active');
         }
     });
+});
+
+
+document.querySelector('.basket-btn').addEventListener('click', (e) => {
+    e.preventDefault();
+    document.querySelector('.basket').classList.toggle('active');
+});
+
+document.querySelector('.close-basket').addEventListener('click', (e) => {
+    e.preventDefault();
+    document.querySelector('.basket').classList.remove('active');
 });
 

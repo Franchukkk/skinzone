@@ -31,23 +31,22 @@ html(lang="en")
         include components/mixins
         +basket()
         //- .float-circles
-        header
+        header.relative 
+            a(href="#").button SHOP NOW 
             +header-line()
             .marquee-lines
-                .header-content
-                    .wrapper
+                .wrapper.header-content.relative
+                    .mini-advantage
+                        p Happy Clients
+                        p.text-center.count-block 505
+                    .mini-advantage.second-advantage
+                        p Sold Accounts
+                        p.text-center.count-block 671
+                    .wrapper.relative.header-btn-container
                         .hero
                         .d-flex.justify-content-center
-                            a(href="#").button SHOP NOW 
-                - for (let i = 0; i < 70; i++)
-                    .marquee-line(style=`top: ${i * 70}px;`)
-                        if (i % 2 === 0)
-                            - for (let j = 0; j < 20; j++)
-                                span Say no to default skins
-                        else 
-                            - for (let j = 0; j < 27; j++)
-                                span Skin 
-                                    b Zone            
+                            
+          
 
         main
             .wrapper
