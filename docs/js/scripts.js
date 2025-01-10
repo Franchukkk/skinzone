@@ -159,7 +159,8 @@ const paymentSlider = new Swiper('.payment-slider', {
         576: {
             slidesPerView: 3,
         },
-        768: {
+
+        1160: {
             slidesPerView: 4,
         }
     }

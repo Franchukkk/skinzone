@@ -20,16 +20,12 @@ mixin header-line()
     
 
 mixin product-card(img, name, price) 
-    .product-card.col-sm-12.col-md-6.col-lg-4
-        .d-flex.justify-content-center.relative
+    .product-card.col-sm-12.col-md-6.col-lg-4.justify-content-center
+        .product-card-content.d-flex.justify-content-center.relative
             div
-                .particle
-                .particle
-                .particle
                 a(href="product-card.html").relative
-                    button.mini-banner SKIN ZONE
-                    .custom-shape-container
                     img(src=img, alt='product-card')
+                hr
                 form(action="").product-card__info 
                     h3= name
                     p= price
@@ -196,9 +192,7 @@ mixin basket()
                                 .d-flex.justify-content-between.relative.w-100
                                     div.w-100
                                         .relative
-                                            button.mini-banner SKIN ZONE
-                                            .custom-shape-container
-                                            img(src="img/random.png", alt='product-card')
+                                            img(src="img/product-image.webp", alt='product-card')
                     .basket-description
                         .row.d-flex.align-items-center
                             .w-80
@@ -214,8 +208,6 @@ mixin basket()
                             .d-flex.justify-content-between.relative.w-100
                                 div.w-100
                                     .relative
-                                        button.mini-banner SKIN ZONE
-                                        .custom-shape-container
                                         img(src="img/skinexample.png", alt='product-card')
                     .basket-description
                         .row.d-flex.align-items-center
@@ -233,9 +225,7 @@ mixin basket()
                                 .d-flex.justify-content-between.relative.w-100
                                     div.w-100
                                         .relative
-                                            button.mini-banner SKIN ZONE
-                                            .custom-shape-container
-                                            img(src="img/random.png", alt='product-card')
+                                            img(src="img/product-image.webp", alt='product-card')
                     .basket-description
                         .row.d-flex.align-items-center
                             .w-80
@@ -251,8 +241,6 @@ mixin basket()
                             .d-flex.justify-content-between.relative.w-100
                                 div.w-100
                                     .relative
-                                        button.mini-banner SKIN ZONE
-                                        .custom-shape-container
                                         img(src="img/skinexample.png", alt='product-card')
                     .basket-description
                         .row.d-flex.align-items-center
@@ -270,9 +258,7 @@ mixin basket()
                                 .d-flex.justify-content-between.relative.w-100
                                     div.w-100
                                         .relative
-                                            button.mini-banner SKIN ZONE
-                                            .custom-shape-container
-                                            img(src="img/random.png", alt='product-card')
+                                            img(src="img/product-image.webp", alt='product-card')
                     .basket-description
                         .row.d-flex.align-items-center
                             .w-80
@@ -288,8 +274,6 @@ mixin basket()
                             .d-flex.justify-content-between.relative.w-100
                                 div.w-100
                                     .relative
-                                        button.mini-banner SKIN ZONE
-                                        .custom-shape-container
                                         img(src="img/skinexample.png", alt='product-card')
                     .basket-description
                         .row.d-flex.align-items-center

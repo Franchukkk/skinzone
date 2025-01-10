@@ -195,6 +195,9 @@ main .header-content
   z-index: 1000
   background: #292929
   transition: all 0.5s ease
+  .product-card
+    img
+      width: 10rem
   +media(400)
     max-width: 32.2rem
     min-width: 250px
@@ -245,9 +248,12 @@ hr
     display: block
     color: #FFF
     text-align: center
-    font-size: 1rem
+    font-size: 0.8rem
     font-weight: 400
-    margin-bottom: 0.5rem
+    margin-bottom: 0.2rem
+    +media(380)
+      font-size: 1rem
+      margin-bottom: 0.5rem
 
   img
     
@@ -649,7 +655,8 @@ h2.text-center.title
   img
     display: block
     margin: 0 auto
-    height: 21rem
+    max-height: 18rem
+    width: 100%
     object-fit: contain
     margin-bottom: .7rem
     transition: all 0.5s ease
@@ -690,6 +697,11 @@ h2.text-center.title
     &:hover
       box-shadow: 10px 0px 30px rgba(24, 224, 227, 0.60), -10px 4px 30px rgba(234, 139, 255, 0.60)
 
+.product-card-content
+  hr
+    display: none
+    background: linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%)
+    box-shadow: -10px 4px 30px 3px rgba(#DA50EF, 0.60), 10px 0px 30px 3px rgba(#2B92FE, 0.60)
 .swiper-slide .product-card
   width: 100%
 
@@ -728,6 +740,10 @@ h2.text-center.title
     bottom: 56%
     right: 23%
     animation-delay: 1s
+
+.random
+  hr
+    display: block
 
 .random .product-card .particle
   width: 2rem
@@ -1057,6 +1073,7 @@ span.price
   img
     width: 100%
     height: 2.5rem
+    object-fit: contain
 
 .card-header
   padding-top: 10rem
@@ -1075,12 +1092,13 @@ span.price
       bottom: 36%
       right: 23%
   .product-card img
-    height: 32rem
+    width: 100%
   .mini-banner
     font-size: 3rem
     width: 280px
     padding: 0.5rem 0
     text-align: center
+
 
 .product-description
   padding: 2.5rem
@@ -1162,3 +1180,8 @@ span.price
   transform: translateX(0%)
   opacity: 1
   filter: blur(0)
+
+
+.image-block
+  img
+    max-height: 20rem

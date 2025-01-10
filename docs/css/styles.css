@@ -246,6 +246,10 @@ main .header-content {
   transition: all 0.5s ease;
 }
 
+.basket .product-card img {
+  width: 10rem;
+}
+
 .basket.active {
   left: 0;
 }
@@ -311,9 +315,9 @@ hr {
   display: block;
   color: #FFF;
   text-align: center;
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: 400;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.2rem;
 }
 
 .basket-product img {
@@ -826,7 +830,8 @@ h2.text-center.title span {
 .product-card img {
   display: block;
   margin: 0 auto;
-  height: 21rem;
+  max-height: 18rem;
+  width: 100%;
   -o-object-fit: contain;
   object-fit: contain;
   margin-bottom: 0.7rem;
@@ -884,6 +889,15 @@ h2.text-center.title span {
 .product-card button:hover {
   -webkit-box-shadow: 10px 0px 30px rgba(24, 224, 227, 0.6), -10px 4px 30px rgba(234, 139, 255, 0.6);
   box-shadow: 10px 0px 30px rgba(24, 224, 227, 0.6), -10px 4px 30px rgba(234, 139, 255, 0.6);
+}
+
+.product-card-content hr {
+  display: none;
+  background: -webkit-gradient(linear, left top, right top, from(#7D2E89), color-stop(20%, #DA50EF), color-stop(47.72%, #DA50EF), color-stop(53.89%, #2B92FE), color-stop(80%, #2B92FE), to(#1C5C9E));
+  background: -o-linear-gradient(left, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%);
+  background: linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%);
+  -webkit-box-shadow: -10px 4px 30px 3px rgba(218, 80, 239, 0.6), 10px 0px 30px 3px rgba(43, 146, 254, 0.6);
+  box-shadow: -10px 4px 30px 3px rgba(218, 80, 239, 0.6), 10px 0px 30px 3px rgba(43, 146, 254, 0.6);
 }
 
 .swiper-slide .product-card {
@@ -961,6 +975,10 @@ h2.text-center.title span {
   right: 23%;
   -webkit-animation-delay: 1s;
   animation-delay: 1s;
+}
+
+.random hr {
+  display: block;
 }
 
 .random .product-card .particle {
@@ -1421,6 +1439,8 @@ span.price {
 .pay-platforms img {
   width: 100%;
   height: 2.5rem;
+  -o-object-fit: contain;
+  object-fit: contain;
 }
 
 .card-header {
@@ -1448,7 +1468,7 @@ span.price {
 }
 
 .product-about .product-card img {
-  height: 32rem;
+  width: 100%;
 }
 
 .product-about .mini-banner {
@@ -1607,6 +1627,10 @@ span.price {
   filter: blur(0);
 }
 
+.image-block img {
+  max-height: 20rem;
+}
+
 @media screen and (min-width: 370px) {
   .mini-advantage p {
     font-size: 2.3rem;
@@ -1622,6 +1646,13 @@ span.price {
 
   p.count-block {
     font-size: 3.5rem;
+  }
+}
+
+@media screen and (min-width: 380px) {
+  .basket-product strong {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
   }
 }
 
