@@ -109,3 +109,38 @@ window.addEventListener('scroll', () => {
     });
 });
 
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const counters = document.querySelectorAll('.count-block');
+    
+    counters.forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-target'));
+        const duration = 2000; // 2 seconds
+        const step = target / (duration / 16); // 16ms is roughly one frame
+        let current = 0;
+        
+        const updateCounter = () => {
+            current += step;
+            if (current < target) {
+                counter.textContent = Math.floor(current);
+                requestAnimationFrame(updateCounter);
+            } else {
+                counter.textContent = target;
+            }
+        };
+        
+        updateCounter();
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const basketMain = document.querySelector(".basket-main")
+    const basketHeader = document.querySelector(".basket-header")
+    const basketFooter = document.querySelector(".basket-footer")
+    const basket = document.querySelector(".basket")
+    
+    if (basketMain && basketHeader && basketFooter) {
+        basketMain.style.height = window.innerHeight - (basketHeader.scrollHeight + basketFooter.scrollHeight) - 120 + "px"
+    }
+})

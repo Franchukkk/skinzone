@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 const paymentSlider = new Swiper('.payment-slider', {
     slidesPerView: 'auto',
-    spaceBetween: 10,
+    spaceBetween: 20,
     loop: true,
     autoplay: {
         delay: 2000,

@@ -15,6 +15,9 @@ body
   font-family: "Anton SC", serif
   background: #000
   overflow-x: hidden
+  overflow-y: scroll
+
+
 
 .relative
   position: relative
@@ -35,6 +38,8 @@ header
   .marquee-lines .button
     box-shadow: 0 0 100px 50px #000
 
+
+.index-header
   .button
     position: absolute
     left: 50%
@@ -80,7 +85,7 @@ header
 .marquee-lines
   position: relative
   height: 90vh
-  background-image: url(../img/header-background.webp)
+  background: linear-gradient(182deg, rgba(0, 0, 0, 0.00) 11.46%, #000 98.22%), url(../img/header-background.png)
   background-size: cover
   background-repeat: no-repeat
   overflow: hidden
@@ -142,12 +147,13 @@ main .header-content
   left: -100%
   top: 0
   height: 100vh
-  overflow-y: scroll
+  overflow-y: hidden
   max-width: 32.2rem
   min-width: 250px
   z-index: 1000
   background: #292929
   transition: all 0.5s ease
+
 
 .basket.active
   left: 0
@@ -168,6 +174,13 @@ main .header-content
 
 .basket-main
   padding: 0 3.25rem
+  overflow-y:  scroll
+  &::-webkit-scrollbar
+    width: 2px
+    background-color: transparent
+  &::-webkit-scrollbar-thumb
+    background: linear-gradient(to bottom, #7D2E89, #DA50EF 20%, #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%)
+    border-radius: 10px
 
 
 hr
@@ -194,6 +207,8 @@ hr
     z-index: 1
 
   b
+    display: block
+    width: 100%
     text-align: center
     font-size: 1.25rem
     font-weight: 400
@@ -265,7 +280,7 @@ hr
   padding: 1rem
   margin-right: 1.56rem
   transition: all 0.5s ease
-  background: linear-gradient(90deg, rgba(218, 80, 239, 0.85) 20%, rgba(218, 80, 239, 0.85) 47.72%, rgba(218, 80, 239, 0.85) 47.72%, rgba(43, 146, 254, 0.85) 53.89%, rgba(43, 146, 254, 0.85) 80%)
+  background: linear-gradient(90deg, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%)
   backdrop-filter: blur(10px)
   &:hover
     box-shadow: 10px 0px 30px rgba(24, 224, 227, 0.60), -10px 4px 30px rgba(234, 139, 255, 0.60)  
@@ -295,7 +310,7 @@ hr
 
 
 .header-line nav
-    background: linear-gradient(90deg, rgba(218, 80, 239, 0.85) 20%, rgba(218, 80, 239, 0.85) 47.72%, rgba(218, 80, 239, 0.85) 47.72%, rgba(43, 146, 254, 0.85) 53.89%, rgba(43, 146, 254, 0.85) 80%)
+    background: linear-gradient(90deg, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%)
     padding: 1.56rem 3rem
     border-radius: 50px
     backdrop-filter: blur(10px)
@@ -369,6 +384,8 @@ hr
   top: 47%
   left: -3.75rem
   transform: translateY(-50%)
+  animation: float 3s ease-in-out infinite
+  animation-delay: 0.5s
 
   p
     text-shadow: 0 0 100px #000
@@ -386,7 +403,11 @@ hr
 
 p.count-block
   font-size: 4.3rem
-  color: #EA8BFF
+
+  background: linear-gradient(90deg, #DA50EF 44.9%, #2A92FE 56.27%)
+  background-clip: text
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent
 
 .hero-second
   position: absolute
@@ -690,7 +711,7 @@ h2.text-center.title
   -webkit-mask-composite: destination-out
   mask-composite: exclude
 .rate-star.active
-  background: linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%)
+  background: linear-gradient(90deg, #DA50EF, #2B92FE 100%)
   -webkit-mask: none
   mask: none
   border: none
@@ -840,6 +861,7 @@ h2.text-center.title
 
 .payment-systems img
   height: 2.5rem
+  margin: 0
 
 .payment-systems
   column-gap: 1rem
@@ -894,6 +916,7 @@ span.price
 .pay-platforms
   column-gap: 0.9rem
   img
+    width: 100%
     height: 2.5rem
 
 .card-header
@@ -988,6 +1011,7 @@ span.price
 
 
 .button.more-btn
+  font-size: 2rem
   padding: 0.2rem 4rem
 
 .block-hidden

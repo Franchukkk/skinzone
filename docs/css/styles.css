@@ -13,6 +13,7 @@ body {
   font-family: "Anton SC", serif;
   background: #000;
   overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .relative {
@@ -43,7 +44,7 @@ header .marquee-lines .button {
   box-shadow: 0 0 100px 50px #000;
 }
 
-header .button {
+.index-header .button {
   position: absolute;
   left: 50%;
   bottom: 0;
@@ -107,7 +108,8 @@ header .button {
 .marquee-lines {
   position: relative;
   height: 90vh;
-  background-image: url(../img/header-background.webp);
+  background: -o-linear-gradient(268deg, rgba(0, 0, 0, 0) 11.46%, #000 98.22%), url(../img/header-background.png);
+  background: linear-gradient(182deg, rgba(0, 0, 0, 0) 11.46%, #000 98.22%), url(../img/header-background.png);
   background-size: cover;
   background-repeat: no-repeat;
   overflow: hidden;
@@ -179,7 +181,7 @@ main .header-content {
   left: -100%;
   top: 0;
   height: 100vh;
-  overflow-y: scroll;
+  overflow-y: hidden;
   max-width: 32.2rem;
   min-width: 250px;
   z-index: 1000;
@@ -214,6 +216,18 @@ main .header-content {
 
 .basket-main {
   padding: 0 3.25rem;
+  overflow-y: scroll;
+}
+
+.basket-main::-webkit-scrollbar {
+  width: 2px;
+  background-color: transparent;
+}
+
+.basket-main::-webkit-scrollbar-thumb {
+  background: -webkit-gradient(linear, left top, left bottom, from(#7D2E89), color-stop(20%, #DA50EF), color-stop(47.72%, #DA50EF), color-stop(47.72%, #DA50EF), color-stop(53.89%, #2B92FE), color-stop(80%, #2B92FE), to(#1C5C9E));
+  background: linear-gradient(to bottom, #7D2E89, #DA50EF 20%, #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%);
+  border-radius: 10px;
 }
 
 hr {
@@ -247,6 +261,8 @@ hr {
 }
 
 .basket-product b {
+  display: block;
+  width: 100%;
   text-align: center;
   font-size: 1.25rem;
   font-weight: 400;
@@ -334,9 +350,9 @@ hr {
   -webkit-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  background: -webkit-gradient(linear, left top, right top, color-stop(20%, rgba(218, 80, 239, 0.85)), color-stop(47.72%, rgba(218, 80, 239, 0.85)), color-stop(47.72%, rgba(218, 80, 239, 0.85)), color-stop(53.89%, rgba(43, 146, 254, 0.85)), color-stop(80%, rgba(43, 146, 254, 0.85)));
-  background: -o-linear-gradient(left, rgba(218, 80, 239, 0.85) 20%, rgba(218, 80, 239, 0.85) 47.72%, rgba(218, 80, 239, 0.85) 47.72%, rgba(43, 146, 254, 0.85) 53.89%, rgba(43, 146, 254, 0.85) 80%);
-  background: linear-gradient(90deg, rgba(218, 80, 239, 0.85) 20%, rgba(218, 80, 239, 0.85) 47.72%, rgba(218, 80, 239, 0.85) 47.72%, rgba(43, 146, 254, 0.85) 53.89%, rgba(43, 146, 254, 0.85) 80%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(20%, rgba(218, 80, 239, 0.85)), color-stop(80%, rgba(43, 146, 254, 0.85)));
+  background: -o-linear-gradient(left, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%);
+  background: linear-gradient(90deg, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
@@ -382,9 +398,9 @@ hr {
 }
 
 .header-line nav {
-  background: -webkit-gradient(linear, left top, right top, color-stop(20%, rgba(218, 80, 239, 0.85)), color-stop(47.72%, rgba(218, 80, 239, 0.85)), color-stop(47.72%, rgba(218, 80, 239, 0.85)), color-stop(53.89%, rgba(43, 146, 254, 0.85)), color-stop(80%, rgba(43, 146, 254, 0.85)));
-  background: -o-linear-gradient(left, rgba(218, 80, 239, 0.85) 20%, rgba(218, 80, 239, 0.85) 47.72%, rgba(218, 80, 239, 0.85) 47.72%, rgba(43, 146, 254, 0.85) 53.89%, rgba(43, 146, 254, 0.85) 80%);
-  background: linear-gradient(90deg, rgba(218, 80, 239, 0.85) 20%, rgba(218, 80, 239, 0.85) 47.72%, rgba(218, 80, 239, 0.85) 47.72%, rgba(43, 146, 254, 0.85) 53.89%, rgba(43, 146, 254, 0.85) 80%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(20%, rgba(218, 80, 239, 0.85)), color-stop(80%, rgba(43, 146, 254, 0.85)));
+  background: -o-linear-gradient(left, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%);
+  background: linear-gradient(90deg, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%);
   padding: 1.56rem 3rem;
   border-radius: 50px;
   -webkit-backdrop-filter: blur(10px);
@@ -516,6 +532,10 @@ hr {
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+  -webkit-animation: float 3s ease-in-out infinite;
+  animation: float 3s ease-in-out infinite;
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
 }
 
 .mini-advantage p {
@@ -535,7 +555,12 @@ hr {
 
 p.count-block {
   font-size: 4.3rem;
-  color: #EA8BFF;
+  background: -webkit-gradient(linear, left top, right top, color-stop(44.9%, #DA50EF), color-stop(56.27%, #2A92FE));
+  background: -o-linear-gradient(left, #DA50EF 44.9%, #2A92FE 56.27%);
+  background: linear-gradient(90deg, #DA50EF 44.9%, #2A92FE 56.27%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .hero-second {
@@ -1004,9 +1029,9 @@ h2.text-center.title span {
 }
 
 .rate-star.active {
-  background: -webkit-gradient(linear, left top, right top, from(#7D2E89), color-stop(20%, #DA50EF), color-stop(47.72%, #DA50EF), color-stop(53.89%, #2B92FE), color-stop(80%, #2B92FE), to(#1C5C9E));
-  background: -o-linear-gradient(left, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%);
-  background: linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#DA50EF), to(#2B92FE));
+  background: -o-linear-gradient(left, #DA50EF, #2B92FE 100%);
+  background: linear-gradient(90deg, #DA50EF, #2B92FE 100%);
   -webkit-mask: none;
   mask: none;
   border: none;
@@ -1201,6 +1226,7 @@ h2.text-center.title span {
 
 .payment-systems img {
   height: 2.5rem;
+  margin: 0;
 }
 
 .payment-systems {
@@ -1272,6 +1298,7 @@ span.price {
 }
 
 .pay-platforms img {
+  width: 100%;
   height: 2.5rem;
 }
 
@@ -1434,6 +1461,7 @@ span.price {
 }
 
 .button.more-btn {
+  font-size: 2rem;
   padding: 0.2rem 4rem;
 }
 
