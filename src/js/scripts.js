@@ -91,6 +91,16 @@ document.querySelector('.close-basket').addEventListener('click', (e) => {
     document.querySelector('.basket').classList.remove('active');
 });
 
+document.querySelector('.burger').addEventListener('click', (e) => {
+    e.preventDefault();
+    document.querySelector('.burger-open').classList.toggle('active');
+});
+
+document.querySelector('.close-burger').addEventListener('click', (e) => {
+    e.preventDefault();
+    document.querySelector('.burger-open').classList.remove('active');
+});
+
 
 window.addEventListener('scroll', () => {
     const blocks = document.querySelectorAll('.block-hidden');

@@ -1,5 +1,5 @@
 mixin header-line()
-    .header-line.d-flex.justify-content-between.w-100
+    .header-line.d-flex.justify-content-between.w-100.align-items-center
         div
             a(href="index.html#header").logo.circle-btn 
                 img(src="img/logo.png", alt="")
@@ -15,10 +15,9 @@ mixin header-line()
                     a(href='index.html#faq' data-section="faq") FAQ
                 li 
                     a(href='index.html#help' data-section="help") HELP CEnter    
+        .burger
 
-                    
-mixin footer()
-    footer 
+    
 
 mixin product-card(img, name, price) 
     .product-card.col-sm-12.col-md-6.col-lg-4
@@ -68,7 +67,7 @@ mixin review(text, author, location, skin, stars)
             .quotes 
                 span “”
         p= text
-        .d-flex.justify-content-between.align-items-center
+        .d-flex.justify-content-between.align-items-center.flex-wrap
             .author 
                 strong= author
                 p= `From ${location}`
@@ -162,7 +161,7 @@ mixin help()
                 button(type="submit").button SEND
 
 mixin advantages()
-    .advantages.d-flex.flex-wrap.justify-content-between.animate-bottom.block-hidden
+    .advantages.d-flex.flex-wrap.animate-bottom.block-hidden
         .advantage.animate-bottom.hidden
             .d-flex.align-items-center
                 img.me-4(src="img/range.webp", alt="")
@@ -301,7 +300,7 @@ mixin basket()
                                 button(type="submit") 
                                     img(src="img/basketIcon.png", alt="")
 
-        hr
+        hr.opacity-1
         form(action="").basket-footer.text-center
             p Total: 
                 span $120
@@ -312,7 +311,7 @@ mixin basket()
 
 mixin footer()
     footer
-        .wrapper.d-flex.justify-content-between.align-items-center.flex-wrap
+        .wrapper.d-flex.justify-content-between.align-items-center.footer-content
             .payment-systems.d-flex
                 img(src="img/coinpayments.png", alt="")
                 img(src="img/webmoney.png", alt="")

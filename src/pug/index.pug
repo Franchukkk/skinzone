@@ -15,107 +15,115 @@ html(lang="en")
         link(rel="stylesheet", href="css/styles.css")
 
     body.relative
-        //- .circle
-        //- .circle
-        //- .circle
-        //- .circle
-        //- .circle
-        //- .circle
-        //- .circle
-        //- .circle
-        //- .circle
-        //- .circle
-        //- .circle
-        //- .circle
-        .snow-container
-        include components/mixins
-        +basket()
-        //- .float-circles
-        header.relative.index-header#header
-            a(href="#products").button SHOP NOW 
-            +header-line()
-            .marquee-lines
-                .wrapper.header-content.relative
-                    .mini-advantage
-                        p Happy Clients
-                        p.text-center.count-block(data-target="505") 505
-                    .mini-advantage.second-advantage
-                        p Sold Accounts
-                        p.text-center.count-block(data-target="671") 671
-                    .wrapper.relative.header-btn-container
-                        .hero
-                        .d-flex.justify-content-center
+        .overflow-x-hidden
+            .burger-open
+                .close-burger
+                ul 
+                    li 
+                        a(href='index.html#products' data-section="products") Products
+                    li 
+                        a(href='index.html#reviews' data-section="reviews") Reviews
+                    li 
+                        a(href='index.html#faq' data-section="faq") FAQ
+                    li 
+                        a(href='index.html#help' data-section="help") HELP CEnter    
+            
+            .snow-container
+            include components/mixins
+            +basket()
+            //- .float-circles
+            header.relative.index-header#header
+                a(href="#products").button SHOP NOW 
+                +header-line()
+                .marquee-lines
+                    .wrapper.header-content.relative
+                        .mini-advantage.first-advantage.absolute-advantage
+                            p.text-shadow Happy Clients
+                            p.text-center.count-block(data-target="505") 505
+                        .mini-advantage.second-advantage.absolute-advantage
+                            p.text-shadow Sold Accounts
+                            p.text-center.count-block.count-block-second(data-target="671") 671
+                        .wrapper.relative.header-btn-container
+                            .hero
+                            .d-flex.justify-content-center
+
+                                    
+            
+
+            main
+                .wrapper
+                    //- .mini-advantage
+                    //-     p.text-center Happy Clients
+                    //-     p.text-center.count-block(data-target="505") 505
+                    //- .mini-advantage.second-advantage
+                    //-     p.text-center Sold Accounts
+                    //-     p.text-center.count-block(data-target="671") 671
+                    +advantages()
+                    .discounts.animate-bottom#products
+                        h2.text-center.title.animate-bottom.hidden DISCOUNTS
+                            span DISCOUNTS
+                        .relative.block-hidden
+                            .swiper.discounts-slider
+                                .swiper-wrapper
+                                    .swiper-slide
+                                        +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                                    .swiper-slide
+                                        +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                                    .swiper-slide
+                                        +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                                    .swiper-slide
+                                        +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                                    .swiper-slide
+                                        +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                                    .swiper-slide
+                                        +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                                    .swiper-slide
+                                        +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                                    .swiper-slide
+                                        +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                                    
+                            .swiper-button-prev.products-button-prev
+                            .swiper-button-next.products-button-next
+        
+                    .products.animate-bottom
+                        h2.text-center.title.animate-bottom.hidden Random Skins + Full ACCESS
+                            span Random Skins + Full ACCESS
+                        .row.g-5.random.block-hidden
+                            +product-card("img/random.png", "Guaranteed 500+ skins | Full Access", "$110")
+                            +product-card("img/random.png", "Guaranteed 500+ skins | Full Access", "$110")
+                            +product-card("img/random.png", "Guaranteed 500+ skins | Full Access", "$110")
+                            +product-card("img/random.png", "Guaranteed 500+ skins | Full Access", "$110")
+                            +product-card("img/random.png", "Guaranteed 500+ skins | Full Access", "$110")
+                            +product-card("img/random.png", "Guaranteed 500+ skins | Full Access", "$110")
                             
-          
 
-        main
-            .wrapper
-                +advantages()
-                .discounts.animate-bottom#products
-                    h2.text-center.title.animate-bottom.hidden DISCOUNTS
-                        span DISCOUNTS
-                    .relative.block-hidden
-                        .swiper.discounts-slider
-                            .swiper-wrapper
-                                .swiper-slide
-                                    +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
-                                .swiper-slide
-                                    +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
-                                .swiper-slide
-                                    +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
-                                .swiper-slide
-                                    +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
-                                .swiper-slide
-                                    +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
-                                .swiper-slide
-                                    +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
-                                .swiper-slide
-                                    +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
-                                .swiper-slide
-                                    +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
-                                
-                        .swiper-button-prev.products-button-prev
-                        .swiper-button-next.products-button-next
-    
-                .products.animate-bottom
-                    h2.text-center.title.animate-bottom.hidden Random Skins + Full ACCESS
-                        span Random Skins + Full ACCESS
-                    .row.g-5.random.block-hidden
-                        +product-card("img/random.png", "Guaranteed 500+ skins | Full Access", "$110")
-                        +product-card("img/random.png", "Guaranteed 500+ skins | Full Access", "$110")
-                        +product-card("img/random.png", "Guaranteed 500+ skins | Full Access", "$110")
-                        +product-card("img/random.png", "Guaranteed 500+ skins | Full Access", "$110")
-                        +product-card("img/random.png", "Guaranteed 500+ skins | Full Access", "$110")
-                        +product-card("img/random.png", "Guaranteed 500+ skins | Full Access", "$110")
-                        
+                        h2.text-center.title.animate-bottom.hidden  Guaranted skins | Full Access
+                            span  Guaranted skins | Full Access
+                        form.search.d-flex.align-items-stretch
+                            input(type="search" name="" placeholder="Find an item...")
+                            button(type="submit").search-btn SEARCH
+                        .row.g-5.block-hidden
+                            +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                            +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                            +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                            +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                            +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                            +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                            +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                            +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                            +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
+                            .d-flex.justify-content-center
+                                button(type="submit").button.more-btn MORE
+                            
 
-                    h2.text-center.title.animate-bottom.hidden  Guaranted skins | Full Access
-                        span  Guaranted skins | Full Access
-                    form.search.d-flex.align-items-stretch
-                        input(type="search" name="" placeholder="Find an item...")
-                        button(type="submit").search-btn SEARCH
-                    .row.g-5.block-hidden
-                        +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
-                        +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
-                        +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
-                        +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
-                        +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
-                        +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
-                        +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
-                        +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
-                        +product-card("img/skinexample.png", "Guaranteed skin: Pink Lama | Full Access", "$110")
-                        .d-flex.justify-content-center
-                            button(type="submit").button.more-btn MORE
-                        
+                    +reviews()
 
-                +reviews()
+                +join-block()
+                .wrapper
+                    +faq()
 
-            +join-block()
-            .wrapper
-                +faq()
-
-                +help()
-        +footer()
+                    +help()
+            +footer()
 
 
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
