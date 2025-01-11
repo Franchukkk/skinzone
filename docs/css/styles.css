@@ -50,7 +50,7 @@ header .marquee-lines .button {
   position: absolute;
   min-width: 280px;
   left: 50%;
-  bottom: 0;
+  bottom: calc(30vh - 10px);
   -webkit-transform: translate(-50%, 50%);
   -ms-transform: translate(-50%, 50%);
   transform: translate(-50%, 50%);
@@ -70,9 +70,11 @@ header .marquee-lines .button {
   width: 18.75rem;
   top: 0;
   right: -100%;
-  background-color: #242424;
+  background-color: #000;
   z-index: 9999;
-  padding-top: 5rem;
+  padding-top: 6rem;
+  -webkit-box-shadow: 0 0 20px 1px #303030;
+  box-shadow: 0 0 20px 1px #303030;
   -webkit-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
@@ -94,12 +96,16 @@ header .marquee-lines .button {
   padding: 1rem 1rem;
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
-  background: -webkit-gradient(linear, left top, left bottom, from(#242424), to(#242424)) padding-box, -webkit-gradient(linear, left top, right top, color-stop(20%, rgba(218, 80, 239, 0.3)), color-stop(80%, rgba(43, 146, 254, 0.3))) border-box;
-  background: -o-linear-gradient(#242424, #242424) padding-box, -o-linear-gradient(left, rgba(218, 80, 239, 0.3) 20%, rgba(43, 146, 254, 0.3) 80%) border-box;
-  background: linear-gradient(#242424, #242424) padding-box, linear-gradient(90deg, rgba(218, 80, 239, 0.3) 20%, rgba(43, 146, 254, 0.3) 80%) border-box;
+  background: -webkit-gradient(linear, left top, left bottom, from(#000), to(#000)) padding-box, -webkit-gradient(linear, left top, right top, color-stop(20%, rgba(218, 80, 239, 0.3)), color-stop(80%, rgba(43, 146, 254, 0.3))) border-box;
+  background: -o-linear-gradient(#000, #000) padding-box, -o-linear-gradient(left, rgba(218, 80, 239, 0.3) 20%, rgba(43, 146, 254, 0.3) 80%) border-box;
+  background: linear-gradient(#000, #000) padding-box, linear-gradient(90deg, rgba(218, 80, 239, 0.3) 20%, rgba(43, 146, 254, 0.3) 80%) border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   text-transform: uppercase;
+}
+
+.burger-open .close-burger {
+  top: 3.9rem;
 }
 
 .burger-open.active {
@@ -164,10 +170,11 @@ header .marquee-lines .button {
 .marquee-lines {
   position: relative;
   height: 90vh;
-  background: -o-linear-gradient(268deg, rgba(0, 0, 0, 0) 30.46%, #000 98.22%), url(../img/header-background.jpg);
-  background: linear-gradient(182deg, rgba(0, 0, 0, 0) 30.46%, #000 98.22%), url(../img/header-background.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(20%, #000), color-stop(50%, rgba(0, 0, 0, 0.8)), color-stop(70%, rgba(0, 0, 0, 0))), url(../img/header-background.jpg);
+  background: -o-linear-gradient(bottom, #000 20%, rgba(0, 0, 0, 0.8) 50%, rgba(0, 0, 0, 0) 70%), url(../img/header-background.jpg);
+  background: linear-gradient(to top, #000 20%, rgba(0, 0, 0, 0.8) 50%, rgba(0, 0, 0, 0) 70%), url(../img/header-background.jpg);
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
   overflow: hidden;
   margin-top: -15px;
 }
@@ -240,10 +247,12 @@ main .header-content {
   overflow-y: hidden;
   width: 100vw;
   z-index: 1000;
-  background: #292929;
+  background: #000;
   -webkit-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
+  -webkit-box-shadow: 0 0 20px 1px #303030;
+  box-shadow: 0 0 20px 1px #303030;
 }
 
 .basket .product-card img {
@@ -257,9 +266,9 @@ main .header-content {
 .basket-header {
   padding: 1rem 0;
   border-bottom: 2px solid transparent;
-  background: -webkit-gradient(linear, left top, left bottom, from(#292929), to(#292929)) padding-box, -webkit-gradient(linear, left top, right top, from(#7D2E89), color-stop(20%, #DA50EF), color-stop(47.72%, #DA50EF), color-stop(53.89%, #2B92FE), color-stop(80%, #2B92FE), to(#1C5C9E)) border-box;
-  background: -o-linear-gradient(#292929, #292929) padding-box, -o-linear-gradient(left, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%) border-box;
-  background: linear-gradient(#292929, #292929) padding-box, linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%) border-box;
+  background: -webkit-gradient(linear, left top, left bottom, from(#000), to(#000)) padding-box, -webkit-gradient(linear, left top, right top, from(#7D2E89), color-stop(20%, #DA50EF), color-stop(47.72%, #DA50EF), color-stop(53.89%, #2B92FE), color-stop(80%, #2B92FE), to(#1C5C9E)) border-box;
+  background: -o-linear-gradient(#000, #000) padding-box, -o-linear-gradient(left, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%) border-box;
+  background: linear-gradient(#000, #000) padding-box, linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%) border-box;
   background-origin: border-box;
   background-clip: padding-box, border-box;
   -webkit-box-sizing: border-box;
@@ -465,8 +474,8 @@ hr {
 .header-line .burger {
   position: relative;
   display: block;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 25px;
   border-bottom: 3px solid #fff;
 }
 
@@ -474,20 +483,42 @@ hr {
 .header-line .burger::after {
   content: "";
   position: absolute;
-  width: 40px;
+  width: 30px;
   height: 3px;
   background-color: #fff;
   -webkit-box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5), 0px 0px 15px rgba(0, 0, 0, 0.3);
   box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5), 0px 0px 15px rgba(0, 0, 0, 0.3);
   left: 0;
+  z-index: 9999999;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .header-line .burger::before {
-  top: 24px;
+  top: 0;
 }
 
 .header-line .burger::after {
-  top: 12px;
+  bottom: 8px;
+}
+
+.header-line .burger.active {
+  border-bottom: 0;
+}
+
+.header-line .burger.active::before {
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  top: 11px;
+}
+
+.header-line .burger.active::after {
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  bottom: 11px;
 }
 
 .header-line nav {
@@ -593,14 +624,14 @@ hr {
 
 .hero {
   position: absolute;
-  height: 60vh;
+  height: 40vh;
   width: 100%;
   background: url(../img/banana.webp), -o-radial-gradient(53.65% 44.34%, 37.21% 37.21%, #FFF 0%, rgba(0, 0, 0, 0) 100%);
   background: url(../img/banana.webp), radial-gradient(37.21% 37.21% at 53.65% 44.34%, #FFF 0%, rgba(0, 0, 0, 0) 100%);
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: center bottom;
-  bottom: 30px;
+  background-position: top center;
+  bottom: 30vh;
   left: 0;
   z-index: -1;
   -webkit-animation: float 3s ease-in-out infinite;
@@ -622,7 +653,7 @@ hr {
 
 .absolute-advantage {
   position: absolute;
-  top: 30%;
+  bottom: 5vh;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
@@ -805,7 +836,7 @@ h2.text-center.title {
 
 h2.text-center.title span {
   position: absolute;
-  font-size: 4rem;
+  font-size: 3.2rem;
   font-weight: 400;
   background: -webkit-gradient(linear, left top, right top, from(#7D2E89), color-stop(20%, #DA50EF), color-stop(47.72%, #DA50EF), color-stop(53.89%, #2B92FE), color-stop(80%, #2B92FE), to(#1C5C9E));
   background: -o-linear-gradient(left, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%);
@@ -815,7 +846,7 @@ h2.text-center.title span {
   opacity: 0.5;
   width: 100%;
   left: 50%;
-  top: -1rem;
+  top: -0.5rem;
   padding-top: 8.75rem;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
@@ -891,13 +922,15 @@ h2.text-center.title span {
   box-shadow: 10px 0px 30px rgba(24, 224, 227, 0.6), -10px 4px 30px rgba(234, 139, 255, 0.6);
 }
 
+.product-card-content {
+  width: 75%;
+}
+
 .product-card-content hr {
   display: none;
   background: -webkit-gradient(linear, left top, right top, from(#7D2E89), color-stop(20%, #DA50EF), color-stop(47.72%, #DA50EF), color-stop(53.89%, #2B92FE), color-stop(80%, #2B92FE), to(#1C5C9E));
   background: -o-linear-gradient(left, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%);
   background: linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%);
-  -webkit-box-shadow: -10px 4px 30px 3px rgba(218, 80, 239, 0.6), 10px 0px 30px 3px rgba(43, 146, 254, 0.6);
-  box-shadow: -10px 4px 30px 3px rgba(218, 80, 239, 0.6), 10px 0px 30px 3px rgba(43, 146, 254, 0.6);
 }
 
 .swiper-slide .product-card {
@@ -1104,11 +1137,17 @@ h2.text-center.title span {
 }
 
 .swiper-button-prev {
-  left: -2.5rem;
+  left: 1rem;
 }
 
 .swiper-button-next {
-  right: -2.5rem;
+  right: 1rem;
+}
+
+.prev-rev,
+.next-rev {
+  top: auto;
+  bottom: -2.5rem;
 }
 
 .swiper-button-prev:hover:after,
@@ -1355,6 +1394,10 @@ h2.text-center.title span {
   margin-bottom: 1rem;
 }
 
+footer .payment-systems {
+  display: none;
+}
+
 .payment-systems img {
   height: 2.5rem;
   margin: 0;
@@ -1375,7 +1418,7 @@ footer p {
   color: #FFF;
   font-size: 1rem;
   font-weight: 400;
-  margin: 0;
+  margin-bottom: 2rem;
 }
 
 .footer-content {
@@ -1628,7 +1671,7 @@ span.price {
 }
 
 .image-block img {
-  max-height: 20rem;
+  max-height: 30rem;
 }
 
 @media screen and (min-width: 370px) {
@@ -1663,6 +1706,49 @@ span.price {
   }
 }
 
+@media screen and (min-width: 450px) {
+  .index-header .button {
+    bottom: 0;
+  }
+
+  .marquee-lines {
+    background: -o-linear-gradient(268deg, rgba(0, 0, 0, 0) 30.46%, #000 98.22%), url(../img/header-background.jpg);
+    background: linear-gradient(182deg, rgba(0, 0, 0, 0) 30.46%, #000 98.22%), url(../img/header-background.jpg);
+  }
+
+  .hero {
+    height: 60vh;
+    width: 100%;
+    background-position: center bottom;
+    background-size: contain;
+    bottom: 30px;
+  }
+
+  .absolute-advantage {
+    bottom: auto;
+    top: 30%;
+  }
+
+  h2.text-center.title span {
+    font-size: 4rem;
+    top: -1rem;
+  }
+
+  .swiper-button-prev {
+    left: -2.5rem;
+  }
+
+  .swiper-button-next {
+    right: -2.5rem;
+  }
+
+  .prev-rev,
+  .next-rev {
+    top: 50%;
+    bottom: auto;
+  }
+}
+
 @media screen and (min-width: 540px) {
   html {
     font-size: 16px;
@@ -1672,6 +1758,22 @@ span.price {
 @media screen and (min-width: 600px) {
   .header-line {
     padding: 0 3rem;
+  }
+}
+
+@media screen and (min-width: 630px) {
+  footer .payment-systems {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  footer .payment-slider {
+    display: none;
+  }
+
+  footer p {
+    margin: 0;
   }
 }
 

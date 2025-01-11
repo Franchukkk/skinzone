@@ -20,7 +20,7 @@ mixin header-line()
     
 
 mixin product-card(img, name, price) 
-    .product-card.col-sm-12.col-md-6.col-lg-4.justify-content-center
+    .product-card.col-sm-12.col-md-6.col-lg-4.d-flex.justify-content-center
         .product-card-content.d-flex.justify-content-center.relative
             div
                 a(href="product-card.html").relative
@@ -192,7 +192,7 @@ mixin basket()
                                 .d-flex.justify-content-between.relative.w-100
                                     div.w-100
                                         .relative
-                                            img(src="img/product-image.webp", alt='product-card')
+                                            img(src="img/random.webp", alt='product-card')
                     .basket-description
                         .row.d-flex.align-items-center
                             .w-80
@@ -208,7 +208,7 @@ mixin basket()
                             .d-flex.justify-content-between.relative.w-100
                                 div.w-100
                                     .relative
-                                        img(src="img/skinexample.png", alt='product-card')
+                                        img(src="img/skinexample.webp", alt='product-card')
                     .basket-description
                         .row.d-flex.align-items-center
                             .w-80
@@ -225,7 +225,7 @@ mixin basket()
                                 .d-flex.justify-content-between.relative.w-100
                                     div.w-100
                                         .relative
-                                            img(src="img/product-image.webp", alt='product-card')
+                                            img(src="img/random.webp", alt='product-card')
                     .basket-description
                         .row.d-flex.align-items-center
                             .w-80
@@ -241,7 +241,7 @@ mixin basket()
                             .d-flex.justify-content-between.relative.w-100
                                 div.w-100
                                     .relative
-                                        img(src="img/skinexample.png", alt='product-card')
+                                        img(src="img/skinexample.webp", alt='product-card')
                     .basket-description
                         .row.d-flex.align-items-center
                             .w-80
@@ -258,7 +258,7 @@ mixin basket()
                                 .d-flex.justify-content-between.relative.w-100
                                     div.w-100
                                         .relative
-                                            img(src="img/product-image.webp", alt='product-card')
+                                            img(src="img/random.webp", alt='product-card')
                     .basket-description
                         .row.d-flex.align-items-center
                             .w-80
@@ -274,7 +274,7 @@ mixin basket()
                             .d-flex.justify-content-between.relative.w-100
                                 div.w-100
                                     .relative
-                                        img(src="img/skinexample.png", alt='product-card')
+                                        img(src="img/skinexample.webp", alt='product-card')
                     .basket-description
                         .row.d-flex.align-items-center
                             .w-80
@@ -296,10 +296,29 @@ mixin basket()
 mixin footer()
     footer
         .wrapper.d-flex.justify-content-between.align-items-center.footer-content
-            .payment-systems.d-flex
+            .payment-systems
                 img(src="img/coinpayments.png", alt="")
                 img(src="img/webmoney.png", alt="")
             p Fortnite is a registered trademark of Epic Games, Inc. ©
-            .payment-systems.d-flex
+            .payment-systems
                 img(src="img/paypal.png", alt="")
                 img(src="img/visamastercard.png", alt="")
+        .pay-platforms.swiper.payment-slider
+            .swiper-wrapper
+                .swiper-slide
+                    img(src="img/visamastercard.png", alt="")
+                .swiper-slide
+                    img(src="img/paypal.png", alt="")
+                .swiper-slide
+                    img(src="img/coinpayments.png", alt="")
+                .swiper-slide
+                    img(src="img/webmoney.png", alt="")
+                .swiper-slide
+                    img(src="img/visamastercard.png", alt="")
+                .swiper-slide
+                    img(src="img/paypal.png", alt="")
+                .swiper-slide
+                    img(src="img/coinpayments.png", alt="")
+                .swiper-slide
+                    img(src="img/webmoney.png", alt="")
+

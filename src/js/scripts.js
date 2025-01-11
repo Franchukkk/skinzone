@@ -80,25 +80,30 @@ document.addEventListener('scroll', () => {
     });
 });
 
+const basket = document.querySelector('.basket');
+const burger = document.querySelector('.burger');
+const burgerOpen = document.querySelector('.burger-open');
 
 document.querySelector('.basket-btn').addEventListener('click', (e) => {
     e.preventDefault();
-    document.querySelector('.basket').classList.toggle('active');
+    basket.classList.toggle('active');
 });
 
 document.querySelector('.close-basket').addEventListener('click', (e) => {
     e.preventDefault();
-    document.querySelector('.basket').classList.remove('active');
+    basket.classList.remove('active');
 });
 
 document.querySelector('.burger').addEventListener('click', (e) => {
     e.preventDefault();
-    document.querySelector('.burger-open').classList.toggle('active');
+    burger.classList.toggle("active")
+    burgerOpen.classList.toggle('active');
 });
 
 document.querySelector('.close-burger').addEventListener('click', (e) => {
     e.preventDefault();
-    document.querySelector('.burger-open').classList.remove('active');
+    burger.classList.toggle("active")
+    burgerOpen.classList.remove('active');
 });
 
 
