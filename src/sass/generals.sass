@@ -218,6 +218,13 @@ main .header-content
     min-width: 250px
 
 
+.basket-description
+  button[type='submit']
+    transition: all .5s
+    &:hover
+      transform: scale(1.2)
+
+
 .basket.active
   left: 0
 
@@ -602,13 +609,13 @@ p.count-block-second
 
 .join-btn-container
   a
+    font-size: 2rem
     width: 18rem
     padding: 0.5rem
     text-align: center
     +media(450)
       width: 21rem
       padding: 1rem
-    +media(450)
     &:first-child
       background: #3DB6FD
       margin-bottom: 1rem
