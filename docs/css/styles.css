@@ -9,7 +9,6 @@ html {
 
 body {
   margin: 0;
-  height: 200vh;
   font-family: "Anton SC", serif;
   background: #000;
 }
@@ -48,7 +47,7 @@ header .marquee-lines .button {
 
 .index-header .button {
   position: absolute;
-  min-width: 280px;
+  min-width: 220px;
   left: 50%;
   bottom: calc(30vh - 10px);
   -webkit-transform: translate(-50%, 50%);
@@ -208,20 +207,20 @@ main .marquee-lines {
 
 .marquee-lines .marquee-line:nth-child(even) span {
   color: #FFF;
-  font-size: 70px;
+  font-size: 40px;
   font-weight: 400;
   text-transform: uppercase;
 }
 
 .marquee-lines .marquee-line:nth-child(odd) span {
-  color: #EA8BFF;
-  font-size: 70px;
+  color: #DA50EF;
+  font-size: 40px;
   font-weight: 400;
   text-transform: uppercase;
 }
 
 .marquee-lines .marquee-line:nth-child(odd) span b {
-  color: #18E0E3;
+  color: #2B92FE;
 }
 
 .header-content {
@@ -704,6 +703,7 @@ p.count-block-second {
 
 .hero-second {
   position: absolute;
+  display: none;
   height: 38.2rem;
   width: 100%;
   background-image: url(../img/bananaTG.webp);
@@ -733,14 +733,14 @@ p.count-block-second {
 }
 
 .join-btn-container a {
-  width: 21rem;
-  padding: 1rem;
+  width: 18rem;
+  padding: 0.5rem;
   text-align: center;
 }
 
 .join-btn-container a:first-child {
   background: #3DB6FD;
-  margin-bottom: 2.8rem;
+  margin-bottom: 1rem;
 }
 
 .join-btn-container a:last-child {
@@ -799,9 +799,9 @@ p.count-block-second {
   opacity: 0;
   -webkit-filter: blur(5px);
   filter: blur(5px);
-  -webkit-transform: translateX(-100%);
-  -ms-transform: translateX(-100%);
-  transform: translateX(-100%);
+  -webkit-transform: translateX(-10%);
+  -ms-transform: translateX(-10%);
+  transform: translateX(-10%);
   -webkit-transition: all 1s;
   -o-transition: all 1s;
   transition: all 1s;
@@ -1185,8 +1185,8 @@ h2.text-center.title span {
 }
 
 .rate-star {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 1.8rem;
+  height: 1.8rem;
   border-radius: 1.25rem;
   border: 2px solid transparent;
   background: -webkit-gradient(linear, left top, right top, from(#7D2E89), color-stop(20%, #DA50EF), color-stop(47.72%, #DA50EF), color-stop(53.89%, #2B92FE), color-stop(80%, #2B92FE), to(#1C5C9E)) border-box;
@@ -1225,7 +1225,7 @@ h2.text-center.title span {
   -webkit-text-fill-color: transparent;
 }
 
-.review {
+div.review {
   border: 2px solid transparent;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#000), to(#000)), -webkit-gradient(linear, left top, right top, from(#7D2E89), color-stop(20%, #DA50EF), color-stop(47.72%, #DA50EF), color-stop(53.89%, #2B92FE), color-stop(80%, #2B92FE), to(#1C5C9E));
   background-image: -o-linear-gradient(#000, #000), -o-linear-gradient(left, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%);
@@ -1238,13 +1238,13 @@ h2.text-center.title span {
   box-sizing: border-box;
 }
 
-.review p {
+div.review p {
   color: #FFF;
   font-size: 1.5rem;
   font-weight: 400;
 }
 
-.review strong {
+div.review strong {
   font-size: 2.25rem;
   font-weight: 400;
   background: -webkit-gradient(linear, left top, right top, from(#7D2E89), color-stop(20%, #DA50EF), color-stop(47.72%, #DA50EF), color-stop(53.89%, #2B92FE), color-stop(80%, #2B92FE), to(#1C5C9E));
@@ -1343,6 +1343,7 @@ h2.text-center.title span {
   min-width: 270px;
   max-width: 46.875rem;
   margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
 .help h3 {
@@ -1653,12 +1654,12 @@ span.price {
   opacity: 0;
   -webkit-filter: blur(5px);
   filter: blur(5px);
-  -webkit-transform: translateX(100%);
-  -ms-transform: translateX(100%);
-  transform: translateX(100%);
-  -webkit-transition: all 1s;
-  -o-transition: all 1s;
-  transition: all 1s;
+  -webkit-transform: translateX(30%);
+  -ms-transform: translateX(30%);
+  transform: translateX(30%);
+  -webkit-transition: all 1.5s;
+  -o-transition: all 1.5s;
+  transition: all 1.5s;
 }
 
 .block-hidden.active {
@@ -1729,6 +1730,21 @@ span.price {
     top: 30%;
   }
 
+  .join-btn-container a {
+    width: 21rem;
+    padding: 1rem;
+  }
+
+  .join-btn-container a:first-child {
+    margin-bottom: 2.8rem;
+  }
+
+  .hidden {
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+
   h2.text-center.title span {
     font-size: 4rem;
     top: -1rem;
@@ -1747,6 +1763,20 @@ span.price {
     top: 50%;
     bottom: auto;
   }
+
+  .rate-star {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .block-hidden {
+    -webkit-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    transform: translateX(100%);
+    -webkit-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+  }
 }
 
 @media screen and (min-width: 540px) {
@@ -1756,6 +1786,14 @@ span.price {
 }
 
 @media screen and (min-width: 600px) {
+  .marquee-lines .marquee-line:nth-child(even) span {
+    font-size: 70px;
+  }
+
+  .marquee-lines .marquee-line:nth-child(odd) span {
+    font-size: 70px;
+  }
+
   .header-line {
     padding: 0 3rem;
   }
@@ -1821,6 +1859,12 @@ span.price {
   }
 }
 
+@media screen and (min-width: 850px) {
+  .hero-second {
+    display: block;
+  }
+}
+
 @media screen and (min-width: 1190px) {
   .hero {
     height: 70vh;
@@ -1863,5 +1907,11 @@ span.price {
 @media screen and (min-width: 2000px) {
   html {
     font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .join-width {
+    width: 100% !important;
   }
 }

@@ -13,7 +13,6 @@ html
 
 body
   margin: 0
-  height: 200vh
   font-family: "Anton SC", serif
   background: #000
 
@@ -45,7 +44,7 @@ header
 .index-header
   .button
     position: absolute
-    min-width: 280px
+    min-width: 220px
     left: 50%
     bottom: calc(30vh - 10px)
     transform: translate(-50%, 50%)
@@ -168,17 +167,21 @@ main .marquee-lines
 
 .marquee-lines .marquee-line:nth-child(even) span
   color: #FFF
-  font-size: 70px
+  font-size: 40px
   font-weight: 400
   text-transform: uppercase
+  +media(600)
+    font-size: 70px
 
 .marquee-lines .marquee-line:nth-child(odd) span
-  color: #EA8BFF
-  font-size: 70px
+  color: #DA50EF
+  font-size: 40px
   font-weight: 400
   text-transform: uppercase
+  +media(600)
+    font-size: 70px
   b
-    color: #18E0E3
+    color: #2B92FE
 
 
 .header-content
@@ -572,9 +575,9 @@ p.count-block-second
 
 .hero-second
   position: absolute
+  display: none
   height: 38.2rem
   width: 100%
-
   background-image: url(../img/bananaTG.webp)
   background-size: contain
   background-repeat: no-repeat
@@ -583,6 +586,9 @@ p.count-block-second
   right: -100px
   z-index: -1
   animation: float 3s ease-in-out infinite
+  +media(850)
+    display: block
+    
 
 .hero-second.reversed
   background-position-x: left
@@ -596,12 +602,18 @@ p.count-block-second
 
 .join-btn-container
   a
-    width: 21rem
-    padding: 1rem
+    width: 18rem
+    padding: 0.5rem
     text-align: center
+    +media(450)
+      width: 21rem
+      padding: 1rem
+    +media(450)
     &:first-child
       background: #3DB6FD
-      margin-bottom: 2.8rem
+      margin-bottom: 1rem
+      +media(450)
+        margin-bottom: 2.8rem
     &:last-child
       background: #446FFD
 
@@ -640,8 +652,10 @@ p.count-block-second
 .hidden
   opacity: 0
   filter: blur(5px)
-  transform: translateX(-100%)
+  transform: translateX(-10%)
   transition: all 1s
+  +media(450)
+    transform: translateX(-100%)
 
 .animate-bottom.hidden
     transform: translateY(100%)
@@ -896,14 +910,17 @@ h2.text-center.title
   display: none
 
 .rate-star
-  width: 2.5rem
-  height: 2.5rem
+  width: 1.8rem
+  height: 1.8rem
   border-radius: 1.25rem
   border: 2px solid transparent
   background: linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%) border-box
   -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)
   -webkit-mask-composite: destination-out
   mask-composite: exclude
+  +media(450)
+    width: 2.5rem
+    height: 2.5rem
 .rate-star.active
   background: linear-gradient(90deg, #DA50EF, #2B92FE 100%)
   -webkit-mask: none
@@ -922,7 +939,7 @@ h2.text-center.title
   -webkit-background-clip: text
   -webkit-text-fill-color: transparent
 
-.review 
+div.review 
   border: 2px solid transparent
   background-image: linear-gradient(#000, #000), linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%)
   background-origin: border-box
@@ -1013,6 +1030,7 @@ h2.text-center.title
   min-width: 270px
   max-width: 46.875rem
   margin: 0 auto
+  padding: 0 1.5rem
 
 .help
   h3
@@ -1231,8 +1249,11 @@ span.price
 .block-hidden
   opacity: 0
   filter: blur(5px)
-  transform: translateX(100%)
-  transition: all 1s
+  transform: translateX(30%)
+  transition: all 1.5s
+  +media(450)
+    transform: translateX(100%)
+    transition: all 1s
 .block-hidden.active
   transform: translateX(0%)
   opacity: 1
@@ -1242,3 +1263,7 @@ span.price
 .image-block
   img
     max-height: 30rem
+
+@media screen and (max-width: 850px)
+  .join-width
+    width: 100% !important

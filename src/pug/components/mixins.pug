@@ -57,10 +57,10 @@ mixin reviews()
 mixin review(text, author, location, skin, stars)
     .review.wrapper-sm
         .d-flex.justify-content-between 
-            .rate.d-flex.justify-content-between 
+            .rate.d-flex.justify-content-between.align-items-center
                 - for (let i = 0; i < 5; i++)
                     .rate-star(class=i < stars ? 'active' : '')
-            .quotes 
+            .quotes.d-flex.align-items-center
                 span “”
         p= text
         .d-flex.justify-content-between.align-items-center.flex-wrap
@@ -74,7 +74,7 @@ mixin join-block()
         .header-content.black-bg
             .wrapper.h-100.relative
 
-                    .col-8
+                    .col-sm-12.col-md-8.join-width
                         .join-btn-container.d-flex.justify-content-center.align-items-center
                             div
                                 a(href="#").button JOIN TELEGRAM
@@ -84,7 +84,7 @@ mixin join-block()
                         .hero-second
         .lines-top
             - for (let i = -1; i < 50; i++)
-                .marquee-line(style=`top: ${i * 70}px;`)
+                .marquee-line(style=`top: ${(i * 70) / 16}rem;`)
                     if (i % 2 === 0)
                         - for (let j = 0; j < 40; j++)
                             span Join our community
