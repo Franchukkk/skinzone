@@ -46,7 +46,7 @@ header
     position: absolute
     min-width: 220px
     left: 50%
-    bottom: calc(30vh - 10px)
+    bottom: calc(29vh - 10px)
     transform: translate(-50%, 50%)
     z-index: 999
     +media(450)
@@ -232,7 +232,7 @@ main .header-content
 .basket-header
   padding: 1rem 0
   border-bottom: 2px solid transparent
-  background: linear-gradient(#000, #000) padding-box, linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%) border-box
+  background: linear-gradient(#000, #000) padding-box, linear-gradient(90deg, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%) border-box
   background-origin: border-box
   background-clip: padding-box, border-box
   box-sizing: border-box
@@ -249,7 +249,7 @@ main .header-content
     width: 4px
     background-color: transparent
   &::-webkit-scrollbar-thumb
-    background: linear-gradient(to bottom, #7D2E89, #DA50EF 20%, #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%)
+    background: linear-gradient(to bottom, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%)
     border-radius: 10px
 
 
@@ -288,7 +288,7 @@ hr
     text-align: center
     font-size: 1.25rem
     font-weight: 400
-    background: linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%)
+    background: linear-gradient(90deg, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%)
     background-clip: text
     -webkit-background-clip: text
     -webkit-text-fill-color: transparent
@@ -337,7 +337,7 @@ hr
     font-weight: 400
     span
       font-size: 2rem
-      background: linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%)
+      background: linear-gradient(90deg, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%)
       background-clip: text
       -webkit-background-clip: text
       -webkit-text-fill-color: transparent
@@ -456,7 +456,7 @@ hr
   display: inline-block
   border: none
   border-radius: 2.7rem 
-  background: linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%)
+  background: linear-gradient(90deg, rgba(218, 80, 239, 1) 20%, rgba(43, 146, 254, 1) 80%)
   padding: 0.3rem 4rem
   color: #FFF
   font-size: 2rem
@@ -485,15 +485,15 @@ hr
 
 .hero
   position: absolute
-  height: 40vh
-  width: 100%
+  height: 50vh
+  width: 100vw
   background: url(../img/banana.webp), radial-gradient(37.21% 37.21% at 53.65% 44.34%, #FFF 0%, rgba(0, 0, 0, 0.00) 100%)
-  background-size: cover
+  background-size: contain
   background-repeat: no-repeat
   background-position: top center
-  bottom: 30vh
+  bottom: 25vh
   left: 0
-  z-index: -1
+  z-index: 1
   animation: float 3s ease-in-out infinite
   +media(450)
     height: 60vh
@@ -637,7 +637,7 @@ p.count-block-second
   padding: 1rem
   border-radius: 1rem
   border: 2px solid transparent
-  background: linear-gradient(#000, #000) padding-box, linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%) border-box  
+  background: linear-gradient(#000, #000) padding-box, linear-gradient(90deg, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%) border-box  
   box-sizing: border-box
   min-width: 300px
   img
@@ -687,7 +687,7 @@ h2.text-center.title
     position: absolute
     font-size: 3.2rem
     font-weight: 400
-    background: linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%)
+    background: linear-gradient(90deg, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%)
     -webkit-background-clip: text
     color: #000
     opacity: .5
@@ -728,7 +728,7 @@ h2.text-center.title
     text-align: center
     font-size: 1.65rem
     font-weight: 400
-    background: linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%)
+    background: linear-gradient(90deg, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%)
     background-clip: text
     -webkit-background-clip: text
     -webkit-text-fill-color: transparent
@@ -741,13 +741,15 @@ h2.text-center.title
     border: none
     color: #FFF
     text-align: right
-    font-size: 1.5rem
+    font-size: 2rem
     font-weight: 400
     border-radius: 43.5px
-    background: linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%)
+    background: linear-gradient(90deg, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%)
     text-transform: uppercase
-    padding: .2rem 2.5rem
+    padding: .5rem 4rem
     transition:  all 0.5s ease
+    +media(450)
+      font-size: 1.5rem
     &:hover
       box-shadow: 10px 0px 30px rgba(24, 224, 227, 0.60), -10px 4px 30px rgba(234, 139, 255, 0.60)
 
@@ -755,7 +757,12 @@ h2.text-center.title
   width: 75%
   hr
     display: none
-    background: linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%)
+    background: linear-gradient(90deg, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%)
+
+.swiper
+  padding-bottom: 2rem
+  +media(600)
+    padding-bottom: 0
 
 .swiper-slide .product-card
   width: 100%
@@ -853,7 +860,7 @@ h2.text-center.title
   font-size: 1.5rem
   font-weight: 400
   border-radius: 2.5rem
-  background: linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%)
+  background: linear-gradient(90deg, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%)
   padding: 0 4rem
   transition:  all 0.5s ease
   &:hover
@@ -863,7 +870,7 @@ h2.text-center.title
   padding-bottom: 30px
 
 .swiper-button-next:after, .swiper-button-prev:after
-  background: linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%)
+  background: linear-gradient(90deg, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%)
   -webkit-background-clip: text
   -webkit-text-fill-color: transparent
   font-weight: bolder
@@ -879,13 +886,22 @@ h2.text-center.title
   +media(450)
     right: -2.5rem
 
+.swiper-button-prev,
+.swiper-button-next
+  display: none
+  +media(600)
+    display: block
+
 .prev-rev,
 .next-rev
+  display: none
   top: auto
   bottom: -2.5rem
   +media(450)
     top: 50%
     bottom: auto
+  +media(600)
+    display: block
 
 .swiper-button-prev:hover:after, .swiper-button-next:hover:after
   filter: drop-shadow(10px 0 15px rgba(24, 224, 227, 0.6)) drop-shadow(-10px 4px 15px rgba(234, 139, 255, 0.6))
@@ -919,20 +935,32 @@ h2.text-center.title
 .rate-star
   width: 1.8rem
   height: 1.8rem
-  border-radius: 1.25rem
-  border: 2px solid transparent
-  background: linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%) border-box
-  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)
-  -webkit-mask-composite: destination-out
-  mask-composite: exclude
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)
+  background: linear-gradient(90deg, #DA50EF, #2B92FE 100%)
+  opacity: 0.2
+  position: relative
+
   +media(450)
     width: 2.5rem
     height: 2.5rem
+
 .rate-star.active
   background: linear-gradient(90deg, #DA50EF, #2B92FE 100%)
   -webkit-mask: none
   mask: none
   border: none
+  opacity: 1
+
+.swiper-pagination
+
+  display: block
+  +media(600)
+    display: none
+
+.swiper-pagination-bullet
+  width: 1rem
+  height: 1rem
+  background: linear-gradient(90deg, #DA50EF, #2B92FE 100%)
 
 .rate
   column-gap: 5px
@@ -941,14 +969,14 @@ h2.text-center.title
   font-size: 3rem
   font-style: normal
   font-weight: 400
-  background: linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%)
+  background: linear-gradient(90deg, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%)
   background-clip: text
   -webkit-background-clip: text
   -webkit-text-fill-color: transparent
 
 div.review 
   border: 2px solid transparent
-  background-image: linear-gradient(#000, #000), linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%)
+  background-image: linear-gradient(#000, #000), linear-gradient(90deg, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%)
   background-origin: border-box
   background-clip: padding-box, border-box
   border-radius: 1rem
@@ -961,7 +989,7 @@ div.review
   strong
     font-size: 2.25rem
     font-weight: 400
-    background: linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%)
+    background: linear-gradient(90deg, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%)
     background-clip: text
     -webkit-background-clip: text
     -webkit-text-fill-color: transparent
@@ -985,7 +1013,7 @@ div.review
   left: 0
   width: 16.125rem
   height: 14.437rem
-  background: linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%)
+  background: linear-gradient(90deg, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%)
   border-radius: 50% 50% 0px 60px
   z-index: -1
 
@@ -994,7 +1022,7 @@ div.review
   font-size: 1.5rem
   font-weight: 400
   border-radius: 1rem
-  background: linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%)
+  background: linear-gradient(90deg, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%)
 
 .accordion-item
   background-color: transparent
@@ -1009,7 +1037,7 @@ div.review
 .accordion-body
   margin-top: -3px
   border: 2px solid transparent
-  background-image: linear-gradient(#000, #000), linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%)
+  background-image: linear-gradient(#000, #000), linear-gradient(90deg, rgba(218, 80, 239, 1) 20%, rgba(43, 146, 254, 1) 80%)
   background-origin: border-box
   background-clip: padding-box, border-box
   border-radius: 0px 0px 15px 15px
@@ -1049,7 +1077,7 @@ div.review
   .form-part
     border-radius: 1rem
     border: 2px solid transparent
-    background-image: linear-gradient(#000, #000), linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%)
+    background-image: linear-gradient(#000, #000), linear-gradient(90deg, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%)
     background-origin: border-box
     background-clip: padding-box, border-box
     padding: 2rem
@@ -1058,7 +1086,7 @@ div.review
     label
       font-size: 1.25rem
       font-weight: 400
-      background: linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%)
+      background: linear-gradient(90deg, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%)
       background-clip: text
       -webkit-background-clip: text
       -webkit-text-fill-color: transparent
@@ -1094,6 +1122,9 @@ footer
 footer
   background: #292929
   padding: 2rem 0
+  padding-bottom: 0
+  +media(450)
+    padding-bottom: 2rem
   .payment-slider
     +media(630)
       display: none
@@ -1140,7 +1171,7 @@ footer
 span.price
   font-size: 3rem
   font-weight: 400
-  background: linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%)
+  background: linear-gradient(90deg, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%)
   background-clip: text
   -webkit-background-clip: text
   -webkit-text-fill-color: transparent
@@ -1160,6 +1191,12 @@ span.price
 .card-header
   padding-top: 10rem
   margin-bottom: 7.8rem
+
+footer .pay-platforms
+  width: 60%
+  padding-bottom: 0
+  +media(450)
+    width: auto
 
 
 .product-about 
@@ -1186,7 +1223,7 @@ span.price
   padding: 2.5rem
   border: 2px solid transparent
   border-radius: 2rem
-  background-image: linear-gradient(#000, #000), linear-gradient(90deg, #7D2E89, #DA50EF 20% #DA50EF 47.72%, #DA50EF 47.72%, #2B92FE 53.89%, #2B92FE 80%, #1C5C9E 100%)
+  background-image: linear-gradient(#000, #000), linear-gradient(90deg, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%)
   background-origin: border-box
   background-clip: padding-box, border-box
 

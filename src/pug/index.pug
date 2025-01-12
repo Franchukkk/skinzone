@@ -33,6 +33,7 @@ html(lang="en")
             +basket()
             //- .float-circles
             header.relative.index-header#header
+                .hero
                 a(href="#products").button SHOP NOW 
                 +header-line()
                 .marquee-lines.relative
@@ -43,8 +44,9 @@ html(lang="en")
                         .mini-advantage.second-advantage.absolute-advantage
                             p.text-shadow Sold Accounts
                             p.text-center.count-block.count-block-second(data-target="671") 671
+                        
                         .wrapper.relative.header-btn-container
-                            .hero
+                            
                             .d-flex.justify-content-center
 
                                     
@@ -63,7 +65,7 @@ html(lang="en")
                         h2.text-center.title.animate-bottom.hidden DISCOUNTS
                             span DISCOUNTS
                         .relative.block-hidden
-                            .swiper.discounts-slider
+                            .swiper.discounts-slider.relative
                                 .swiper-wrapper
                                     .swiper-slide
                                         +product-card("img/skinexample.webp", "Guaranteed skin: Pink Lama | Full Access", "$110")
@@ -82,9 +84,9 @@ html(lang="en")
                                     .swiper-slide
                                         +product-card("img/skinexample.webp", "Guaranteed skin: Pink Lama | Full Access", "$110")
                                     
+                                .swiper-pagination
                             .swiper-button-prev.products-button-prev
                             .swiper-button-next.products-button-next
-        
                     .products.animate-bottom
                         h2.text-center.title.animate-bottom.hidden Random Skins + Full ACCESS
                             span Random Skins + Full ACCESS
