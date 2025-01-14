@@ -151,8 +151,7 @@
           <hr class="opacity-1">
           <form class="basket-footer text-center" action="">
             <p>Total: <span>$120</span></p>
-            <button class="button" type="submit">Back to shopping</button>
-            <button class="button" type="submit">Check out</button>
+            <button class="button" type="submit">Back to shopping</button><a class="button" href="checkout.html">Check out</a>
           </form>
         </div>
     <header>
@@ -174,30 +173,95 @@
     <main>
       <div class="wrapper">
         <div class="checkout-blocks row">
-          <form class="checkout-form col-12 col-md-6" action="">
-            <label for="promo"></label>
-            <input id="promo" type="text" placeholder="Add promo code">
-            <div class="row"> 
-              <div class="col-sm-12 col-md-6">
-                <label for="name"></label>
-                <input id="name" type="text" placeholder="write...">
+          <form class="checkout-form col-12 col-md-6 help" action="">
+            <div class="form-part">
+              <div class="row"> 
+                <div class="col-sm-12 col-md-6">
+                  <p> 
+                    <label for="name">Name</label>
+                  </p>
+                  <input id="name" type="text" placeholder="write...">
+                </div>
+                <div class="col-sm-12 col-md-6">
+                  <p> 
+                    <label for="surname">First name</label>
+                  </p>
+                  <input id="surname" type="text" placeholder="write...">
+                </div>
               </div>
-              <div class="col-sm-12 col-md-6">
-                <label for="surname"></label>
-                <input id="surname" type="text" placeholder="write...">
+              <p> 
+                <label for="email">Email</label>
+              </p>
+              <input id="email" type="email" placeholder="write...">
+              <p> 
+                <label for="phone">Phone</label>
+              </p>
+              <input id="phone" type="tel" placeholder="write...">
+              <p> 
+                <label for="promo">Promocode</label>
+              </p>
+              <input id="promo" type="text" placeholder="write...">
+              <div class="addons-container">
+                <h3> 
+                  <label class="addons-title">Addons</label>
+                </h3>
+                <div class="addons-list"> 
+                  <div class="d-flex align-items-center addon-item">
+                    <input type="checkbox" id="chance" name="chance">
+                    <label for="chance">🔥 Increase the chance of rare outfits <span>(+15$) (optional)</span></label>
+                  </div>
+                  <div class="d-flex align-items-center addon-item">
+                    <input type="checkbox" id="delivery" name="delivery">
+                    <label for="delivery">🚀 Super fast delivery <span>(+20$) (optional)</span></label>
+                  </div>
+                  <div class="d-flex align-items-center addon-item">
+                    <input type="checkbox" id="glidersChance" name="glidersChance">
+                    <label for="glidersChance">🪂 Increase the chance of rare gliders <span>(+10$) (optional)</span></label>
+                  </div>
+                  <div class="d-flex align-items-center addon-item">
+                    <input type="checkbox" id="pickaxes" name="pickaxes">
+                    <label for="pickaxes">🪓 Increase the chance of rare pickaxes <span>(+10$) (optional)</span></label>
+                  </div>
+                  <div class="d-flex addon-item">
+                    <input type="checkbox" id="emotes" name="emotes">
+                    <label for="emotes">💃 Increase the chance of exclusive emotes <span>(+10$) (optional)</span></label>
+                  </div>
+                </div>
               </div>
             </div>
-            <label for="country"></label>
-            <input id="country" type="text" placeholder="write...">
-            <label for="email"></label>
-            <input id="email" type="text" placeholder="write...">
           </form>
-          <div class="checkout-products col-12 col-md-6">
-            <p>Your order </p>
-            <div class="d-flex justify-content-between"> <span>Product name</span><span class="checkout-product-price">999 грн</span></div>
-            <div class="d-flex justify-content-between"> <span>Product name</span><span class="checkout-product-price">999 грн</span></div>
-            <div class="d-flex justify-content-between"> <span>Product name</span><span class="checkout-product-price">999 грн</span></div>
-            <div class="d-flex justify-content-between"> <span>Product name</span><span class="checkout-product-price">999 грн</span></div>
+          <div class="help col-12 col-md-6">
+            <div class="form-part checkout-products">
+              <div class="d-flex justify-content-between products-table-head"> 
+                <label>Your order </label>
+                <label>Subtotal</label>
+              </div>
+              <div class="checkout-products-scroll-list">
+                <div class="d-flex justify-content-between"> <span>Product name</span><span class="checkout-product-price">999$</span></div>
+                <div class="d-flex justify-content-between"> <span>Product name</span><span class="checkout-product-price">999$</span></div>
+                <div class="d-flex justify-content-between"> <span>Product name</span><span class="checkout-product-price">999$</span></div>
+                <div class="d-flex justify-content-between"> <span>Product name</span><span class="checkout-product-price">999$</span></div>
+                <div class="d-flex justify-content-between"> <span>Product name</span><span class="checkout-product-price">999$</span></div>
+                <div class="d-flex justify-content-between"> <span>Product name</span><span class="checkout-product-price">999$</span></div>
+                <div class="d-flex justify-content-between"> <span>Product name</span><span class="checkout-product-price">999$</span></div>
+                <div class="d-flex justify-content-between"> <span>Product name</span><span class="checkout-product-price">999$</span></div>
+              </div><br>
+              <div class="d-flex justify-content-between"> 
+                <p>Subtotal</p>
+                <p>999$</p>
+              </div>
+              <div class="checkout-products-scroll-list">
+                <div class="d-flex justify-content-between"> <span>🔥 Increase the chance of rare outfits</span><span class="checkout-product-price">15$</span></div>
+                <div class="d-flex justify-content-between"> <span>🔥 Increase the chance of rare outfits</span><span class="checkout-product-price">15$</span></div>
+                <div class="d-flex justify-content-between"> <span>🔥 Increase the chance of rare outfits</span><span class="checkout-product-price">15$</span></div>
+                <div class="d-flex justify-content-between"> <span>🔥 Increase the chance of rare outfits</span><span class="checkout-product-price">15$</span></div>
+                <div class="d-flex justify-content-between"> <span>🔥 Increase the chance of rare outfits</span><span class="checkout-product-price">15$</span></div>
+              </div><br>
+              <div class="d-flex justify-content-between"> 
+                <label>Total</label>
+                <label>999$</label>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -21,35 +21,232 @@ html(lang="en")
         main
             .wrapper
                 .checkout-blocks.row
-                    form(action="").checkout-form.col-12.col-md-6
-                        label(for="promo")
-                        input(id="promo" type="text" placeholder="Add promo code") 
-                        .row 
-                            .col-sm-12.col-md-6
-                                label(for="name")
-                                input(id="name" type="text" placeholder="write...") 
-                            .col-sm-12.col-md-6
-                                label(for="surname")
-                                input(id="surname" type="text" placeholder="write...") 
-                        label(for="country")
-                        input(id="country" type="text" placeholder="write...") 
-                        label(for="email")
-                        input(id="email" type="text" placeholder="write...") 
-                    .checkout-products.col-12.col-md-6
-                        p Your order 
-                        .d-flex.justify-content-between 
-                            span Product name
-                            span.checkout-product-price 999 грн
-                        .d-flex.justify-content-between 
-                            span Product name
-                            span.checkout-product-price 999 грн
-                        .d-flex.justify-content-between 
-                            span Product name
-                            span.checkout-product-price 999 грн
-                        .d-flex.justify-content-between 
-                            span Product name
-                            span.checkout-product-price 999 грн
-
+                    form(action="").checkout-form.col-12.col-md-6.help
+                        .form-part
+                            .row 
+                                .col-sm-12.col-md-6
+                                    p 
+                                        label(for="name") Name
+                                    input(id="name" type="text" placeholder="write...") 
+                                .col-sm-12.col-md-6
+                                    p 
+                                        label(for="surname") First name
+                                    input(id="surname" type="text" placeholder="write...") 
+                            //- label(for="country-select") Country
+                            //- br
+                            //- select#country-select
+                            //-     option(value="") Select country
+                            //-     option(value="usa") United States
+                            //-     option(value="china") China
+                            //-     option(value="india") India
+                            //-     option(value="indonesia") Indonesia
+                            //-     option(value="pakistan") Pakistan
+                            //-     option(value="brazil") Brazil
+                            //-     option(value="nigeria") Nigeria
+                            //-     option(value="bangladesh") Bangladesh
+                            //-     option(value="russia") Russia
+                            //-     option(value="mexico") Mexico
+                            //-     option(value="japan") Japan
+                            //-     option(value="ethiopia") Ethiopia
+                            //-     option(value="philippines") Philippines
+                            //-     option(value="egypt") Egypt
+                            //-     option(value="vietnam") Vietnam
+                            //-     option(value="dr_congo") DR Congo
+                            //-     option(value="turkey") Turkey
+                            //-     option(value="iran") Iran
+                            //-     option(value="germany") Germany
+                            //-     option(value="thailand") Thailand
+                            //-     option(value="uk") United Kingdom
+                            //-     option(value="france") France
+                            //-     option(value="italy") Italy
+                            //-     option(value="tanzania") Tanzania
+                            //-     option(value="south_africa") South Africa
+                            //-     option(value="myanmar") Myanmar
+                            //-     option(value="kenya") Kenya
+                            //-     option(value="south_korea") South Korea
+                            //-     option(value="colombia") Colombia
+                            //-     option(value="spain") Spain
+                            //-     option(value="uganda") Uganda
+                            //-     option(value="argentina") Argentina
+                            //-     option(value="algeria") Algeria
+                            //-     option(value="sudan") Sudan
+                            //-     option(value="ukraine") Ukraine
+                            //-     option(value="iraq") Iraq
+                            //-     option(value="afghanistan") Afghanistan
+                            //-     option(value="poland") Poland
+                            //-     option(value="canada") Canada
+                            //-     option(value="morocco") Morocco
+                            //-     option(value="saudi_arabia") Saudi Arabia
+                            //-     option(value="uzbekistan") Uzbekistan
+                            //-     option(value="peru") Peru
+                            //-     option(value="angola") Angola
+                            //-     option(value="malaysia") Malaysia
+                            //-     option(value="mozambique") Mozambique
+                            //-     option(value="ghana") Ghana
+                            //-     option(value="yemen") Yemen
+                            //-     option(value="nepal") Nepal
+                            //-     option(value="venezuela") Venezuela
+                            //-     option(value="madagascar") Madagascar
+                            //-     option(value="cameroon") Cameroon
+                            //-     option(value="ivory_coast") Ivory Coast
+                            //-     option(value="australia") Australia
+                            //-     option(value="niger") Niger
+                            //-     option(value="taiwan") Taiwan
+                            //-     option(value="sri_lanka") Sri Lanka
+                            //-     option(value="burkina_faso") Burkina Faso
+                            //-     option(value="mali") Mali
+                            //-     option(value="romania") Romania
+                            //-     option(value="malawi") Malawi
+                            //-     option(value="chile") Chile
+                            //-     option(value="kazakhstan") Kazakhstan
+                            //-     option(value="zambia") Zambia
+                            //-     option(value="guatemala") Guatemala
+                            //-     option(value="ecuador") Ecuador
+                            //-     option(value="syria") Syria
+                            //-     option(value="netherlands") Netherlands
+                            //-     option(value="senegal") Senegal
+                            //-     option(value="cambodia") Cambodia
+                            //-     option(value="chad") Chad
+                            //-     option(value="somalia") Somalia
+                            //-     option(value="zimbabwe") Zimbabwe
+                            //-     option(value="guinea") Guinea
+                            //-     option(value="rwanda") Rwanda
+                            //-     option(value="benin") Benin
+                            //-     option(value="burundi") Burundi
+                            //-     option(value="tunisia") Tunisia
+                            //-     option(value="bolivia") Bolivia
+                            //-     option(value="belgium") Belgium
+                            //-     option(value="haiti") Haiti
+                            //-     option(value="cuba") Cuba
+                            //-     option(value="south_sudan") South Sudan
+                            //-     option(value="dominican_republic") Dominican Republic
+                            //-     option(value="czech_republic") Czech Republic
+                            //-     option(value="greece") Greece
+                            //-     option(value="jordan") Jordan
+                            //-     option(value="portugal") Portugal
+                            //-     option(value="azerbaijan") Azerbaijan
+                            //-     option(value="sweden") Sweden
+                            //-     option(value="honduras") Honduras
+                            //-     option(value="united_arab_emirates") United Arab Emirates
+                            //-     option(value="hungary") Hungary
+                            //-     option(value="tajikistan") Tajikistan
+                            //-     option(value="belarus") Belarus
+                            //-     option(value="austria") Austria
+                            //-     option(value="papua_new_guinea") Papua New Guinea
+                            //-     option(value="serbia") Serbia
+                            //-     option(value="israel") Israel
+                            //-     option(value="switzerland") Switzerland
+                            //-     option(value="togo") Togo
+                            //-     option(value="sierra_leone") Sierra Leone
+                            //-     option(value="hong_kong") Hong Kong
+                            //-     option(value="laos") Laos
+                            //-     option(value="paraguay") Paraguay
+                            //-     option(value="bulgaria") Bulgaria
+                            //-     option(value="libya") Libya
+                            //-     option(value="lebanon") Lebanon
+                            //-     option(value="nicaragua") Nicaragua
+                            //-     option(value="kyrgyzstan") Kyrgyzstan
+                            //-     option(value="el_salvador") El Salvador
+                            //-     option(value="turkmenistan") Turkmenistan
+                            //-     option(value="singapore") Singapore
+                            //-     option(value="denmark") Denmark
+                            //-     option(value="finland") Finland
+                            //-     option(value="congo") Congo
+                            //-     option(value="slovakia") Slovakia
+                            //-     option(value="norway") Norway
+                            //-     option(value="oman") Oman
+                            //-     option(value="palestine") Palestine
+                            //-     option(value="costa_rica") Costa Rica
+                            //-     option(value="liberia") Liberia
+                            //-     option(value="ireland") Ireland
+                            //-     option(value="central_african_republic") Central African Republic
+                            p 
+                                label(for="email") Email
+                            input(id="email" type="email" placeholder="write...") 
+                            p 
+                                label(for="phone") Phone
+                            input(id="phone" type="tel" placeholder="write...") 
+                            p 
+                                label(for="promo") Promocode
+                            input(id="promo" type="text" placeholder="write...") 
+                            .addons-container
+                                h3 
+                                    label.addons-title Addons
+                                .addons-list 
+                                    .d-flex.align-items-center.addon-item
+                                        input(type="checkbox" id="chance" name="chance")
+                                        label(for="chance") 🔥 Increase the chance of rare outfits 
+                                            span (+15$) (optional)
+                                    .d-flex.align-items-center.addon-item
+                                        input(type="checkbox" id="delivery" name="delivery")
+                                        label(for="delivery") 🚀 Super fast delivery 
+                                            span (+20$) (optional)
+                                    .d-flex.align-items-center.addon-item
+                                        input(type="checkbox" id="glidersChance" name="glidersChance")
+                                        label(for="glidersChance") 🪂 Increase the chance of rare gliders 
+                                            span (+10$) (optional)
+                                    .d-flex.align-items-center.addon-item
+                                        input(type="checkbox" id="pickaxes" name="pickaxes")
+                                        label(for="pickaxes") 🪓 Increase the chance of rare pickaxes 
+                                            span (+10$) (optional)
+                                    .d-flex.addon-item
+                                        input(type="checkbox" id="emotes" name="emotes")
+                                        label(for="emotes") 💃 Increase the chance of exclusive emotes 
+                                            span (+10$) (optional)
+                    .help.col-12.col-md-6
+                        .form-part.checkout-products
+                            .d-flex.justify-content-between.products-table-head 
+                                label Your order 
+                                label Subtotal
+                            .checkout-products-scroll-list
+                                .d-flex.justify-content-between 
+                                    span Product name
+                                    span.checkout-product-price 999$
+                                .d-flex.justify-content-between 
+                                    span Product name
+                                    span.checkout-product-price 999$
+                                .d-flex.justify-content-between 
+                                    span Product name
+                                    span.checkout-product-price 999$
+                                .d-flex.justify-content-between 
+                                    span Product name
+                                    span.checkout-product-price 999$
+                                .d-flex.justify-content-between 
+                                    span Product name
+                                    span.checkout-product-price 999$
+                                .d-flex.justify-content-between 
+                                    span Product name
+                                    span.checkout-product-price 999$
+                                .d-flex.justify-content-between 
+                                    span Product name
+                                    span.checkout-product-price 999$
+                                .d-flex.justify-content-between 
+                                    span Product name
+                                    span.checkout-product-price 999$
+                            br
+                            .d-flex.justify-content-between 
+                                p Subtotal
+                                p 999$
+                            .checkout-products-scroll-list
+                                .d-flex.justify-content-between 
+                                    span 🔥 Increase the chance of rare outfits
+                                    span.checkout-product-price 15$
+                                .d-flex.justify-content-between 
+                                    span 🔥 Increase the chance of rare outfits
+                                    span.checkout-product-price 15$
+                                .d-flex.justify-content-between 
+                                    span 🔥 Increase the chance of rare outfits
+                                    span.checkout-product-price 15$
+                                .d-flex.justify-content-between 
+                                    span 🔥 Increase the chance of rare outfits
+                                    span.checkout-product-price 15$
+                                .d-flex.justify-content-between 
+                                    span 🔥 Increase the chance of rare outfits
+                                    span.checkout-product-price 15$
+                            br
+                            .d-flex.justify-content-between 
+                                label Total
+                                label 999$
 
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>

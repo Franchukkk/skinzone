@@ -1091,7 +1091,7 @@ div.review
       -webkit-background-clip: text
       -webkit-text-fill-color: transparent
 
-    input
+    input, select
       display: block
       width: 100%
       border-radius: 2.5rem
@@ -1100,10 +1100,22 @@ div.review
       border: none
       outline: none
 
+    select
+      appearance: none
+      outline: none
+      min-height: 2rem
+      background-image: url(../img/arrow-down.png)
+      background-repeat: no-repeat
+      background-position: right 1rem center
+      background-size: 1rem
+      padding-right: 3rem
   button
     font-size: 2rem
     padding: .5rem 5rem
 .name-input
+  margin-bottom: 1rem
+
+.checkout-blocks input, .checkout-blocks select
   margin-bottom: 1rem
 
 footer
@@ -1311,3 +1323,68 @@ footer .pay-platforms
 @media screen and (max-width: 850px)
   .join-width
     width: 100% !important
+
+.addons-title
+  font-size: 2rem
+
+.addon-item
+  margin-bottom: 1rem
+
+.addons-list input[type="checkbox"]
+  appearance: none
+  display: inline-block
+  width: 20px !important
+  height: 20px
+  margin: 0
+  margin-right: 1rem
+  padding: 0
+  border: 2px solid transparent
+  background: linear-gradient(#000, #000) padding-box, linear-gradient(90deg, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%) border-box
+  border-radius: 4px
+  position: relative
+  cursor: pointer
+
+  &:checked::before
+    content: ""
+    position: absolute
+    width: 12px
+    height: 12px
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    background: linear-gradient(90deg, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%)
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%)
+
+.checkout-products p, span
+  color: #fff
+
+.checkout-products
+  .d-flex
+    column-gap: 0.2rem
+  span 
+    font-style: italic
+
+.checkout-products-scroll-list
+  max-height: 6rem
+  overflow-y: scroll
+  overflow-x: hidden
+  padding-right: 0.5rem
+  &::-webkit-scrollbar
+    width: 4px
+    background-color: transparent
+  &::-webkit-scrollbar-thumb
+    background: linear-gradient(to bottom, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%)
+    border-radius: 10px
+
+.products-table-head
+  margin-bottom: 0.5rem
+
+.help .addon-item label
+  color: #fff
+  -webkit-text-fill-color: #fff
+  span
+    background: linear-gradient(90deg, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%)
+    background-clip: text
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+  

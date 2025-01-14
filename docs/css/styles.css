@@ -1410,7 +1410,8 @@ div.review strong {
   -webkit-text-fill-color: transparent;
 }
 
-.help .form-part input {
+.help .form-part input,
+.help .form-part select {
   display: block;
   width: 100%;
   border-radius: 2.5rem;
@@ -1420,12 +1421,30 @@ div.review strong {
   outline: none;
 }
 
+.help .form-part select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  min-height: 2rem;
+  background-image: url(../img/arrow-down.png);
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1rem;
+  padding-right: 3rem;
+}
+
 .help button {
   font-size: 2rem;
   padding: 0.5rem 5rem;
 }
 
 .name-input {
+  margin-bottom: 1rem;
+}
+
+.checkout-blocks input,
+.checkout-blocks select {
   margin-bottom: 1rem;
 }
 
@@ -1713,6 +1732,101 @@ footer .pay-platforms {
 
 .image-block img {
   max-height: 30rem;
+}
+
+.addons-title {
+  font-size: 2rem;
+}
+
+.addon-item {
+  margin-bottom: 1rem;
+}
+
+.addons-list input[type=checkbox] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  width: 20px !important;
+  height: 20px;
+  margin: 0;
+  margin-right: 1rem;
+  padding: 0;
+  border: 2px solid transparent;
+  background: -webkit-gradient(linear, left top, left bottom, from(#000), to(#000)) padding-box, -webkit-gradient(linear, left top, right top, color-stop(20%, rgba(218, 80, 239, 0.85)), color-stop(80%, rgba(43, 146, 254, 0.85))) border-box;
+  background: -o-linear-gradient(#000, #000) padding-box, -o-linear-gradient(left, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%) border-box;
+  background: linear-gradient(#000, #000) padding-box, linear-gradient(90deg, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%) border-box;
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+}
+
+.addons-list input[type=checkbox]:checked::before {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(20%, rgba(218, 80, 239, 0.85)), color-stop(80%, rgba(43, 146, 254, 0.85)));
+  background: -o-linear-gradient(left, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%);
+  background: linear-gradient(90deg, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%);
+  -webkit-clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+.checkout-products p,
+span {
+  color: #fff;
+}
+
+.checkout-products .d-flex {
+  -webkit-column-gap: 0.2rem;
+  -moz-column-gap: 0.2rem;
+  column-gap: 0.2rem;
+}
+
+.checkout-products span {
+  font-style: italic;
+}
+
+.checkout-products-scroll-list {
+  max-height: 6rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding-right: 0.5rem;
+}
+
+.checkout-products-scroll-list::-webkit-scrollbar {
+  width: 4px;
+  background-color: transparent;
+}
+
+.checkout-products-scroll-list::-webkit-scrollbar-thumb {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, rgba(218, 80, 239, 0.85)), color-stop(80%, rgba(43, 146, 254, 0.85)));
+  background: linear-gradient(to bottom, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%);
+  border-radius: 10px;
+}
+
+.products-table-head {
+  margin-bottom: 0.5rem;
+}
+
+.help .addon-item label {
+  color: #fff;
+  -webkit-text-fill-color: #fff;
+}
+
+.help .addon-item label span {
+  background: -webkit-gradient(linear, left top, right top, color-stop(20%, rgba(218, 80, 239, 0.85)), color-stop(80%, rgba(43, 146, 254, 0.85)));
+  background: -o-linear-gradient(left, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%);
+  background: linear-gradient(90deg, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 @media screen and (min-width: 370px) {
