@@ -295,6 +295,7 @@ main .header-content {
 
 .basket-main {
   padding: 0 3.25rem;
+  padding-left: 1.5rem;
   overflow-y: scroll;
 }
 
@@ -1869,6 +1870,10 @@ span {
   .marquee-lines {
     background: -o-linear-gradient(268deg, rgba(0, 0, 0, 0) 30.46%, #000 98.22%), url(../img/header-background.jpg);
     background: linear-gradient(182deg, rgba(0, 0, 0, 0) 30.46%, #000 98.22%), url(../img/header-background.jpg);
+  }
+
+  .basket-main {
+    padding: 0 3.25rem;
   }
 
   .hero {

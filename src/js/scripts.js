@@ -61,6 +61,9 @@ const reviewsSlider = new Swiper('.reviews-slider', {
     }
 });
 
+
+
+
 document.addEventListener('scroll', () => {
     const sections = document.querySelectorAll('#products, #reviews, #faq, #help');
     const navLinks = document.querySelectorAll('nav ul li a');
@@ -157,3 +160,4 @@ document.addEventListener("DOMContentLoaded", function() {
         basketMain.style.height = window.innerHeight - (basketHeader.scrollHeight + basketFooter.scrollHeight) - 120 + "px"
     }
 })
+
