@@ -173,7 +173,7 @@
     <main>
       <div class="wrapper">
         <div class="checkout-blocks row">
-          <form class="checkout-form col-12 col-md-6 help" action="">
+          <form class="checkout-form col-12 col-md-12 col-lg-6 help" action="">
             <div class="form-part">
               <div class="row"> 
                 <div class="col-sm-12 col-md-6">
@@ -230,7 +230,7 @@
               </div>
             </div>
           </form>
-          <div class="help col-12 col-md-6">
+          <div class="help col-12 col-md-12 col-lg-6">
             <div class="form-part checkout-products">
               <div class="d-flex justify-content-between products-table-head"> 
                 <label>Your order </label>
@@ -262,6 +262,27 @@
                 <label>999$</label>
               </div>
             </div>
+            <div class="checkout-products addons-list check-out-payment-method d-flex">
+              <div class="w-100">
+                <div class="row flex-lg-nowrap">
+                  <label class="d-flex justify-content-center align-items-center col-sm-12 col-md-12 col-lg-6">
+                    <input class="payment-method-btn" type="radio" name="paymentMethod" id="webmoney"><img src="https://git.eagleinc.xyz/skin-zone/website/-/raw/master/docs/img/webmoney.png" alt="">
+                  </label>
+                  <label class="d-flex justify-content-center align-items-center col-sm-12 col-md-12 col-lg-6">
+                    <input class="payment-method-btn" type="radio" name="paymentMethod" id="coinpayments"><img src="img/black-coin-payments.png" alt="">
+                  </label>
+                </div>
+                <div class="row flex-lg-nowrap">
+                  <label class="d-flex justify-content-center align-items-center col-sm-12 col-md-12 col-lg-6">
+                    <input class="payment-method-btn" type="radio" name="paymentMethod" id="visamastercard"><img src="https://git.eagleinc.xyz/skin-zone/website/-/raw/master/docs/img/visamastercard.png" alt="">
+                  </label>
+                  <label class="d-flex justify-content-center align-items-center col-sm-12 col-md-12 col-lg-6">
+                    <input class="payment-method-btn" type="radio" name="paymentMethod" id="paypal"><img src="https://git.eagleinc.xyz/skin-zone/website/-/raw/master/docs/img/paypal.png" alt="">
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex justify-content-center"><a class="button submit-order" href="#">Submit order</a></div>
           </div>
         </div>
       </div>
