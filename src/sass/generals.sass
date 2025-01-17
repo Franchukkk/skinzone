@@ -1087,7 +1087,7 @@ div.review
     margin-bottom: 2rem
 
     label
-      font-size: 1.25rem
+      font-size: 1rem
       font-weight: 400
       background: linear-gradient(90deg, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%)
       background-clip: text
@@ -1333,6 +1333,14 @@ footer .pay-platforms
 .addon-item
   margin-bottom: 1rem
 
+.addons-list 
+  .w-80
+    width: 100%
+    +media(990)
+      width: 80%
+    +media(1200)
+      width: 100%
+
 .addons-list input[type="checkbox"],
 .addons-list input[type="radio"]
   appearance: none
@@ -1410,10 +1418,12 @@ footer .pay-platforms
 
 
 .checkout-products.check-out-payment-method
-  width: 50%
+  width: 100%
   padding: 12px
   margin: 0 auto
   min-width: 250px
+  +media(992)
+    width: 50%
   +media(1024)
     justify-content: end
     width: auto
@@ -1433,6 +1443,11 @@ footer .pay-platforms
       max-width: 120px
       +media(1200)
         max-width: 160px
+
+  .wrap
+    flex-wrap: wrap
+    +media(576)
+      flex-wrap: nowrap
       
 
 .submit-order

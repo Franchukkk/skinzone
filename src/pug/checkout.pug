@@ -30,7 +30,7 @@ html(lang="en")
                                     input(id="name" type="text" placeholder="write...") 
                                 .col-sm-12.col-md-6
                                     p 
-                                        label(for="surname") First name
+                                        label(for="surname") Last name
                                     input(id="surname" type="text" placeholder="write...") 
                             //- label(for="country-select") Country
                             //- br
@@ -175,23 +175,23 @@ html(lang="en")
                                 .addons-list 
                                     .d-flex.align-items-center.addon-item
                                         input(type="checkbox" id="chance" name="chance")
-                                        label(for="chance") 🔥 Increase the chance of rare outfits 
+                                        label(for="chance").w-80 🔥 Increase the chance of rare outfits 
                                             span (+15$) (optional)
                                     .d-flex.align-items-center.addon-item
                                         input(type="checkbox" id="delivery" name="delivery")
-                                        label(for="delivery") 🚀 Super fast delivery 
+                                        label(for="delivery").w-80 🚀 Super fast delivery 
                                             span (+20$) (optional)
                                     .d-flex.align-items-center.addon-item
                                         input(type="checkbox" id="glidersChance" name="glidersChance")
-                                        label(for="glidersChance") 🪂 Increase the chance of rare gliders 
+                                        label(for="glidersChance").w-80 🪂 Increase the chance of rare gliders 
                                             span (+10$) (optional)
                                     .d-flex.align-items-center.addon-item
                                         input(type="checkbox" id="pickaxes" name="pickaxes")
-                                        label(for="pickaxes") 🪓 Increase the chance of rare pickaxes 
+                                        label(for="pickaxes").w-80 🪓 Increase the chance of rare pickaxes 
                                             span (+10$) (optional)
                                     .d-flex.addon-item
                                         input(type="checkbox" id="emotes" name="emotes")
-                                        label(for="emotes") 💃 Increase the chance of exclusive emotes 
+                                        label(for="emotes").w-80 💃 Increase the chance of exclusive emotes 
                                             span (+10$) (optional)
                     .help.col-12.col-md-12.col-lg-6
                         .form-part.checkout-products
@@ -228,7 +228,7 @@ html(lang="en")
                                 p Subtotal
                                 p 999$
                             .checkout-products-scroll-list
-                                .d-flex.justify-content-between 
+                                .d-flex.justify-content-between
                                     span 🔥 Increase the chance of rare outfits
                                     span.checkout-product-price 15$
                                 .d-flex.justify-content-between 
@@ -249,20 +249,20 @@ html(lang="en")
                                 label 999$
                         .checkout-products.addons-list.check-out-payment-method.d-flex
                             div.w-100
-                                .row.flex-lg-nowrap
-                                    label.d-flex.justify-content-center.align-items-center.col-sm-12.col-md-12.col-lg-6
+                                .row.wrap
+                                    label.d-flex.justify-content-center.align-items-center.col-sm-6.col-md-6.col-lg-6
                                         input(type="radio" name="paymentMethod" id="webmoney").payment-method-btn
-                                        img(src="https://git.eagleinc.xyz/skin-zone/website/-/raw/master/docs/img/webmoney.png", alt="")
-                                    label.d-flex.justify-content-center.align-items-center.col-sm-12.col-md-12.col-lg-6
+                                        img(src="img/webmoney.png", alt="")
+                                    label.d-flex.justify-content-center.align-items-center.col-sm-6.col-md-6.col-lg-6
                                         input(type="radio" name="paymentMethod" id="coinpayments").payment-method-btn
                                         img(src="img/black-coin-payments.png", alt="")
-                                .row.flex-lg-nowrap
-                                    label.d-flex.justify-content-center.align-items-center.col-sm-12.col-md-12.col-lg-6
+                                .row.wrap
+                                    label.d-flex.justify-content-center.align-items-center.col-sm-6.col-md-6.col-lg-6
                                         input(type="radio" name="paymentMethod" id="visamastercard").payment-method-btn
-                                        img(src="https://git.eagleinc.xyz/skin-zone/website/-/raw/master/docs/img/visamastercard.png", alt="")
-                                    label.d-flex.justify-content-center.align-items-center.col-sm-12.col-md-12.col-lg-6
+                                        img(src="img/visamastercard.png", alt="")
+                                    label.d-flex.justify-content-center.align-items-center.col-sm-6.col-md-6.col-lg-6
                                         input(type="radio" name="paymentMethod" id="paypal").payment-method-btn
-                                        img(src="https://git.eagleinc.xyz/skin-zone/website/-/raw/master/docs/img/paypal.png", alt="")
+                                        img(src="img/paypal.png", alt="")
                         .d-flex.justify-content-center
                             a(href="#").button.submit-order Submit order
 

@@ -1401,7 +1401,7 @@ div.review strong {
 }
 
 .help .form-part label {
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 400;
   background: -webkit-gradient(linear, left top, right top, color-stop(20%, rgba(218, 80, 239, 0.85)), color-stop(80%, rgba(43, 146, 254, 0.85)));
   background: -o-linear-gradient(left, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%);
@@ -1743,6 +1743,10 @@ footer .pay-platforms {
   margin-bottom: 1rem;
 }
 
+.addons-list .w-80 {
+  width: 100%;
+}
+
 .addons-list input[type=checkbox],
 .addons-list input[type=radio] {
   -webkit-appearance: none;
@@ -1858,7 +1862,7 @@ span {
 }
 
 .checkout-products.check-out-payment-method {
-  width: 50%;
+  width: 100%;
   padding: 12px;
   margin: 0 auto;
   min-width: 250px;
@@ -1881,6 +1885,11 @@ span {
 
 .checkout-products.check-out-payment-method label img {
   max-width: 120px;
+}
+
+.checkout-products.check-out-payment-method .wrap {
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .submit-order {
@@ -2013,6 +2022,13 @@ span {
   }
 }
 
+@media screen and (min-width: 576px) {
+  .checkout-products.check-out-payment-method .wrap {
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+}
+
 @media screen and (min-width: 600px) {
   .marquee-lines .marquee-line:nth-child(even) span {
     font-size: 70px;
@@ -2111,6 +2127,18 @@ span {
   }
 }
 
+@media screen and (min-width: 990px) {
+  .addons-list .w-80 {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .checkout-products.check-out-payment-method {
+    width: 50%;
+  }
+}
+
 @media screen and (min-width: 1024px) {
   .checkout-products.check-out-payment-method {
     -webkit-box-pack: end;
@@ -2146,6 +2174,10 @@ span {
 }
 
 @media screen and (min-width: 1200px) {
+  .addons-list .w-80 {
+    width: 100%;
+  }
+
   .checkout-products.check-out-payment-method label img {
     max-width: 160px;
   }
