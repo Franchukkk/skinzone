@@ -20,26 +20,30 @@ document.addEventListener("scroll", () => {
             newOffset = parentWidth;
         }
 
-        line.style.transform = `translateX(${newOffset - 320}px)`; // Початковий зсув -300px
+        line.style.transform = `translateX(${newOffset - 320}px)`; // Початковий зсув
     });
 });
 
-const containerTop = document.querySelector(".reviews").offsetTop;
 
-console.log(containerTop);
-
-document.addEventListener("scroll", () => {
-    const lines = document.querySelectorAll("main .marquee-line");
+if (document.querySelector(".reviews")) {
+    const containerTop = document.querySelector(".reviews").offsetTop;
     
-    const scrollTop = (window.scrollY - containerTop);
-
-    lines.forEach((line, index) => {
-        if (index % 2 === 0) {
-            line.style.transform = `translateX(${scrollTop - 2000}px)`; // Початковий зсув -300px
-        } else {
-            line.style.transform = `translateX(-${scrollTop + 2000}px)`; // Початковий зсув -300px
-        }
-
-
+    console.log(containerTop);
+    
+    document.addEventListener("scroll", () => {
+        const lines = document.querySelectorAll("main .marquee-line");
+        
+        const scrollTop = (window.scrollY - containerTop);
+    
+        lines.forEach((line, index) => {
+            if (index % 2 === 0) {
+                line.style.transform = `translateX(${scrollTop - 2000}px)`; // Початковий зсув
+            } else {
+                line.style.transform = `translateX(-${scrollTop + 2000}px)`; // Початковий зсув
+            }
+    
+    
+        });
     });
-});
+
+}

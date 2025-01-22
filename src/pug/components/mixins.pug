@@ -104,31 +104,31 @@ mixin faq()
             .accordion-item
                 h2.accordion-header
                 button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#flush-collapseOne' aria-expanded='false' aria-controls='flush-collapseOne')
-                    | produkt warranty
+                    | 1. Product Warranty
                 #flush-collapseOne.accordion-collapse.collapse(data-bs-parent='#accordionFlushExample')
                     .accordion-body
-                        | Just bought the Ikonik account for 175 euro, and it's legit! I received around 220 skins, all just like they said. The whole process was super easy, and I'm really satisfied. Definitely recommend it to anyone looking for a good deal!
+                        | We provide a 14 day warranty. After purchase - do not change account's email to your own, otherwise the warranty will no longer be valid. If you experience any problems, we will replace your account immediately.
             .accordion-item
                 h2.accordion-header
                 button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#flush-collapseTwo' aria-expanded='false' aria-controls='flush-collapseTwo')
-                    | produkt warranty
+                    | 2.Delivery times
                 #flush-collapseTwo.accordion-collapse.collapse(data-bs-parent='#accordionFlushExample')
                     .accordion-body
-                        |  Just bought the Ikonik account for 175 euro, and it's legit! I received around 220 skins, all just like they said. The whole process was super easy, and I'm really satisfied. Definitely recommend it to anyone looking for a good deal!
+                        |  Immediately upon completion of your purchase, your account information will be available on the order page and will be instantly sent to your designated email address. With our 24/7 automated systems, you have instant access to your purchased product.
             .accordion-item
                 h2.accordion-header
                 button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#flush-collapseThree' aria-expanded='false' aria-controls='flush-collapseThree')
-                    | produkt warranty
+                    | 3.Will there be access to email?
                 #flush-collapseThree.accordion-collapse.collapse(data-bs-parent='#accordionFlushExample')
                     .accordion-body
-                        |  Just bought the Ikonik account for 175 euro, and it's legit! I received around 220 skins, all just like they said. The whole process was super easy, and I'm really satisfied. Definitely recommend it to anyone looking for a good deal!
+                        |  Yes, you will have full access to your account, including email and the account itself. You will have the ability to modify all account details, as well as connect consoles as you see fit.
             .accordion-item
                 h2.accordion-header
                 button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#flush-collapseFour' aria-expanded='false' aria-controls='flush-collapseFour')
-                    | produkt warranty
+                    | 4. Why should you be trusted?
                 #flush-collapseFour.accordion-collapse.collapse(data-bs-parent='#accordionFlushExample')
                     .accordion-body
-                        |  Just bought the Ikonik account for 175 euro, and it's legit! I received around 220 skins, all just like they said. The whole process was super easy, and I'm really satisfied. Definitely recommend it to anyone looking for a good deal!
+                        |  The security of our customers is our top priority. All payments, including card or cryptocurrency payments, are secured by Stripe and Coinpayments with 3-D Secure technology to ensure your data is 100% safe. In addition, our website is equipped with SSL security, creating a safe and secure environment for transactions and order pickup.
 mixin help()
     .help.wrapper-sm.animate-bottom#help
         h2.text-center.title.animate-bottom.hidden Help CEnter
@@ -153,10 +153,45 @@ mixin help()
             .form-part
                 p 
                     label(for="name") Your order number
-                input(type="text" id="name" name="userName" placeholder="Your order number...").name-input
-
+                input(type="text" id="name" name="userName" placeholder="Your order number...").name-input.track-input
+                
+                .w-100.track-container
+                    //- table.track-order-status.w-100.track-status
+                    //-     tr 
+                    //-         td PRODUCT NAME
+                    //-         td.availability.text-right SUPER FORTNITE ACCOUNT
+                    //-     tr 
+                    //-         td PRICE
+                    //-         td.availability.text-right 100$
+                    //-     tr
+                    //-         td STATUS
+                    //-         td.availability.text-right PENDING
+                    //- table.track-order-status.w-100.track-status
+                    //-     tr 
+                    //-         td PRODUCT NAME
+                    //-         td.availability.text-right SUPER FORTNITE ACCOUNT
+                    //-     tr 
+                    //-         td PRICE
+                    //-         td.availability.text-right 100$
+                    //-     tr
+                    //-         td STATUS
+                    //-         td.availability.text-right PENDING
+                    //- table.track-order-status.w-100.track-status
+                    //-     tr 
+                    //-         td PRODUCT NAME
+                    //-         td.availability.text-right SUPER FORTNITE ACCOUNT
+                    //-     tr 
+                    //-         td PRICE
+                    //-         td.availability.text-right 100$
+                    //-     tr
+                    //-         td STATUS
+                    //-         td.availability.text-right PENDING
+                    //- div
+                    //-     span.track-product-name.availability.mr-5 Product name
+                    //-     span.track-product-price.availability 100$
+                    //- span.track-product-price pending
             .d-flex.justify-content-center
-                button(type="submit").button SEND
+                button(type="submit").button.track-button TRACK
 
 mixin advantages()
     .advantages.d-flex.flex-wrap.animate-bottom.block-hidden
@@ -187,109 +222,109 @@ mixin basket()
             .cross
         .basket-main
             .basket-products 
-                form(action="").basket-product.d-flex.align-items-center
-                    .basket-image.relative
-                        .random
-                            .product-card.w-100
-                                .d-flex.justify-content-between.relative.w-100
-                                    div.w-100
-                                        .relative
-                                            img(src="img/random.webp", alt='product-card')
-                    .basket-description
-                        .row.d-flex.align-items-center
-                            .w-80
-                                strong Guaranteed skin: Pink Lama | Full Access
-                                b $110
-                            .w-20
-                                button(type="submit") 
-                                    img(src="img/basketIcon.png", alt="")
-                hr
-                form(action="").basket-product.d-flex.align-items-center
-                    .basket-image.relative
-                        .product-card.w-100
-                            .d-flex.justify-content-between.relative.w-100
-                                div.w-100
-                                    .relative
-                                        img(src="img/skinexample.webp", alt='product-card')
-                    .basket-description
-                        .row.d-flex.align-items-center
-                            .w-80
-                                strong Guaranteed skin: Pink Lama | Full Access
-                                b $110
-                            .w-20
-                                button(type="submit") 
-                                    img(src="img/basketIcon.png", alt="")
-                hr
-                form(action="").basket-product.d-flex.align-items-center
-                    .basket-image.relative
-                        .random
-                            .product-card.w-100
-                                .d-flex.justify-content-between.relative.w-100
-                                    div.w-100
-                                        .relative
-                                            img(src="img/random.webp", alt='product-card')
-                    .basket-description
-                        .row.d-flex.align-items-center
-                            .w-80
-                                strong Guaranteed skin: Pink Lama | Full Access
-                                b $110
-                            .w-20
-                                button(type="submit") 
-                                    img(src="img/basketIcon.png", alt="")
-                hr
-                form(action="").basket-product.d-flex.align-items-center
-                    .basket-image.relative
-                        .product-card.w-100
-                            .d-flex.justify-content-between.relative.w-100
-                                div.w-100
-                                    .relative
-                                        img(src="img/skinexample.webp", alt='product-card')
-                    .basket-description
-                        .row.d-flex.align-items-center
-                            .w-80
-                                strong Guaranteed skin: Pink Lama | Full Access
-                                b $110
-                            .w-20
-                                button(type="submit") 
-                                    img(src="img/basketIcon.png", alt="")
-                hr
-                form(action="").basket-product.d-flex.align-items-center
-                    .basket-image.relative
-                        .random
-                            .product-card.w-100
-                                .d-flex.justify-content-between.relative.w-100
-                                    div.w-100
-                                        .relative
-                                            img(src="img/random.webp", alt='product-card')
-                    .basket-description
-                        .row.d-flex.align-items-center
-                            .w-80
-                                strong Guaranteed skin: Pink Lama | Full Access
-                                b $110
-                            .w-20
-                                button(type="submit") 
-                                    img(src="img/basketIcon.png", alt="")
-                hr
-                form(action="").basket-product.d-flex.align-items-center
-                    .basket-image.relative
-                        .product-card.w-100
-                            .d-flex.justify-content-between.relative.w-100
-                                div.w-100
-                                    .relative
-                                        img(src="img/skinexample.webp", alt='product-card')
-                    .basket-description
-                        .row.d-flex.align-items-center
-                            .w-80
-                                strong Guaranteed skin: Pink Lama | Full Access
-                                b $110
-                            .w-20
-                                button(type="submit") 
-                                    img(src="img/basketIcon.png", alt="")
+                //- form(action="").basket-product.d-flex.align-items-center
+                //-     .basket-image.relative
+                //-         .random
+                //-             .product-card.w-100
+                //-                 .d-flex.justify-content-between.relative.w-100
+                //-                     div.w-100
+                //-                         .relative
+                //-                             img(src="img/random.webp", alt='product-card')
+                //-     .basket-description
+                //-         .row.d-flex.align-items-center
+                //-             .w-80
+                //-                 strong Guaranteed skin: Pink Lama | Full Access
+                //-                 b $110
+                //-             .w-20
+                //-                 button(type="submit") 
+                //-                     img(src="img/basketIcon.png", alt="")
+                //- hr
+                //- form(action="").basket-product.d-flex.align-items-center
+                //-     .basket-image.relative
+                //-         .product-card.w-100
+                //-             .d-flex.justify-content-between.relative.w-100
+                //-                 div.w-100
+                //-                     .relative
+                //-                         img(src="img/skinexample.webp", alt='product-card')
+                //-     .basket-description
+                //-         .row.d-flex.align-items-center
+                //-             .w-80
+                //-                 strong Guaranteed skin: Pink Lama | Full Access
+                //-                 b $110
+                //-             .w-20
+                //-                 button(type="submit") 
+                //-                     img(src="img/basketIcon.png", alt="")
+                //- hr
+                //- form(action="").basket-product.d-flex.align-items-center
+                //-     .basket-image.relative
+                //-         .random
+                //-             .product-card.w-100
+                //-                 .d-flex.justify-content-between.relative.w-100
+                //-                     div.w-100
+                //-                         .relative
+                //-                             img(src="img/random.webp", alt='product-card')
+                //-     .basket-description
+                //-         .row.d-flex.align-items-center
+                //-             .w-80
+                //-                 strong Guaranteed skin: Pink Lama | Full Access
+                //-                 b $110
+                //-             .w-20
+                //-                 button(type="submit") 
+                //-                     img(src="img/basketIcon.png", alt="")
+                //- hr
+                //- form(action="").basket-product.d-flex.align-items-center
+                //-     .basket-image.relative
+                //-         .product-card.w-100
+                //-             .d-flex.justify-content-between.relative.w-100
+                //-                 div.w-100
+                //-                     .relative
+                //-                         img(src="img/skinexample.webp", alt='product-card')
+                //-     .basket-description
+                //-         .row.d-flex.align-items-center
+                //-             .w-80
+                //-                 strong Guaranteed skin: Pink Lama | Full Access
+                //-                 b $110
+                //-             .w-20
+                //-                 button(type="submit") 
+                //-                     img(src="img/basketIcon.png", alt="")
+                //- hr
+                //- form(action="").basket-product.d-flex.align-items-center
+                //-     .basket-image.relative
+                //-         .random
+                //-             .product-card.w-100
+                //-                 .d-flex.justify-content-between.relative.w-100
+                //-                     div.w-100
+                //-                         .relative
+                //-                             img(src="img/random.webp", alt='product-card')
+                //-     .basket-description
+                //-         .row.d-flex.align-items-center
+                //-             .w-80
+                //-                 strong Guaranteed skin: Pink Lama | Full Access
+                //-                 b $110
+                //-             .w-20
+                //-                 button(type="submit") 
+                //-                     img(src="img/basketIcon.png", alt="")
+                //- hr
+                //- form(action="").basket-product.d-flex.align-items-center
+                //-     .basket-image.relative
+                //-         .product-card.w-100
+                //-             .d-flex.justify-content-between.relative.w-100
+                //-                 div.w-100
+                //-                     .relative
+                //-                         img(src="img/skinexample.webp", alt='product-card')
+                //-     .basket-description
+                //-         .row.d-flex.align-items-center
+                //-             .w-80
+                //-                 strong Guaranteed skin: Pink Lama | Full Access
+                //-                 b $110
+                //-             .w-20
+                //-                 button(type="submit") 
+                //-                     img(src="img/basketIcon.png", alt="")
 
         hr.opacity-1
         form(action="").basket-footer.text-center
             p Total: 
-                span $120
+                span $0
 
             button(type="submit").button Back to shopping
 
@@ -298,11 +333,9 @@ mixin basket()
 mixin footer()
     footer
         .wrapper.d-flex.justify-content-between.align-items-center.footer-content
-            .payment-systems
-                img(src="img/coinpayments.png", alt="")
-                img(src="img/webmoney.png", alt="")
             p Fortnite is a registered trademark of Epic Games, Inc. ©
             .payment-systems
+                img(src="img/coinpayments.png", alt="")
                 img(src="img/paypal.png", alt="")
                 img(src="img/visamastercard.png", alt="")
         .pay-platforms.swiper.payment-slider
@@ -314,13 +347,9 @@ mixin footer()
                 .swiper-slide
                     img(src="img/coinpayments.png", alt="")
                 .swiper-slide
-                    img(src="img/webmoney.png", alt="")
-                .swiper-slide
                     img(src="img/visamastercard.png", alt="")
                 .swiper-slide
                     img(src="img/paypal.png", alt="")
                 .swiper-slide
                     img(src="img/coinpayments.png", alt="")
-                .swiper-slide
-                    img(src="img/webmoney.png", alt="")
 

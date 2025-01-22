@@ -1512,6 +1512,24 @@ footer p {
   font-weight: 400;
 }
 
+.track-order-status {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.track-status {
+  margin-bottom: 2rem;
+}
+
+.track-container p {
+  color: #98F89B;
+}
+
 span.price {
   font-size: 3rem;
   font-weight: 400;
@@ -1894,6 +1912,10 @@ span {
 
 .submit-order {
   font-size: 2rem !important;
+}
+
+.mr-5 {
+  margin-right: 1rem;
 }
 
 @media screen and (min-width: 370px) {

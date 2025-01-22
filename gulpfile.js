@@ -20,7 +20,7 @@ export const browserSyncFunc = () => {
             baseDir: "docs"
         },
         open: true,
-        browser: "safari" // тут потрібно ввести назву свого браузера так
+        browser: "safari" // тут потрібно ввести назву свого браузера
         //port: 8080
     })
 }
@@ -67,7 +67,7 @@ export const js = () => {
     .src([
         "src/js/**/*.js"
     ])
-    // Видаляємо uglify, щоб не мінімізувати JavaScript
+
     .pipe(concat("scripts.js"))
     .pipe(gulp.dest("docs/js"))
     .pipe(browserSync.reload({

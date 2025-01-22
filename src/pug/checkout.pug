@@ -15,6 +15,19 @@ html(lang="en")
     body
         include components/mixins
         +basket()
+        .snow-container
+        .burger-open
+            .close-burger
+            ul 
+                li 
+                    a(href='index.html#products' data-section="products") Products
+                li 
+                    a(href='index.html#reviews' data-section="reviews") Reviews
+                li 
+                    a(href='index.html#faq' data-section="faq") FAQ
+                li 
+                    a(href='index.html#help' data-section="help") HELP CEnter    
+            
         header
             .wrapper
                 +header-line()
@@ -199,70 +212,68 @@ html(lang="en")
                                 label Your order 
                                 label Subtotal
                             .checkout-products-scroll-list
-                                .d-flex.justify-content-between 
-                                    span Product name
-                                    span.checkout-product-price 999$
-                                .d-flex.justify-content-between 
-                                    span Product name
-                                    span.checkout-product-price 999$
-                                .d-flex.justify-content-between 
-                                    span Product name
-                                    span.checkout-product-price 999$
-                                .d-flex.justify-content-between 
-                                    span Product name
-                                    span.checkout-product-price 999$
-                                .d-flex.justify-content-between 
-                                    span Product name
-                                    span.checkout-product-price 999$
-                                .d-flex.justify-content-between 
-                                    span Product name
-                                    span.checkout-product-price 999$
-                                .d-flex.justify-content-between 
-                                    span Product name
-                                    span.checkout-product-price 999$
-                                .d-flex.justify-content-between 
-                                    span Product name
-                                    span.checkout-product-price 999$
+                                //- .d-flex.justify-content-between 
+                                //-     span Product name
+                                //-     span.checkout-product-price 999$
+                                //- .d-flex.justify-content-between 
+                                //-     span Product name
+                                //-     span.checkout-product-price 999$
+                                //- .d-flex.justify-content-between 
+                                //-     span Product name
+                                //-     span.checkout-product-price 999$
+                                //- .d-flex.justify-content-between 
+                                //-     span Product name
+                                //-     span.checkout-product-price 999$
+                                //- .d-flex.justify-content-between 
+                                //-     span Product name
+                                //-     span.checkout-product-price 999$
+                                //- .d-flex.justify-content-between 
+                                //-     span Product name
+                                //-     span.checkout-product-price 999$
+                                //- .d-flex.justify-content-between 
+                                //-     span Product name
+                                //-     span.checkout-product-price 999$
+                                //- .d-flex.justify-content-between 
+                                //-     span Product name
+                                //-     span.checkout-product-price 999$
                             br
                             .d-flex.justify-content-between 
                                 p Subtotal
-                                p 999$
+                                p 0$
                             .checkout-products-scroll-list
-                                .d-flex.justify-content-between
-                                    span 🔥 Increase the chance of rare outfits
-                                    span.checkout-product-price 15$
-                                .d-flex.justify-content-between 
-                                    span 🔥 Increase the chance of rare outfits
-                                    span.checkout-product-price 15$
-                                .d-flex.justify-content-between 
-                                    span 🔥 Increase the chance of rare outfits
-                                    span.checkout-product-price 15$
-                                .d-flex.justify-content-between 
-                                    span 🔥 Increase the chance of rare outfits
-                                    span.checkout-product-price 15$
-                                .d-flex.justify-content-between 
-                                    span 🔥 Increase the chance of rare outfits
-                                    span.checkout-product-price 15$
+                                //- .d-flex.justify-content-between
+                                //-     span 🔥 Increase the chance of rare outfits
+                                //-     span.checkout-product-price 15$
+                                //- .d-flex.justify-content-between 
+                                //-     span 🔥 Increase the chance of rare outfits
+                                //-     span.checkout-product-price 15$
+                                //- .d-flex.justify-content-between 
+                                //-     span 🔥 Increase the chance of rare outfits
+                                //-     span.checkout-product-price 15$
+                                //- .d-flex.justify-content-between 
+                                //-     span 🔥 Increase the chance of rare outfits
+                                //-     span.checkout-product-price 15$
+                                //- .d-flex.justify-content-between 
+                                //-     span 🔥 Increase the chance of rare outfits
+                                //-     span.checkout-product-price 15$
                             br
                             .d-flex.justify-content-between 
                                 label Total
-                                label 999$
+                                label 0$
                         .checkout-products.addons-list.check-out-payment-method.d-flex
                             div.w-100
                                 .row.wrap
                                     label.d-flex.justify-content-center.align-items-center.col-sm-6.col-md-6.col-lg-6
-                                        input(type="radio" name="paymentMethod" id="webmoney").payment-method-btn
-                                        img(src="img/webmoney.png", alt="")
+                                        input(type="radio" name="paymentMethod" id="paypal" data-value="paypal" onchange="checkPaymentMethod()").payment-method-btn
+                                        img(src="img/paypal.png", alt="")
                                     label.d-flex.justify-content-center.align-items-center.col-sm-6.col-md-6.col-lg-6
-                                        input(type="radio" name="paymentMethod" id="coinpayments").payment-method-btn
+                                        input(type="radio" name="paymentMethod" id="coinpayments" data-value="coinpayments" onchange="checkPaymentMethod()").payment-method-btn
                                         img(src="img/black-coin-payments.png", alt="")
                                 .row.wrap
                                     label.d-flex.justify-content-center.align-items-center.col-sm-6.col-md-6.col-lg-6
-                                        input(type="radio" name="paymentMethod" id="visamastercard").payment-method-btn
+                                        input(type="radio" name="paymentMethod" id="visamastercard" data-value="visamastercard" onchange="checkPaymentMethod()").payment-method-btn
                                         img(src="img/visamastercard.png", alt="")
-                                    label.d-flex.justify-content-center.align-items-center.col-sm-6.col-md-6.col-lg-6
-                                        input(type="radio" name="paymentMethod" id="paypal").payment-method-btn
-                                        img(src="img/paypal.png", alt="")
+
                         .d-flex.justify-content-center
                             a(href="#").button.submit-order Submit order
 

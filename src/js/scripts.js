@@ -9,57 +9,63 @@ const observer = new IntersectionObserver((entries) => {
 const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((el) => observer.observe(el));
 
-const discountsSlider = new Swiper('.discounts-slider', {
-    loop: true,
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true
-    },
-    navigation: {
-        nextEl: '.products-button-next',
-        prevEl: '.products-button-prev',
-    },
-    breakpoints: {
-        320: {
-            slidesPerView: 1,
-            spaceBetween: 20
+if (document.querySelector('.discounts-slider')) {
+    const discountsSlider = new Swiper('.discounts-slider', {
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true
         },
-        768: {
-            slidesPerView: 2,
-            spaceBetween: 30
+        navigation: {
+            nextEl: '.products-button-next',
+            prevEl: '.products-button-prev',
         },
-        1024: {
-            slidesPerView: 3,
-            spaceBetween: 30
+        breakpoints: {
+            320: {
+                slidesPerView: 1,
+                spaceBetween: 20
+            },
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 30
+            },
+            1024: {
+                slidesPerView: 3,
+                spaceBetween: 30
+            }
         }
-    }
-});
+    });
 
-const reviewsSlider = new Swiper('.reviews-slider', {
-    loop: true,
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true
-    },
-    navigation: {
-        nextEl: '.next-rev',
-        prevEl: '.prev-rev',
-    },
-    breakpoints: {
-        320: {
-            slidesPerView: 1,
-            spaceBetween: 20
+}
+
+if (document.querySelector('.reviews-slider')) {
+    const reviewsSlider = new Swiper('.reviews-slider', {
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true
         },
-        768: {
-            slidesPerView: 1,
-            spaceBetween: 30
+        navigation: {
+            nextEl: '.next-rev',
+            prevEl: '.prev-rev',
         },
-        1024: {
-            slidesPerView: 1,
-            spaceBetween: 30
+        breakpoints: {
+            320: {
+                slidesPerView: 1,
+                spaceBetween: 20
+            },
+            768: {
+                slidesPerView: 1,
+                spaceBetween: 30
+            },
+            1024: {
+                slidesPerView: 1,
+                spaceBetween: 30
+            }
         }
-    }
-});
+    });
+
+}
 
 
 
@@ -87,6 +93,7 @@ const burgerOpen = document.querySelector('.burger-open');
 
 document.querySelector('.basket-btn').addEventListener('click', (e) => {
     e.preventDefault();
+    getCart(localStorage.getItem('userId'))
     basket.classList.toggle('active');
 });
 
@@ -158,6 +165,21 @@ document.addEventListener("DOMContentLoaded", function() {
     
     if (basketMain && basketHeader && basketFooter) {
         basketMain.style.height = window.innerHeight - (basketHeader.scrollHeight + basketFooter.scrollHeight) - 120 + "px"
+    }
+})
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    if (document.querySelector(".track-button")) {
+        const trackButton = document.querySelector(".track-button")
+        trackButton.addEventListener("click", function(e) {
+            e.preventDefault()
+            getOrderInfo(document.querySelector(".track-input").value)
+        })
+    }
+
+    if (document.querySelector(".checkout-products-scroll-list")) {
+        transferCartDataToCheckout(localStorage.getItem('userId'))
     }
 })
 
