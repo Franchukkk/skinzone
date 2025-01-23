@@ -212,8 +212,10 @@ function generateProductCards(data) {
 
   let totalSum = 0;
 
+
   const productCardsHtml = data.data.map(product => {
-      totalSum += product.price;
+      console.log(product.product.title);
+      totalSum += product.product.price;
       return `
           <form action="" class="basket-product d-flex align-items-center">
               <div class="basket-image relative">
@@ -221,17 +223,17 @@ function generateProductCards(data) {
                       <div class="d-flex justify-content-between relative w-100">
                           <div class="w-100">
                               <div class="relative">
-                                  <img src="${product.img}" alt="product-card">
+                                  <img src="${product.product.img}" alt="product-card">
                               </div>
                           </div>
                       </div>
                   </div>
               </div>
-              <div class="basket-description">
+              <div class="basket-description w-100">
                   <div class="row d-flex align-items-center">
                       <div class="w-80">
-                          <strong>${product.title}</strong>
-                          <b>$${product.price}</b>
+                          <strong>${product.product.title}</strong>
+                          <b>$${product.product.price}</b>
                       </div>
                       <div class="w-20">
                           <button type="submit">
@@ -353,7 +355,7 @@ function updateProducts(arr, containerToUpdate) {
         <div class="product-card col-sm-12 col-md-6 col-lg-4 d-flex justify-content-center">
             <div class="product-card-content d-flex justify-content-center relative">
                 <div>
-                    <a href="product-card.html" class="relative" data-value="${element.ID}" onclick="openCardPage">
+                    <a href="product-card.html" class="relative" data-value="${element.ID}" onclick="openCardPage()">
                         <img src="${element.image}" alt="product-card">
                     </a>
                     <hr>
@@ -393,11 +395,21 @@ function fetchProduct(productID) {
       .catch(error => console.error('Error:', error));
   }
 
-function openCardPage () {
-  event.preventDefault()
-  fetchProduct(event.target.getAttribute('data-value'))
+  function openCardPage() {
+    event.preventDefault();
   
-}
+    // Знаходимо найближче батьківське гіперпосилання
+    const closestLink = event.target.closest('a');
+  
+    // Перевіряємо, чи було знайдено гіперпосилання
+    if (closestLink) {
+      const dataValue = closestLink.getAttribute('data-value');
+      console.log(dataValue);
+      fetchProduct(dataValue);
+    } else {
+      console.error('Не знайдено батьківського гіперпосилання');
+    }
+  }
 
 // додавання продукту в корзину
 function addProductToCart(token, productID) {
@@ -435,7 +447,6 @@ function getOrders(token, status) {
 }
   
 function buyButton () {
-  alert(1)
   event.preventDefault();
   console.log(localStorage.getItem('userId'), event.target.getAttribute('data-value'));
   addProductToCart(localStorage.getItem('userId'), event.target.getAttribute('data-value'))  

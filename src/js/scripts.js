@@ -97,6 +97,11 @@ document.querySelector('.basket-btn').addEventListener('click', (e) => {
     basket.classList.toggle('active');
 });
 
+document.querySelector(".cart-close-btn").addEventListener("click", function(e) {
+    e.preventDefault();
+    basket.classList.toggle('active');
+});
+
 document.querySelector('.close-basket').addEventListener('click', (e) => {
     e.preventDefault();
     basket.classList.remove('active');
