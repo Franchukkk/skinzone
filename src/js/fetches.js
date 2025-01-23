@@ -284,11 +284,11 @@ function renderCartItems(cart) {
       itemWrapper.classList.add("d-flex", "justify-content-between");
 
       const titleSpan = document.createElement("span");
-      titleSpan.textContent = item.title;
+      titleSpan.textContent = item.product.title;
 
       const priceSpan = document.createElement("span");
       priceSpan.classList.add("checkout-product-price");
-      priceSpan.textContent = `${item.price}$`;
+      priceSpan.textContent = `${item.product.price}$`;
 
       itemWrapper.appendChild(titleSpan);
       itemWrapper.appendChild(priceSpan);
