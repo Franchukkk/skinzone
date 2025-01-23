@@ -43,12 +43,11 @@ function getOrders(token, status) {
 }
 
 // створення замовлення через Stripe
-function makeOrderStripe(token) {
-    alert(11);
+function makeOrderStripe(token, email, phone, name) {
     fetch('/api/make-order-stripe', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ token })
+      body: JSON.stringify({ token, email, phone, name })
     })
       .then(res => res.json())
       .then(data => {
@@ -264,39 +263,73 @@ function transferCartDataToCheckout (token) {
     .catch(error => console.error('Error:', error));
 }
 
+// function renderCartItems(cart) {
+//   if (cart.status !== "success" || !Array.isArray(cart.data)) {
+//       console.error("Invalid cart object");
+//       return;
+//   }
+
+//   const container = document.querySelector(".checkout-products-scroll-list");
+
+//   if (!container) {
+//       console.error("Container .checkout-products-scroll-list not found");
+//       return;
+//   }
+
+//   container.innerHTML = "";
+
+//   cart.data.forEach(item => {
+//       const itemWrapper = document.createElement("div");
+//       itemWrapper.classList.add("d-flex", "justify-content-between");
+
+//       const titleSpan = document.createElement("span");
+//       titleSpan.textContent = item.product.title;
+
+//       const priceSpan = document.createElement("span");
+//       priceSpan.classList.add("checkout-product-price");
+//       priceSpan.textContent = `${item.product.price}$`;
+
+//       itemWrapper.appendChild(titleSpan);
+//       itemWrapper.appendChild(priceSpan);
+
+//       container.appendChild(itemWrapper);
+//   });
+// }
+
 function renderCartItems(cart) {
   if (cart.status !== "success" || !Array.isArray(cart.data)) {
-      console.error("Invalid cart object");
-      return;
+    console.error("Invalid cart object");
+    return;
   }
-
   const container = document.querySelector(".checkout-products-scroll-list");
-
   if (!container) {
-      console.error("Container .checkout-products-scroll-list not found");
-      return;
+    console.error("Container .checkout-products-scroll-list not found");
+    return;
   }
-
   container.innerHTML = "";
-
+  let total_checkout_price = 0;
   cart.data.forEach(item => {
-      const itemWrapper = document.createElement("div");
-      itemWrapper.classList.add("d-flex", "justify-content-between");
+    const itemWrapper = document.createElement("div");
+    itemWrapper.classList.add("d-flex", "justify-content-between");
+    const titleSpan = document.createElement("span");
+    titleSpan.textContent = item.product.title;
+    const priceSpan = document.createElement("span");
+    priceSpan.classList.add("checkout-product-price");
+    priceSpan.textContent = `${item.product.price}$`;
+    itemWrapper.appendChild(titleSpan);
+    itemWrapper.appendChild(priceSpan);
 
-      const titleSpan = document.createElement("span");
-      titleSpan.textContent = item.product.title;
-
-      const priceSpan = document.createElement("span");
-      priceSpan.classList.add("checkout-product-price");
-      priceSpan.textContent = `${item.product.price}$`;
-
-      itemWrapper.appendChild(titleSpan);
-      itemWrapper.appendChild(priceSpan);
-
-      container.appendChild(itemWrapper);
+    total_checkout_price += item.product.price;
+    container.appendChild(itemWrapper);
   });
-}
 
+  const totalPriceElement = document.querySelector(".total-checkout-price");
+  if (totalPriceElement) {
+    totalPriceElement.textContent = `$${total_checkout_price}`;
+  } else {
+    console.error(".total-checkout-price element not found");
+  }
+}
 
 
 // // Приклад використання
@@ -343,42 +376,85 @@ function fetchProducts(containerToUpdate = false) {
       })
       .catch(error => console.error('Error:', error));
   }
-  
-// Оновлення списку продуктів на фронті
+  // Оновлення списку продуктів на фронті
 function updateProducts(arr, containerToUpdate) {
-    const container = document.querySelector(containerToUpdate);
-    console.log(container);
-    container.innerHTML = "";
+  const container = document.querySelector(containerToUpdate);
+  console.log(container);
+  container.innerHTML = "";
 
-    // Функція для створення HTML-карточки продукту
-    const createProductCard = (element) => `
-        <div class="product-card col-sm-12 col-md-6 col-lg-4 d-flex justify-content-center">
-            <div class="product-card-content d-flex justify-content-center relative">
-                <div>
-                    <a href="product-card.html" class="relative" data-value="${element.ID}" onclick="openCardPage()">
-                        <img src="${element.image}" alt="product-card">
-                    </a>
-                    <hr>
-                    <form action="" class="product-card__info">
-                        <h3>${element.title}</h3>
-                        <p>${element.price}</p>
-                        <button onclick="buyButton()" data-value="${element.ID}">Buy</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    `;
+  // Функція для створення HTML-карточки продукту
+  const createProductCard = (element) => `
+      <div class="product-card col-sm-12 col-md-6 col-lg-4 d-flex justify-content-center">
+          <div class="product-card-content d-flex justify-content-center relative">
+              <div>
+                  <a href="product-card.html" class="relative" data-value="${element.ID}" onclick="openCardPage()">
+                      <img src="${element.image}" alt="product-card">
+                  </a>
+                  <hr>
+                  <form action="" class="product-card__info">
+                      <h3>${element.title}</h3>
+                      <p>${element.price}$</p>
+                      <button onclick="buyButton()" data-value="${element.ID}">Buy</button>
+                  </form>
+              </div>
+          </div>
+      </div>
+  `;
 
-    arr.forEach((element, index) => {
-        if (
-            (containerToUpdate === "#productsSwiper" && index < 12) || // Перші 12 товарів
-            (containerToUpdate === "#random" && element.category === "random") ||
-            (containerToUpdate === "#guaranted" && element.category === "guaranted")
-        ) {
-            container.innerHTML += createProductCard(element);
-        }
-    });
+  // Функція для обгортання картки в .swiper-slide (для containerToUpdate === "#productsSwiper")
+  const wrapInSwiperSlide = (html) => `
+      <div class="swiper-slide">
+          ${html}
+      </div>
+  `;
+
+  arr.forEach((element, index) => {
+      if (
+          (containerToUpdate === "#productsSwiper" && index < 12) || // Перші 12 товарів
+          (containerToUpdate === "#random" && element.category === "random") ||
+          (containerToUpdate === "#guaranted" && element.category === "guaranted")
+      ) {
+          let productHTML = createProductCard(element);
+
+          // Додаємо обгортку для .swiper-slide, якщо контейнер "#productsSwiper"
+          if (containerToUpdate === "#productsSwiper") {
+              productHTML = wrapInSwiperSlide(productHTML);
+
+              if (document.querySelector('.discounts-slider')) {
+                const discountsSlider = new Swiper('.discounts-slider', {
+                    loop: true,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true
+                    },
+                    navigation: {
+                        nextEl: '.products-button-next',
+                        prevEl: '.products-button-prev',
+                    },
+                    breakpoints: {
+                        320: {
+                            slidesPerView: 1,
+                            spaceBetween: 20
+                        },
+                        768: {
+                            slidesPerView: 2,
+                            spaceBetween: 30
+                        },
+                        1024: {
+                            slidesPerView: 3,
+                            spaceBetween: 30
+                        }
+                    }
+                });
+
+              }
+          }
+
+          container.innerHTML += productHTML;
+      }
+  });
 }
+
 
 
 // отримання детальної інформації про продукт

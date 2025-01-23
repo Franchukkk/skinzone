@@ -9,34 +9,34 @@ const observer = new IntersectionObserver((entries) => {
 const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((el) => observer.observe(el));
 
-if (document.querySelector('.discounts-slider')) {
-    const discountsSlider = new Swiper('.discounts-slider', {
-        loop: true,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true
-        },
-        navigation: {
-            nextEl: '.products-button-next',
-            prevEl: '.products-button-prev',
-        },
-        breakpoints: {
-            320: {
-                slidesPerView: 1,
-                spaceBetween: 20
-            },
-            768: {
-                slidesPerView: 2,
-                spaceBetween: 30
-            },
-            1024: {
-                slidesPerView: 3,
-                spaceBetween: 30
-            }
-        }
-    });
+// if (document.querySelector('.discounts-slider')) {
+//     const discountsSlider = new Swiper('.discounts-slider', {
+//         loop: true,
+//         pagination: {
+//             el: '.swiper-pagination',
+//             clickable: true
+//         },
+//         navigation: {
+//             nextEl: '.products-button-next',
+//             prevEl: '.products-button-prev',
+//         },
+//         breakpoints: {
+//             320: {
+//                 slidesPerView: 1,
+//                 spaceBetween: 20
+//             },
+//             768: {
+//                 slidesPerView: 2,
+//                 spaceBetween: 30
+//             },
+//             1024: {
+//                 slidesPerView: 3,
+//                 spaceBetween: 30
+//             }
+//         }
+//     });
 
-}
+// }
 
 if (document.querySelector('.reviews-slider')) {
     const reviewsSlider = new Swiper('.reviews-slider', {
@@ -100,6 +100,7 @@ document.querySelector('.basket-btn').addEventListener('click', (e) => {
 document.querySelector(".cart-close-btn").addEventListener("click", function(e) {
     e.preventDefault();
     basket.classList.toggle('active');
+    window.location.href = "index.html";
 });
 
 document.querySelector('.close-basket').addEventListener('click', (e) => {
