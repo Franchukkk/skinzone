@@ -189,3 +189,17 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 })
 
+
+
+if (document.querySelector("#promo")) {
+    let promo = document.querySelector("#promo")
+
+    promo.addEventListener("input", function() {
+        console.log(1);
+        let promoCode = document.querySelector("#promo").value
+        applyPromoCode(promoCode)
+    })
+}
+
+
+

@@ -477,24 +477,47 @@ function renderCartItems(cart) {
 
 
 // отримання списку продуктів
-function fetchProducts(containerToUpdate = false) {
-    fetch('/api/fetch-products', {
-      method: 'GET'
-    })
-      .then(res => res.json())
-      .then(data => {
-        if (data.status === 'success') {
-          const products = data.data
-          console.log('Products array:', products)
-          if (containerToUpdate != false) {
-              updateProducts(products, containerToUpdate)
-          }
-        } else {
-          console.error('Error fetching products:', data.data);
+// function fetchProducts(containerToUpdate = false) {
+//     fetch('/api/fetch-products', {
+//       method: 'GET'
+//     })
+//       .then(res => res.json())
+//       .then(data => {
+//         if (data.status === 'success') {
+//           const products = data.data
+//           console.log('Products array:', products)
+//           if (containerToUpdate != false) {
+//               updateProducts(products, containerToUpdate)
+//           }
+//         } else {
+//           console.error('Error fetching products:', data.data);
+//         }
+//       })
+//       .catch(error => console.error('Error:', error));
+//   }
+
+function fetchProducts(containerToUpdate = false, addon = false) {
+  // додати параметр до URL, якщо addon = true
+  const url = addon ? '/api/fetch-products?addon=true' : '/api/fetch-products?addon=false';
+
+  fetch(url, {
+    method: 'GET'
+  })
+    .then(res => res.json())
+    .then(data => {
+      if (data.status === 'success') {
+        const products = data.data;
+        console.log('Products array:', products);
+        if (containerToUpdate !== false) {
+          updateProducts(products, containerToUpdate);
         }
-      })
-      .catch(error => console.error('Error:', error));
-  }
+      } else {
+        console.error('Error fetching products:', data.data);
+      }
+    })
+    .catch(error => console.error('Error:', error));
+}
+
   // Оновлення списку продуктів на фронті
 function updateProducts(arr, containerToUpdate) {
   const container = document.querySelector(containerToUpdate);
@@ -675,7 +698,59 @@ function parseProductData() {
   }
 }
 
+async function applyPromoCode(promocode) {
+  try {
+    const response = await fetch(`api/check-promo-code?code=${promocode}`);
+    if (!response.ok) {
+      throw new Error(`HTTP Error: ${response.status}`);
+    }
 
+    const result = await response.json();
+    if (result.status === "success") {
+      console.log("Промокод успішно застосовано:");
+      console.log(`ID: ${result.data.ID}`);
+      console.log(`Назва: ${result.data.title}`);
+      console.log(`Код: ${result.data.code}`);
+      console.log(`Час створення: ${new Date(result.data.timestamp)}`);
+      console.log(`Множник: ${result.data.multiplier}`);
+    } else {
+      console.error("Промокод не дійсний або виникла помилка.");
+    }
+  } catch (error) {
+    console.error("Помилка при виконанні запиту:", error.message);
+  }
+}
+
+
+// applyPromoCode("dfsdsf");
+
+
+function fetchSearchProducts(query, category) {
+  const url = `/api/search-product?query=${encodeURIComponent(query)}&category=guaranted`;
+
+  fetch(url, {
+    method: 'GET',
+  })
+    .then(res => res.json())
+    .then(data => {
+      const products = data.data;
+      console.log('Searched products array:', products);
+      updateProducts(products, "#guaranted");
+    })
+    .catch(error => console.error('Error:', error));
+}
+
+document.querySelector('.search-btn').addEventListener('click', function(event) {
+  event.preventDefault();
+
+  const query = document.querySelector('input[type="search"]').value.trim();
+
+  if (query) {
+    fetchSearchProducts(query, 'skins');
+  } else {
+    console.log('Please enter a search term.');
+  }
+});
 if (!localStorage.getItem('userId')) {
     const userId = crypto.randomUUID()
     localStorage.setItem('userId', userId);
@@ -933,4 +1008,18 @@ document.addEventListener("DOMContentLoaded", function() {
         transferCartDataToCheckout(localStorage.getItem('userId'))
     }
 })
+
+
+
+if (document.querySelector("#promo")) {
+    let promo = document.querySelector("#promo")
+
+    promo.addEventListener("input", function() {
+        console.log(1);
+        let promoCode = document.querySelector("#promo").value
+        applyPromoCode(promoCode)
+    })
+}
+
+
 
