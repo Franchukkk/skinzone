@@ -174,18 +174,25 @@ function generateOrderTrackingHtml(orderData) {
 
 // отримання корзини користувача
 function getCart(token) {
-    fetch('/api/get-cart', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ token })
-    })
-      .then(res => res.json())
-      .then(data => {
+  fetch('/api/get-cart', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ token })
+  })
+    .then(res => res.json())
+    .then(data => {
+      if (data.data[0] == undefined) {
+        console.log('Cart is empty');
+        document.querySelector(".submit-order").style = "pointer-events: none; opacity: 0.7;"
+      } else {
         console.log('Cart:', data)
         generateProductCards(data)
-      })
-      .catch(error => console.error('Error:', error));
-  }
+      }
+    })
+    .catch(error => console.error('Error:', error));
+}
+
+getCart(localStorage.getItem('userId'))
 
 // Функція для генерації HTML чекаутвої сторінки
 function generateProductCards(data) {
@@ -525,7 +532,8 @@ function getOrders(token, status) {
 function buyButton () {
   event.preventDefault();
   console.log(localStorage.getItem('userId'), event.target.getAttribute('data-value'));
-  addProductToCart(localStorage.getItem('userId'), event.target.getAttribute('data-value'))  
+  addProductToCart(localStorage.getItem('userId'), event.target.getAttribute('data-value'))
+  setTimeout(getCart(localStorage.getItem('userId')), 100)
 }
 
 function parseProductData() {
