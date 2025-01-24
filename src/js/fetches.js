@@ -303,33 +303,88 @@ function transferCartDataToCheckout (token) {
 //   });
 // }
 
+// function renderCartItems(cart) {
+//   if (cart.status !== "success" || !Array.isArray(cart.data)) {
+//     console.error("Invalid cart object");
+//     return;
+//   }
+//   const container = document.querySelector(".checkout-products-scroll-list");
+//   if (!container) {
+//     console.error("Container .checkout-products-scroll-list not found");
+//     return;
+//   }
+//   container.innerHTML = "";
+//   let total_checkout_price = 0;
+//   cart.data.forEach(item => {
+//     const itemWrapper = document.createElement("div");
+//     itemWrapper.classList.add("d-flex", "justify-content-between");
+//     const titleSpan = document.createElement("span");
+//     titleSpan.textContent = item.product.title;
+//     const priceSpan = document.createElement("span");
+//     priceSpan.classList.add("checkout-product-price");
+//     priceSpan.textContent = `${item.product.price}$`;
+//     itemWrapper.appendChild(titleSpan);
+//     itemWrapper.appendChild(priceSpan);
+
+//     total_checkout_price += item.product.price;
+//     container.appendChild(itemWrapper);
+//   });
+
+//   const totalPriceElement = document.querySelector(".total-checkout-price");
+//   if (totalPriceElement) {
+//     totalPriceElement.textContent = `$${total_checkout_price}`;
+//   } else {
+//     console.error(".total-checkout-price element not found");
+//   }
+// }
+
 function renderCartItems(cart) {
   if (cart.status !== "success" || !Array.isArray(cart.data)) {
     console.error("Invalid cart object");
     return;
   }
-  const container = document.querySelector(".checkout-products-scroll-list");
-  if (!container) {
-    console.error("Container .checkout-products-scroll-list not found");
+
+  // Отримуємо контейнер для товарів
+  const listContainer = document.querySelector(".checkout-products-scroll-list");
+  const addonsContainer = document.querySelector(".checkout-products-scroll-addons");
+
+  if (!listContainer || !addonsContainer) {
+    console.error("One or both containers not found");
     return;
   }
-  container.innerHTML = "";
+
+  // Очищаємо контейнери
+  listContainer.innerHTML = "";
+  addonsContainer.innerHTML = "";
+
   let total_checkout_price = 0;
+
   cart.data.forEach(item => {
     const itemWrapper = document.createElement("div");
     itemWrapper.classList.add("d-flex", "justify-content-between");
+
     const titleSpan = document.createElement("span");
     titleSpan.textContent = item.product.title;
+
     const priceSpan = document.createElement("span");
     priceSpan.classList.add("checkout-product-price");
     priceSpan.textContent = `${item.product.price}$`;
+
     itemWrapper.appendChild(titleSpan);
     itemWrapper.appendChild(priceSpan);
 
+    // Збільшуємо загальну вартість
     total_checkout_price += item.product.price;
-    container.appendChild(itemWrapper);
+
+    // Перевірка категорії і додавання в відповідний контейнер
+    if (item.product.category === "addon") {
+      addonsContainer.appendChild(itemWrapper); // Додаємо в контейнер addons
+    } else {
+      listContainer.appendChild(itemWrapper); // Додаємо в стандартний контейнер
+    }
   });
 
+  // Оновлюємо загальну вартість
   const totalPriceElement = document.querySelector(".total-checkout-price");
   if (totalPriceElement) {
     totalPriceElement.textContent = `$${total_checkout_price}`;
@@ -337,6 +392,7 @@ function renderCartItems(cart) {
     console.error(".total-checkout-price element not found");
   }
 }
+
 
 
 // // Приклад використання
@@ -398,13 +454,35 @@ function fetchProducts(containerToUpdate = false, addon = false) {
         const products = data.data;
         console.log('Products array:', products);
         if (containerToUpdate !== false) {
-          updateProducts(products, containerToUpdate);
+          if (containerToUpdate == "addons") {
+            updateAddons(products);
+          } else {
+            updateProducts(products, containerToUpdate);
+
+          }
         }
       } else {
         console.error('Error fetching products:', data.data);
       }
     })
     .catch(error => console.error('Error:', error));
+}
+
+
+// оновлення списку аддонів на сторінці чекаута
+function updateAddons(arr) {
+  let container = document.querySelector(".addons-list");
+  let containerHTML = "";
+  arr.forEach(element => {
+    containerHTML += `
+    <div class="d-flex align-items-center addon-item">
+      <input type="checkbox" id="${element.title}" name="${element.ID}">
+      <label class="w-80" for="${element.title}">${element.description}</span></label>
+    </div>
+    `;
+  });
+
+  container.innerHTML = containerHTML;
 }
 
   // Оновлення списку продуктів на фронті
@@ -613,7 +691,6 @@ async function applyPromoCode(promocode) {
 
 // applyPromoCode("dfsdsf");
 
-
 function fetchSearchProducts(query) {
   const url = `/api/search-product?query=${encodeURIComponent(query)}&category=guaranted`;
 
@@ -624,14 +701,30 @@ function fetchSearchProducts(query) {
     .then(data => {
       const products = data.data;
       console.log('Searched products array:', products);
+      let productsHTML = '';
       products.forEach(product => {
-        console.log(product.ID);
+        productsHTML += `
+      <div class="product-card col-sm-12 col-md-6 col-lg-4 d-flex justify-content-center">
+          <div class="product-card-content d-flex justify-content-center relative">
+              <div>
+                  <a href="product-card.html" class="relative" data-value="${product.ID}" onclick="openCardPage()">
+                      <img src="${product.image}" alt="product-card">
+                  </a>
+                  <hr>
+                  <form action="" class="product-card__info">
+                      <h3>${product.title}</h3>
+                      <p>${product.price}$</p>
+                      <button onclick="buyButton()" data-value="${product.ID}">Buy</button>
+                  </form>
+              </div>
+          </div>
+      </div>
+  `;
       });
-      updateProducts(products, "#guaranted");
+      document.querySelector("#guaranted").innerHTML = productsHTML;
     })
     .catch(error => console.error('Error:', error));
 }
-
 if (document.querySelector('.search-btn')) {
   document.querySelector('.search-btn').addEventListener('click', function(event) {
     event.preventDefault();
@@ -644,4 +737,11 @@ if (document.querySelector('.search-btn')) {
       console.log('Please enter a search term.');
     }
   });
+}
+
+
+function addonToCart (id) {
+  console.log(1);
+  addProductToCart(localStorage.getItem('userId'), id)
+  setTimeout(transferCartDataToCheckout("8a0292cc-b130-46d3-9369-12f32069d434"), 100)
 }
