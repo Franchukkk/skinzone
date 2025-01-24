@@ -384,6 +384,7 @@ function renderCartItems(cart) {
 //       .catch(error => console.error('Error:', error));
 //   }
 
+
 function fetchProducts(containerToUpdate = false, addon = false) {
   // додати параметр до URL, якщо addon = true
   const url = addon ? '/api/fetch-products?addon=true' : '/api/fetch-products?addon=false';
