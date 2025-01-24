@@ -614,7 +614,7 @@ async function applyPromoCode(promocode) {
 // applyPromoCode("dfsdsf");
 
 
-function fetchSearchProducts(query, category) {
+function fetchSearchProducts(query) {
   const url = `/api/search-product?query=${encodeURIComponent(query)}&category=guaranted`;
 
   fetch(url, {
@@ -624,6 +624,9 @@ function fetchSearchProducts(query, category) {
     .then(data => {
       const products = data.data;
       console.log('Searched products array:', products);
+      products.forEach(product => {
+        console.log(product.ID);
+      });
       updateProducts(products, "#guaranted");
     })
     .catch(error => console.error('Error:', error));
