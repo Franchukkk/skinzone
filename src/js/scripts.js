@@ -180,7 +180,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const trackButton = document.querySelector(".track-button")
         trackButton.addEventListener("click", function(e) {
             e.preventDefault()
-            getOrderInfo(document.querySelector(".track-input").value)
+            getOrderInfo(parseInt(document.querySelector(".track-input").value))
         })
     }
 

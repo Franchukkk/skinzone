@@ -275,7 +275,7 @@ function generateOrderTrackingHtml(orderData) {
           </tr>
           <tr>
               <td>STATUS</td>
-              <td class="availability text-right">${orderData.data.orderStatus.toUpperCase()}</td>
+              <td class="availability text-right">${orderData.status.toUpperCase()}</td>
           </tr>
       </table>
   `).join('');
@@ -341,7 +341,7 @@ function generateProductCards(data) {
                       <div class="d-flex justify-content-between relative w-100">
                           <div class="w-100">
                               <div class="relative">
-                                  <img src="${product.product.img}" alt="product-card">
+                                  <img src="${product.product.image}" alt="product-card">
                               </div>
                           </div>
                       </div>
@@ -683,10 +683,10 @@ function parseProductData() {
     const productData = JSON.parse(productDataRaw);
 
     // Отримання потрібних полів
-    const { title, description, price, active } = productData.data;
+    const { title, description, price, active, image } = productData.data;
     const img = productData.data.img || 'default_image.jpg';
 
-    document.querySelector(".image-block img").src = img;
+    document.querySelector(".image-block img").src = image;
     document.querySelector(".text-block h2").innerHTML = title;
     document.querySelector(".availability").innerHTML = active ? "IN STOK" : "NOT IN STOK";
     document.querySelector(".price").innerHTML = price + "$";
@@ -740,17 +740,20 @@ function fetchSearchProducts(query, category) {
     .catch(error => console.error('Error:', error));
 }
 
-document.querySelector('.search-btn').addEventListener('click', function(event) {
-  event.preventDefault();
+if (document.querySelector('.search-btn')) {
+  document.querySelector('.search-btn').addEventListener('click', function(event) {
+    event.preventDefault();
+  
+    const query = document.querySelector('input[type="search"]').value.trim();
+  
+    if (query) {
+      fetchSearchProducts(query, 'skins');
+    } else {
+      console.log('Please enter a search term.');
+    }
+  });
+}
 
-  const query = document.querySelector('input[type="search"]').value.trim();
-
-  if (query) {
-    fetchSearchProducts(query, 'skins');
-  } else {
-    console.log('Please enter a search term.');
-  }
-});
 if (!localStorage.getItem('userId')) {
     const userId = crypto.randomUUID()
     localStorage.setItem('userId', userId);
@@ -1000,7 +1003,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const trackButton = document.querySelector(".track-button")
         trackButton.addEventListener("click", function(e) {
             e.preventDefault()
-            getOrderInfo(document.querySelector(".track-input").value)
+            getOrderInfo(parseInt(document.querySelector(".track-input").value))
         })
     }
 
