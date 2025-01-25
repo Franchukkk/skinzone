@@ -183,7 +183,9 @@ function getCart(token) {
     .then(data => {
       if (data.data[0] == undefined) {
         console.log('Cart is empty');
-        document.querySelector(".submit-order").style = "pointer-events: none; opacity: 0.7;"
+        if (document.querySelector(".submit-order")) {
+          document.querySelector(".submit-order").style = "pointer-events: none; opacity: 0.7;"
+        }
       } else {
         console.log('Cart:', data)
         generateProductCards(data)
