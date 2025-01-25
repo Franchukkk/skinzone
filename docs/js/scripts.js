@@ -207,19 +207,19 @@ function checkPaymentMethod () {
   } else if (method == "coinpayments") {
     makeOrderCoinpayments(localStorage.getItem('userId'))
   } else if (method == "visamastercard"){
-    makeOrderStripe(localStorage.getItem('userId'))
+    makeOrderStripe(localStorage.getItem('userId'), document.querySelector("#email").value, document.querySelector("#phone").value, document.querySelector("#name").value)
   }
 }
 
 
 // функція для оновлення href кнопки підтвердження замовлення
 function updateSubmitOrderHref(responseObject) {
-
+  console.log(responseObject);
   if (responseObject.status === "success" && responseObject.data) {
       const submitOrderElement = document.querySelector(".submit-order");
 
       if (submitOrderElement) {
-          submitOrderElement.href = responseObject.data;
+          submitOrderElement.href = responseObject.data.url;
           console.log("Посилання успішно оновлено!");
       } else {
           console.error("Елемент .submit-order не знайдено на сторінці.");
@@ -858,7 +858,7 @@ if (document.querySelector('.search-btn')) {
 function addonToCart (id) {
   console.log(1);
   addProductToCart(localStorage.getItem('userId'), id)
-  setTimeout(transferCartDataToCheckout("8a0292cc-b130-46d3-9369-12f32069d434"), 100)
+  setTimeout(transferCartDataToCheckout(localStorage.getItem('userId')), 500)
 }
 if (!localStorage.getItem('userId')) {
     const userId = crypto.randomUUID()
@@ -880,15 +880,15 @@ document.addEventListener("DOMContentLoaded", function() {
     if (document.querySelector(".addons-list")) {
         fetchProducts("addons", true)
 
-
-
-        const checkboxes = document.querySelectorAll('.addons-list input[type="checkbox"]');
-        console.log(checkboxes);
-        checkboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', function() {
-                addonToCart(checkbox.name);
+        setTimeout(function() {
+            const checkboxes = document.querySelectorAll('.addons-list input[type="checkbox"]');
+            console.log(checkboxes);
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    addonToCart(checkbox.name);
+                });
             });
-        });
+        }, 500)
     }
 })
 document.addEventListener("scroll", () => {

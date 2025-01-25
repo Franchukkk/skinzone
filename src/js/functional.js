@@ -18,14 +18,14 @@ document.addEventListener("DOMContentLoaded", function() {
     if (document.querySelector(".addons-list")) {
         fetchProducts("addons", true)
 
-
-
-        const checkboxes = document.querySelectorAll('.addons-list input[type="checkbox"]');
-        console.log(checkboxes);
-        checkboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', function() {
-                addonToCart(checkbox.name);
+        setTimeout(function() {
+            const checkboxes = document.querySelectorAll('.addons-list input[type="checkbox"]');
+            console.log(checkboxes);
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    addonToCart(checkbox.name);
+                });
             });
-        });
+        }, 500)
     }
 })
