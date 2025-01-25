@@ -506,6 +506,8 @@ function renderCartItems(cart) {
   } else {
     console.error(".total-checkout-price element not found");
   }
+
+  localStorage.setItem('beforePromocodePrice', document.querySelector(".total-checkout-price").innerHTML);
 }
 
 
@@ -781,6 +783,7 @@ function parseProductData() {
 }
 
 async function applyPromoCode(promocode) {
+  
   try {
     const response = await fetch(`api/check-promo-code?code=${promocode}`);
     if (!response.ok) {
@@ -795,12 +798,22 @@ async function applyPromoCode(promocode) {
       console.log(`Код: ${result.data.code}`);
       console.log(`Час створення: ${new Date(result.data.timestamp)}`);
       console.log(`Множник: ${result.data.multiplier}`);
+
+      document.querySelector(".total-checkout-price").innerHTML = "$" + Math.ceil(Number(document.querySelector(".total-checkout-price").innerHTML.slice(1)) * result.data.multiplier);
     } else {
       console.error("Промокод не дійсний або виникла помилка.");
+      document.querySelector(".total-checkout-price").innerHTML = localStorage.getItem('beforePromocodePrice')
     }
   } catch (error) {
     console.error("Помилка при виконанні запиту:", error.message);
+    document.querySelector(".total-checkout-price").innerHTML = localStorage.getItem('beforePromocodePrice')
   }
+}
+
+if (document.querySelector("#promo")) {
+  document.querySelector("#promo").addEventListener("input", function() {
+    applyPromoCode(this.value);
+  })
 }
 
 
