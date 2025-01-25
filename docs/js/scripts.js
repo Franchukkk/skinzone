@@ -170,11 +170,11 @@ function makeOrderStripe(token, email, phone, name) {
   }
 
 // створення замовлення через paypal
-function makeOrderPaypal(token) {
+function makeOrderPaypal(token, email, phone, name) {
     fetch('/api/make-order-paypal', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ token })
+      body: JSON.stringify({ token, email, phone, name })
     })
       .then(res => res.json())
       .then(data => {
@@ -185,11 +185,11 @@ function makeOrderPaypal(token) {
   }
 
 // створення замовлення через coinpayments
-function makeOrderCoinpayments(token) {
+function makeOrderCoinpayments(token, email, phone, name) {
     fetch('/api/make-order-coinpayments', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ token })
+      body: JSON.stringify({ token, email, phone, name })
     })
       .then(res => res.json())
       .then(data => {
@@ -275,7 +275,7 @@ function generateOrderTrackingHtml(orderData) {
           </tr>
           <tr>
               <td>STATUS</td>
-              <td class="availability text-right">${orderData.status.toUpperCase()}</td>
+              <td class="availability text-right">${orderData.data.orderStatus.toUpperCase()}</td>
           </tr>
       </table>
   `).join('');
@@ -293,6 +293,7 @@ function getCart(token) {
   })
     .then(res => res.json())
     .then(data => {
+      console.log(data);
       if (data.data[0] == undefined) {
         console.log('Cart is empty');
         if (document.querySelector(".submit-order")) {
