@@ -73,7 +73,7 @@ function makeOrderPaypal(token, email, phone, name) {
   }
 
 // створення замовлення через coinpayments
-function makeOrderCoinpayments(token, email, phone, name, promo="" , currency="Bitcoin") {
+function makeOrderCoinpayments(token, email, phone, name, promo="" , currency="BTC") {
     fetch('/api/make-order-coinpayments', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -157,7 +157,7 @@ async function disableProductFromCart(token, productId, isAddon = false) {
       },
       body: JSON.stringify({
         ID: productId,
-        User: token,
+        token: token,
       }),
     });
 
@@ -586,7 +586,7 @@ function updateProducts(arr, containerToUpdate) {
 
   arr.forEach((element, index) => {
       if (
-          (containerToUpdate === "#productsSwiper" && index < 12) || // Перші 12 товарів
+          (containerToUpdate === "#productsSwiper" && index < 6) || // Перші 12 товарів
           (containerToUpdate === "#random" && element.category === "random") ||
           (containerToUpdate === "#guaranted" && element.category === "guaranted")
       ) {
@@ -715,9 +715,9 @@ function parseProductData() {
 
   try {
     const productData = JSON.parse(productDataRaw);
-
+    console.log(productData);
     // Отримання потрібних полів
-    const { title, description, price, active, image } = productData.data;
+    const { ID, title, description, price, active, image } = productData.data;
     const img = productData.data.img || 'default_image.jpg';
 
     document.querySelector(".image-block img").src = image;
@@ -725,6 +725,8 @@ function parseProductData() {
     document.querySelector(".availability").innerHTML = active ? "IN STOK" : "NOT IN STOK";
     document.querySelector(".price").innerHTML = price + "$";
     document.querySelector(".product-description h3").innerHTML = description;
+    document.querySelector(".text-block button").setAttribute('data-value', ID);
+    document.querySelector(".text-block button").setAttribute('onclick', "buyButton()");
 
     console.log({ title, description, price, active, img });
   } catch (error) {
