@@ -20,12 +20,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
         setTimeout(function() {
             const checkboxes = document.querySelectorAll('.addons-list input[type="checkbox"]');
-            console.log(checkboxes);
+
             checkboxes.forEach(checkbox => {
                 checkbox.addEventListener('change', function() {
-                    addonToCart(checkbox.name);
+                    if (checkbox.checked) {
+                        addonToCart(checkbox.name);
+                    } else {
+                        disableProductFromCart(localStorage.getItem("userId"), checkbox.name, true);
+                    }
                 });
             });
+
         }, 500)
     }
 })

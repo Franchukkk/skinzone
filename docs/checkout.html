@@ -132,18 +132,29 @@
             </div>
             <div class="checkout-products addons-list check-out-payment-method d-flex">
               <div class="w-100">
-                <div class="row wrap">
+                <div class="row wrap mb-3">
                   <label class="d-flex justify-content-center align-items-center col-sm-6 col-md-6 col-lg-6">
-                    <input class="payment-method-btn" type="radio" name="paymentMethod" id="paypal" data-value="paypal" onchange="checkPaymentMethod()"><img src="img/paypal.png" alt="">
+                    <input class="payment-method-btn" type="radio" name="paymentMethod" id="visamastercard" data-value="visamastercard" onchange="checkPaymentMethod()"><img src="img/visamastercard.png" alt="">
                   </label>
                   <label class="d-flex justify-content-center align-items-center col-sm-6 col-md-6 col-lg-6">
                     <input class="payment-method-btn" type="radio" name="paymentMethod" id="coinpayments" data-value="coinpayments" onchange="checkPaymentMethod()"><img src="img/black-coin-payments.png" alt="">
                   </label>
                 </div>
-                <div class="row wrap">
-                  <label class="d-flex justify-content-center align-items-center col-sm-6 col-md-6 col-lg-6">
-                    <input class="payment-method-btn" type="radio" name="paymentMethod" id="visamastercard" data-value="visamastercard" onchange="checkPaymentMethod()"><img src="img/visamastercard.png" alt="">
-                  </label>
+                <div class="row"> 
+                  <div class="col-12 d-none coinpayments-currency">
+                    <select class="currency" name="currency" id="currency"> 
+                      <option value="Bitcoin">Bitcoin</option>
+                      <option value="BNB">BNB Coin</option>
+                      <option value="Ether">Ether</option>
+                      <option value="Solana">Solana</option>
+                      <option value="TRON">TRON</option>
+                      <option value="USDT.BEP20">USDT.BEP20</option>
+                      <option value="USDT.ERC20">USDT.ERC20</option>
+                      <option value="USDT.PRC20">USDT.PRC20</option>
+                      <option value="USDT.SOL">USDT.SOL</option>
+                      <option value="USDT.TRC20">USDT.TRC20</option>
+                    </select>
+                  </div>
                 </div>
               </div>
             </div>

@@ -43,11 +43,11 @@ function getOrders(token, status) {
 }
 
 // створення замовлення через Stripe
-function makeOrderStripe(token, email, phone, name) {
+function makeOrderStripe(token, email, phone, name, code="") {
     fetch('/api/make-order-stripe', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ token, email, phone, name })
+      body: JSON.stringify({ token, email, phone, name, code })
     })
       .then(res => res.json())
       .then(data => {
@@ -73,11 +73,11 @@ function makeOrderPaypal(token, email, phone, name) {
   }
 
 // створення замовлення через coinpayments
-function makeOrderCoinpayments(token, email, phone, name) {
+function makeOrderCoinpayments(token, email, phone, name, promo="" , currency="Bitcoin") {
     fetch('/api/make-order-coinpayments', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ token, email, phone, name })
+      body: JSON.stringify({ token, email, phone, name, currency })
     })
       .then(res => res.json())
       .then(data => {
@@ -92,11 +92,21 @@ function checkPaymentMethod () {
   let method = event.target.getAttribute("data-value")
   if (method == "paypal") {
     makeOrderPaypal(localStorage.getItem('userId'))
+    document.querySelector(".coinpayments-currency").classList.add("d-none")
   } else if (method == "coinpayments") {
-    makeOrderCoinpayments(localStorage.getItem('userId'))
+    document.querySelector(".coinpayments-currency").classList.remove("d-none")
+    makeOrderCoinpayments(localStorage.getItem('userId'), document.querySelector("#email").value, document.querySelector("#phone").value, document.querySelector("#name").value, document.querySelector("#promo").value, document.querySelector(".coinpayments-currency").value)
   } else if (method == "visamastercard"){
-    makeOrderStripe(localStorage.getItem('userId'), document.querySelector("#email").value, document.querySelector("#phone").value, document.querySelector("#name").value)
+    makeOrderStripe(localStorage.getItem('userId'), document.querySelector("#email").value, document.querySelector("#phone").value, document.querySelector("#name").value, document.querySelector("#promo").value)
+    document.querySelector(".coinpayments-currency").classList.add("d-none")
   }
+}
+
+if (document.querySelector(".coinpayments-currency")) {
+  let currencySelect = document.querySelector(".coinpayments-currency");
+  currencySelect.addEventListener("change", function() {
+    makeOrderCoinpayments(localStorage.getItem('userId'), document.querySelector("#email").value, document.querySelector("#phone").value, document.querySelector("#name").value, document.querySelector("#promo").value, document.querySelector(".coinpayments-currency").value)
+  })
 }
 
 
@@ -114,6 +124,38 @@ function updateSubmitOrderHref(responseObject) {
       }
   } else {
       console.error("Об'єкт має некоректний статус або не містить посилання.");
+  }
+}
+
+
+async function disableProductFromCart(token, productId, isAddon = false) {
+  event.preventDefault();
+  try {
+    const response = await fetch('/api/disable-product-from-cart', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        ID: productId,
+        User: token,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`Помилка: ${response.status} - ${response.statusText}`);
+    }
+
+    const result = await response.json();
+    console.log('Товар успішно деактивовано:', result);
+    if (isAddon == true) {
+      transferCartDataToCheckout(localStorage.getItem('userId'))
+    } else {
+      getCart(localStorage.getItem('userId'))
+
+    }
+  } catch (error) {
+    console.error('Не вдалося виконати запит:', error);
   }
 }
 
@@ -199,6 +241,7 @@ getCart(localStorage.getItem('userId'))
 
 // Функція для генерації HTML чекаутвої сторінки
 function generateProductCards(data) {
+  console.log(data);
   const container = document.querySelector('.basket-products');
   const footerSpan = document.querySelector('.basket-footer span');
 
@@ -245,7 +288,7 @@ function generateProductCards(data) {
                           <b>$${product.product.price}</b>
                       </div>
                       <div class="w-20">
-                          <button type="submit">
+                          <button type="submit" onclick="disableProductFromCart(localStorage.getItem('userId'), ${product.product.ID})" class="basket-delete-product">
                               <img src="img/basketIcon.png" alt="">
                           </button>
                       </div>

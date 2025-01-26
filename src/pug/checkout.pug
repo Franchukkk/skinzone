@@ -133,18 +133,30 @@ html(lang="en")
                                 label.total-checkout-price $0
                         .checkout-products.addons-list.check-out-payment-method.d-flex
                             div.w-100
-                                .row.wrap
-                                    label.d-flex.justify-content-center.align-items-center.col-sm-6.col-md-6.col-lg-6
-                                        input(type="radio" name="paymentMethod" id="paypal" data-value="paypal" onchange="checkPaymentMethod()").payment-method-btn
-                                        img(src="img/paypal.png", alt="")
-                                    label.d-flex.justify-content-center.align-items-center.col-sm-6.col-md-6.col-lg-6
-                                        input(type="radio" name="paymentMethod" id="coinpayments" data-value="coinpayments" onchange="checkPaymentMethod()").payment-method-btn
-                                        img(src="img/black-coin-payments.png", alt="")
-                                .row.wrap
+                                .row.wrap.mb-3
+                                    //- label.d-flex.justify-content-center.align-items-center.col-sm-6.col-md-6.col-lg-6
+                                    //-     input(type="radio" name="paymentMethod" id="paypal" data-value="paypal" onchange="checkPaymentMethod()").payment-method-btn
+                                    //-     img(src="img/paypal.png", alt="")
                                     label.d-flex.justify-content-center.align-items-center.col-sm-6.col-md-6.col-lg-6
                                         input(type="radio" name="paymentMethod" id="visamastercard" data-value="visamastercard" onchange="checkPaymentMethod()").payment-method-btn
                                         img(src="img/visamastercard.png", alt="")
+                                    label.d-flex.justify-content-center.align-items-center.col-sm-6.col-md-6.col-lg-6
+                                        input(type="radio" name="paymentMethod" id="coinpayments" data-value="coinpayments" onchange="checkPaymentMethod()").payment-method-btn
+                                        img(src="img/black-coin-payments.png", alt="")
 
+                                .row 
+                                    .col-12.d-none.coinpayments-currency
+                                        select(name="currency" id="currency" class="currency") 
+                                            option(value="Bitcoin") Bitcoin
+                                            option(value="BNB") BNB Coin
+                                            option(value="Ether") Ether
+                                            option(value="Solana") Solana
+                                            option(value="TRON") TRON
+                                            option(value="USDT.BEP20") USDT.BEP20
+                                            option(value="USDT.ERC20") USDT.ERC20
+                                            option(value="USDT.PRC20") USDT.PRC20
+                                            option(value="USDT.SOL") USDT.SOL
+                                            option(value="USDT.TRC20") USDT.TRC20
                         .d-flex.justify-content-center
                             a(href="#").button.submit-order Submit order
 
