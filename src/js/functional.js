@@ -61,5 +61,55 @@ document.addEventListener("DOMContentLoaded", function() {
         phoneInput.addEventListener('input', checkFields);
       
         checkFields();
+
+
+
+        
     }
 });
+
+
+
+function saveCheckboxState() {
+    const checkboxes = document.querySelectorAll('.addon-item input[type="checkbox"]');
+    
+    if (checkboxes.length === 0) return;
+
+    const checkboxStates = {};
+
+    checkboxes.forEach(checkbox => {
+        checkboxStates[checkbox.id] = checkbox.checked;
+    });
+
+    localStorage.setItem('checkboxStates', JSON.stringify(checkboxStates));
+}
+
+function restoreCheckboxState() {
+    const checkboxes = document.querySelectorAll('.addon-item input[type="checkbox"]');
+    
+    if (checkboxes.length === 0) return;
+
+    const savedStates = localStorage.getItem('checkboxStates');
+    
+    if (!savedStates) return;
+
+    const checkboxStates = JSON.parse(savedStates);
+
+    checkboxes.forEach(checkbox => {
+        if (checkboxStates[checkbox.id] !== undefined) {
+            checkbox.checked = checkboxStates[checkbox.id];
+        }
+    });
+}
+
+window.onload = function() {
+    restoreCheckboxState();
+};
+
+if (document.querySelector(".addon-item ")) {
+    let checkboxes = document.querySelectorAll('.addon-item input[type="checkbox"]');
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', saveCheckboxState);
+    });
+}
+

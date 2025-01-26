@@ -383,9 +383,9 @@ function generateProductCards(data) {
                           <b>$${product.product.price}</b>
                       </div>
                       <div class="w-20">
-                          <button type="submit" onclick="disableProductHandle(localStorage.getItem('userId'), ${product.ID})" class="basket-delete-product">
-                              <img src="img/basketIcon.png" alt="">
-                          </button>
+                          <div onclick="disableProductHandle(localStorage.getItem('userId'), ${product.ID})" class="basket-delete-product">
+                              <img class="w-100" src="img/basketIcon.png" alt="">
+                          </div>
                       </div>
                   </div>
               </div>
@@ -403,7 +403,7 @@ function disableProductHandle (token, productId, isAddon = false) {
   disableProductFromCart(token, productId, isAddon);
   setTimeout(() => {
     getCart(token);
-  }, 500);
+  }, 1000);
 }
 
 function transferCartDataToCheckout (token) {
