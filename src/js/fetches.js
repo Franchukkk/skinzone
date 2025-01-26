@@ -310,6 +310,27 @@ function getCart(token) {
 
 getCart(localStorage.getItem('userId'))
 
+function getAddonIdFromCartAndDelete (id, token) {
+  fetch('/api/get-cart', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ token })
+  })
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+      data.data.forEach(element => {
+        if (element.product.ID == id) {
+          disableProductFromCart (localStorage.getItem("userId"), element.ID)
+          setTimeout(() => {
+            transferCartDataToCheckout(localStorage.getItem("userId"))
+          }, 200)
+        }
+      })
+    })
+    .catch(error => console.error('Error:', error));
+}
+
 // Функція для генерації HTML чекаутвої сторінки
 function generateProductCards(data) {
   console.log(data);

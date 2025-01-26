@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     if (checkbox.checked) {
                         addonToCart(checkbox.name);
                     } else {
-                        disableProductFromCart(localStorage.getItem("userId"), checkbox.name, true);
+                        getAddonIdFromCartAndDelete(checkbox.name, localStorage.getItem("userId"));
                     }
                 });
             });
