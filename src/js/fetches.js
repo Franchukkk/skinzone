@@ -164,27 +164,6 @@ if (document.querySelector(".submit-order")) {
   document.querySelector(".submit-order").addEventListener("click", function (e) {
     e.preventDefault();
 
-    if (localStorage.getItem("paymentMethod") == "paypal") {
-      makeOrderPaypal(localStorage.getItem('userId'));
-    } else if (localStorage.getItem("paymentMethod") == "coinpayments") {
-      makeOrderCoinpayments(
-        localStorage.getItem('userId'),
-        document.querySelector("#email").value,
-        document.querySelector("#phone").value,
-        document.querySelector("#name").value,
-        document.querySelector("#promo").value,
-        document.querySelector(".coinpayments-currency").value
-      );
-    } else if (localStorage.getItem("paymentMethod") == "visamastercard") {
-      makeOrderStripe(
-        localStorage.getItem('userId'),
-        document.querySelector("#email").value,
-        document.querySelector("#phone").value,
-        document.querySelector("#name").value,
-        document.querySelector("#promo").value
-      );
-    }
-
     const nameInput = document.getElementById('name');
     const surnameInput = document.getElementById('surname');
     const emailInput = document.getElementById('email');
