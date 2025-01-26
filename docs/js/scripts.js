@@ -240,27 +240,97 @@ function updateSubmitOrderHref(responseObject) {
   }
 }
 
+// if (document.querySelector(".submit-order")) {
+//   document.querySelector(".submit-order").addEventListener("click", function(e) {
+//     e.preventDefault();
+//     if (localStorage.getItem("paymentMethod") == "paypal") {
+//       makeOrderPaypal(localStorage.getItem('userId'))
+//     } else if (localStorage.getItem("paymentMethod") == "coinpayments") {
+//       makeOrderCoinpayments(localStorage.getItem('userId'), document.querySelector("#email").value, document.querySelector("#phone").value, document.querySelector("#name").value, document.querySelector("#promo").value, document.querySelector(".coinpayments-currency").value)
+//     } else if (localStorage.getItem("paymentMethod") == "visamastercard"){
+//       makeOrderStripe(localStorage.getItem('userId'), document.querySelector("#email").value, document.querySelector("#phone").value, document.querySelector("#name").value, document.querySelector("#promo").value)
+//     }
+
+//     const nameInput = document.getElementById('name');
+//     const surnameInput = document.getElementById('surname');
+//     const emailInput = document.getElementById('email');
+//     const phoneInput = document.getElementById('phone');
+//     const paymentMethodContainer = document.querySelector('.check-out-payment-method');
+    
+//     function checkFieldsForSubmit() {
+//       if (nameInput.value && surnameInput.value && emailInput.value && phoneInput.value) {
+//         setTimeout(function () {
+//           console.log(e.target.getAttribute("href"));
+//           window.location.href = e.target.getAttribute("href");
+//         }, 500)
+//       } else {
+        
+//       }
+//     }
+
+
+//   })
+// }
+
 if (document.querySelector(".submit-order")) {
-  document.querySelector(".submit-order").addEventListener("click", function(e) {
+  document.querySelector(".submit-order").addEventListener("click", function (e) {
     e.preventDefault();
+
     if (localStorage.getItem("paymentMethod") == "paypal") {
-      makeOrderPaypal(localStorage.getItem('userId'))
+      makeOrderPaypal(localStorage.getItem('userId'));
     } else if (localStorage.getItem("paymentMethod") == "coinpayments") {
-      makeOrderCoinpayments(localStorage.getItem('userId'), document.querySelector("#email").value, document.querySelector("#phone").value, document.querySelector("#name").value, document.querySelector("#promo").value, document.querySelector(".coinpayments-currency").value)
-    } else if (localStorage.getItem("paymentMethod") == "visamastercard"){
-      makeOrderStripe(localStorage.getItem('userId'), document.querySelector("#email").value, document.querySelector("#phone").value, document.querySelector("#name").value, document.querySelector("#promo").value)
+      makeOrderCoinpayments(
+        localStorage.getItem('userId'),
+        document.querySelector("#email").value,
+        document.querySelector("#phone").value,
+        document.querySelector("#name").value,
+        document.querySelector("#promo").value,
+        document.querySelector(".coinpayments-currency").value
+      );
+    } else if (localStorage.getItem("paymentMethod") == "visamastercard") {
+      makeOrderStripe(
+        localStorage.getItem('userId'),
+        document.querySelector("#email").value,
+        document.querySelector("#phone").value,
+        document.querySelector("#name").value,
+        document.querySelector("#promo").value
+      );
     }
 
-    setTimeout(function () {
-      console.log(e.target.getAttribute("href"));
-      window.location.href = e.target.getAttribute("href");
-    }, 500)
-  })
+    const nameInput = document.getElementById('name');
+    const surnameInput = document.getElementById('surname');
+    const emailInput = document.getElementById('email');
+    const phoneInput = document.getElementById('phone');
+    const inputs = [nameInput, surnameInput, emailInput, phoneInput];
+
+    function checkFieldsForSubmit() {
+      let allFieldsValid = true;
+
+      inputs.forEach(input => {
+        if (!input.value.trim()) {
+          input.style.border = "2px solid red";
+          allFieldsValid = false;
+        } else {
+          input.style.border = "";
+        }
+      });
+
+      if (allFieldsValid) {
+        setTimeout(function () {
+          console.log(e.target.getAttribute("href"));
+          window.location.href = e.target.getAttribute("href");
+        }, 500);
+      }
+    }
+
+    checkFieldsForSubmit();
+  });
 }
 
 
+
 async function disableProductFromCart(token, productId, isAddon = false) {
-  event.preventDefault();
+  // event.preventDefault();
   try {
     const response = await fetch('/api/disable-product-from-cart', {
       method: 'POST',
@@ -360,6 +430,9 @@ function getCart(token) {
         if (document.querySelector(".submit-order")) {
           document.querySelector(".submit-order").style = "pointer-events: none; opacity: 0.7;"
         }
+        document.querySelector('.basket-products').innerHTML = '';
+        document.querySelector('.basket-footer span').textContent = '$0';
+
       } else {
         console.log('Cart:', data)
         generateProductCards(data)
@@ -397,6 +470,9 @@ function generateProductCards(data) {
 
 
   const productCardsHtml = data.data.map(product => {
+      if (product.product.category == "addon") {
+        return '';
+      }
       console.log(product.product.title);
       totalSum += product.product.price;
       return `
@@ -419,7 +495,7 @@ function generateProductCards(data) {
                           <b>$${product.product.price}</b>
                       </div>
                       <div class="w-20">
-                          <button type="submit" onclick="disableProductFromCart(localStorage.getItem('userId'), ${product.product.ID})" class="basket-delete-product">
+                          <button type="submit" onclick="disableProductHandle(localStorage.getItem('userId'), ${product.ID})" class="basket-delete-product">
                               <img src="img/basketIcon.png" alt="">
                           </button>
                       </div>
@@ -432,6 +508,14 @@ function generateProductCards(data) {
 
   container.innerHTML = productCardsHtml;
   footerSpan.textContent = `$${totalSum}`;
+}
+
+function disableProductHandle (token, productId, isAddon = false) {
+  event.preventDefault;
+  disableProductFromCart(token, productId, isAddon);
+  setTimeout(() => {
+    getCart(token);
+  }, 500);
 }
 
 function transferCartDataToCheckout (token) {
@@ -776,14 +860,19 @@ function fetchProduct(productID) {
   }
 
 // додавання продукту в корзину
-function addProductToCart(token, productID) {
+function addProductToCart(token, productID, addon= false ) {
     fetch('/api/add-product-to-cart', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ token, productID })
     })
       .then(res => res.json())
-      .then(data => console.log('Add to Cart:', data))
+      .then(data => {
+        console.log('Add to Cart:', data)
+        if (addon) {
+          setTimeout(transferCartDataToCheckout(localStorage.getItem('userId')), 1000)
+        }
+      })
       .catch(error => console.error('Error:', error));
   }
 
@@ -934,9 +1023,52 @@ if (document.querySelector('.search-btn')) {
 
 function addonToCart (id) {
   console.log(1);
-  addProductToCart(localStorage.getItem('userId'), id)
-  setTimeout(transferCartDataToCheckout(localStorage.getItem('userId')), 500)
+  addProductToCart(localStorage.getItem('userId'), id, true)
+  setTimeout(transferCartDataToCheckout(localStorage.getItem('userId')), 1000)
 }
+
+
+
+const forms = document.querySelectorAll('.sent-tg-form');
+
+console.log(forms);
+
+forms.forEach((form) => {
+    form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        const name = form.querySelector('#name').value;
+        const email = form.querySelector('#email').value;
+        const message = form.querySelector('#message').value;
+
+        const body = {
+            name,
+            email,
+            content: message
+        };
+
+        try {
+            const response = await fetch('/api/send-message-telegram', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(body),
+            });
+
+            if (response.ok) {
+                const result = await response.json();
+                alert('Повідомлення успішно надіслано!');
+            } else {
+                alert('Помилка при відправці повідомлення. Спробуйте ще раз.');
+            }
+        } catch (error) {
+            console.error('Помилка:', error);
+            alert('Сталася помилка. Перевірте підключення до інтернету та спробуйте ще раз.');
+        }
+    });
+});
+
 if (!localStorage.getItem('userId')) {
     const userId = crypto.randomUUID()
     localStorage.setItem('userId', userId);

@@ -39,17 +39,12 @@ mixin reviews()
             .swiper.reviews-slider
                 .swiper-wrapper
                     .swiper-slide
-                        +review("Just bought the Ikonik account for 175 euro, and it’s legit! I received around 220 skins, all just like they said. The whole process was super easy, and I'm really satisfied. Definitely recommend it to anyone looking for a good deal!", "Max", "Africa", "Pink Lama", 4)
+                        +review("I purchased an account from you in the 40-250 range for 14 euros and was completely satisfied. However, my friends suggested going for a 50-range account, and I’m absolutely blown away! Over 350 skins on this account, and that’s just the start! Renegade Raider?! Oh my gosh, I never thought I’d ever get my hands on it! Plus, it includes Black Knight, Ikonik, Wonder, and so many other incredible skins. I can’t recommend you guys enough! Huge thanks to the team—I’m beyond happy!", "Max", "America", "Purchased 200-400 Skins Full Access", 5)
                     .swiper-slide
-                        +review("Just bought the Ikonik account for 175 euro, and it’s legit! I received around 220 skins, all just like they said. The whole process was super easy, and I'm really satisfied. Definitely recommend it to anyone looking for a good deal!", "Max", "Africa", "Pink Lama", 4)
+                        +review("I just grabbed my Fortnite account for 39 euros, and I’m absolutely thrilled! The account came loaded with around 250 skins, including the legendary Black Knight and Galaxy skins. Delivery was instant, and updating all the details was a breeze. Couldn’t be happier with this purchase—highly recommend!", "Oliver", "Germany", "Purchased 160-400 Skins Full Access", 5)
                     .swiper-slide
-                        +review("Just bought the Ikonik account for 175 euro, and it’s legit! I received around 220 skins, all just like they said. The whole process was super easy, and I'm really satisfied. Definitely recommend it to anyone looking for a good deal!", "Max", "Africa", "Pink Lama", 4)
-                    .swiper-slide
-                        +review("Just bought the Ikonik account for 175 euro, and it’s legit! I received around 220 skins, all just like they said. The whole process was super easy, and I'm really satisfied. Definitely recommend it to anyone looking for a good deal!", "Max", "Africa", "Pink Lama", 4)
-                    .swiper-slide
-                        +review("Just bought the Ikonik account for 175 euro, and it’s legit! I received around 220 skins, all just like they said. The whole process was super easy, and I'm really satisfied. Definitely recommend it to anyone looking for a good deal!", "Max", "Africa", "Pink Lama", 4)
-                    .swiper-slide
-                        +review("Just bought the Ikonik account for 175 euro, and it’s legit! I received around 220 skins, all just like they said. The whole process was super easy, and I'm really satisfied. Definitely recommend it to anyone looking for a good deal!", "Max", "Africa", "Pink Lama", 4)
+                        +review("This account is absolutely insane! 350 skins for just 45? Unreal! I’m beyond excited to have discovered your store. I’ve already shared it with all my friends—they’re gearing up to make their purchases soon too! ", "Harry", "Latvia", "Purchased 180-400 Skins Full Access", 5)
+
 
                 .swiper-pagination
             .swiper-button-prev.prev-rev
@@ -69,7 +64,7 @@ mixin review(text, author, location, skin, stars)
             .author 
                 strong= author
                 p= `From ${location}`
-            p= `bot Guaranteed skin: ${skin} | Full Access`
+            p= `${skin}`
 
 mixin join-block()
     .marquee-lines.animate-bottom
@@ -134,7 +129,7 @@ mixin help()
         h2.text-center.title.animate-bottom.hidden Help CEnter
             span HELP CEnter 
         h3 sent message
-        form(action="").block-hidden
+        form(action="").block-hidden.sent-tg-form
             .form-part
                 p 
                     label(for="name") Your Name
@@ -337,17 +332,17 @@ mixin footer()
             .payment-systems
                 img(src="img/coinpayments.png", alt="")
                 img(src="img/paypal.png", alt="")
-                img(src="img/visamastercard.png", alt="")
+                img(src="img/visamastercard.jpg", alt="")
         .pay-platforms.swiper.payment-slider
             .swiper-wrapper
                 .swiper-slide
-                    img(src="img/visamastercard.png", alt="")
+                    img(src="img/visamastercard.jpg", alt="")
                 .swiper-slide
                     img(src="img/paypal.png", alt="")
                 .swiper-slide
                     img(src="img/coinpayments.png", alt="")
                 .swiper-slide
-                    img(src="img/visamastercard.png", alt="")
+                    img(src="img/visamastercard.jpg", alt="")
                 .swiper-slide
                     img(src="img/paypal.png", alt="")
                 .swiper-slide
