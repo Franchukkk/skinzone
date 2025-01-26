@@ -202,6 +202,7 @@ function makeOrderCoinpayments(token, email, phone, name, promo="" , currency="B
 
 function checkPaymentMethod () {
   let method = event.target.getAttribute("data-value")
+  localStorage.setItem("paymentMethod", method)
   if (method == "paypal") {
     makeOrderPaypal(localStorage.getItem('userId'))
     document.querySelector(".coinpayments-currency").classList.add("d-none")
@@ -237,6 +238,24 @@ function updateSubmitOrderHref(responseObject) {
   } else {
       console.error("Об'єкт має некоректний статус або не містить посилання.");
   }
+}
+
+if (document.querySelector(".submit-order")) {
+  document.querySelector(".submit-order").addEventListener("click", function(e) {
+    e.preventDefault();
+    if (localStorage.getItem("paymentMethod") == "paypal") {
+      makeOrderPaypal(localStorage.getItem('userId'))
+    } else if (localStorage.getItem("paymentMethod") == "coinpayments") {
+      makeOrderCoinpayments(localStorage.getItem('userId'), document.querySelector("#email").value, document.querySelector("#phone").value, document.querySelector("#name").value, document.querySelector("#promo").value, document.querySelector(".coinpayments-currency").value)
+    } else if (localStorage.getItem("paymentMethod") == "visamastercard"){
+      makeOrderStripe(localStorage.getItem('userId'), document.querySelector("#email").value, document.querySelector("#phone").value, document.querySelector("#name").value, document.querySelector("#promo").value)
+    }
+
+    setTimeout(function () {
+      console.log(e.target.getAttribute("href"));
+      window.location.href = e.target.getAttribute("href");
+    }, 500)
+  })
 }
 
 
