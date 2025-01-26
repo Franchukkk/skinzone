@@ -973,6 +973,36 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 500)
     }
 })
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    if (document.querySelector(".checkout-blocks")) {
+        const nameInput = document.getElementById('name');
+        const surnameInput = document.getElementById('surname');
+        const emailInput = document.getElementById('email');
+        const phoneInput = document.getElementById('phone');
+        const paymentMethodContainer = document.querySelector('.check-out-payment-method');
+      
+        function checkFields() {
+          if (nameInput.value && surnameInput.value && emailInput.value && phoneInput.value) {
+            paymentMethodContainer.style.pointerEvents = 'auto';
+            paymentMethodContainer.style.opacity = '1';
+          } else {
+            paymentMethodContainer.style.pointerEvents = 'none';
+            paymentMethodContainer.style.opacity = '0.7';
+          }
+        }
+      
+        nameInput.addEventListener('input', checkFields);
+        surnameInput.addEventListener('input', checkFields);
+        emailInput.addEventListener('input', checkFields);
+        phoneInput.addEventListener('input', checkFields);
+      
+        checkFields();
+    }
+});
+
 document.addEventListener("scroll", () => {
     const lines = document.querySelectorAll(".marquee-line");
     const scrollTop = window.scrollY;
