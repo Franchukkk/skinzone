@@ -328,6 +328,11 @@ async function disableProductFromCart(token, productId, isAddon = false) {
 
     const result = await response.json();
     console.log('Товар успішно деактивовано:', result);
+    document.querySelector(".toast-body").innerHTML = "Successfully removed"
+    document.querySelector(".toast").classList.add("show")
+    setTimeout(() => {
+      document.querySelector(".toast").classList.remove("show")
+    }, 2000)
     if (isAddon == true) {
       transferCartDataToCheckout(localStorage.getItem('userId'))
     } else {
@@ -871,6 +876,11 @@ function addProductToCart(token, productID, addon= false ) {
         console.log('Add to Cart:', data)
         if (addon) {
           setTimeout(transferCartDataToCheckout(localStorage.getItem('userId')), 1000)
+          document.querySelector(".toast-body").innerHTML = "Successfully added"
+          document.querySelector(".toast").classList.add("show")
+          setTimeout(() => {
+            document.querySelector(".toast").classList.remove("show")
+          }, 2000)
         }
       })
       .catch(error => console.error('Error:', error));
@@ -1058,9 +1068,12 @@ forms.forEach((form) => {
 
             if (response.ok) {
                 const result = await response.json();
-                alert('Повідомлення успішно надіслано!');
-            } else {
-                alert('Помилка при відправці повідомлення. Спробуйте ще раз.');
+                // alert('Повідомлення успішно надіслано!');
+                document.querySelector(".toast-body").innerHTML = "Successfully sended"
+                document.querySelector(".toast").classList.add("show")
+                setTimeout(() => {
+                  document.querySelector(".toast").classList.remove("show")
+                }, 2000)
             }
         } catch (error) {
             console.error('Помилка:', error);
@@ -1437,5 +1450,10 @@ if (document.querySelector("#promo")) {
     })
 }
 
+
+document.addEventListener("DOMContentLoaded", function() {
+    const toastElList = document.querySelectorAll('.toast')
+    const toastList = [...toastElList].map(toastEl => new bootstrap.Toast(toastEl, option))
+})
 
 

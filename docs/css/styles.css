@@ -1949,6 +1949,26 @@ span {
   margin-right: 1rem;
 }
 
+.toast {
+  display: block !important;
+  position: fixed;
+  font-size: 1.2rem;
+  right: 1rem;
+  bottom: -200px;
+  max-width: 300px;
+  background: -webkit-gradient(linear, left top, right top, color-stop(20%, rgba(218, 80, 239, 0.85)), color-stop(80%, rgba(43, 146, 254, 0.85)));
+  background: -o-linear-gradient(left, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%);
+  background: linear-gradient(90deg, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%);
+  z-index: 999999999;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.toast.show {
+  bottom: 1rem;
+}
+
 @media screen and (min-width: 370px) {
   .mini-advantage p {
     font-size: 2.3rem;

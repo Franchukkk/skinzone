@@ -202,4 +202,9 @@ if (document.querySelector("#promo")) {
 }
 
 
+document.addEventListener("DOMContentLoaded", function() {
+    const toastElList = document.querySelectorAll('.toast')
+    const toastList = [...toastElList].map(toastEl => new bootstrap.Toast(toastEl, option))
+})
+
 
