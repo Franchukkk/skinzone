@@ -1949,7 +1949,7 @@ span {
   margin-right: 1rem;
 }
 
-.toast {
+.toast-styles-custom {
   display: block !important;
   position: fixed;
   font-size: 1.2rem;
@@ -1965,7 +1965,7 @@ span {
   transition: all 0.5s;
 }
 
-.toast.show {
+.toast-styles-custom.show {
   bottom: 1rem;
 }
 

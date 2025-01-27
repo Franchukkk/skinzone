@@ -216,11 +216,7 @@ async function disableProductFromCart(token, productId, isAddon = false) {
 
     const result = await response.json();
     console.log('Товар успішно деактивовано:', result);
-    document.querySelector(".toast-body").innerHTML = "Successfully removed"
-    document.querySelector(".toast").classList.add("show")
-    setTimeout(() => {
-      document.querySelector(".toast").classList.remove("show")
-    }, 2000)
+
     if (isAddon == true) {
       transferCartDataToCheckout(localStorage.getItem('userId'))
     } else {
@@ -406,6 +402,11 @@ function generateProductCards(data) {
 function disableProductHandle (token, productId, isAddon = false) {
   event.preventDefault;
   disableProductFromCart(token, productId, isAddon);
+  document.querySelector(".toast-body").innerHTML = "Successfully removed"
+  document.querySelector(".toast").classList.add("show")
+  setTimeout(() => {
+    document.querySelector(".toast").classList.remove("show")
+  }, 2000)
   setTimeout(() => {
     getCart(token);
   }, 1000);
