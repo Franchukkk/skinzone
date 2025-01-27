@@ -514,10 +514,10 @@ function generateProductCards(data) {
 function disableProductHandle (token, productId, isAddon = false) {
   event.preventDefault;
   disableProductFromCart(token, productId, isAddon);
-  document.querySelector(".toast-body").innerHTML = "Successfully removed"
-  document.querySelector(".toast").classList.add("show")
+  document.querySelector(".toast-custom-body").innerHTML = "Successfully removed"
+  document.querySelector(".toast-custom").classList.add("show")
   setTimeout(() => {
-    document.querySelector(".toast").classList.remove("show")
+    document.querySelector(".toast-custom").classList.remove("show")
   }, 2000)
   setTimeout(() => {
     getCart(token);
@@ -878,10 +878,10 @@ function addProductToCart(token, productID, addon= false ) {
         if (addon) {
           setTimeout(transferCartDataToCheckout(localStorage.getItem('userId')), 1000)
         }
-        document.querySelector(".toast-body").innerHTML = "Successfully added"
-        document.querySelector(".toast").classList.add("show")
+        document.querySelector(".toast-custom-body").innerHTML = "Successfully added"
+        document.querySelector(".toast-custom").classList.add("show")
         setTimeout(() => {
-          document.querySelector(".toast").classList.remove("show")
+          document.querySelector(".toast-custom").classList.remove("show")
         }, 2000)
       })
       .catch(error => console.error('Error:', error));
@@ -1071,10 +1071,10 @@ forms.forEach((form) => {
             if (response.ok) {
                 const result = await response.json();
                 // alert('Повідомлення успішно надіслано!');
-                document.querySelector(".toast-body").innerHTML = "Successfully sended"
-                document.querySelector(".toast").classList.add("show")
+                document.querySelector(".toast-custom-body").innerHTML = "Successfully sended"
+                document.querySelector(".toast-custom").classList.add("show")
                 setTimeout(() => {
-                  document.querySelector(".toast").classList.remove("show")
+                  document.querySelector(".toast-custom").classList.remove("show")
                 }, 2000)
             }
         } catch (error) {

@@ -1949,13 +1949,13 @@ span {
   margin-right: 1rem;
 }
 
-.toast-styles-custom {
+.toast-custom {
   display: block !important;
   position: fixed;
   font-size: 1.2rem;
   right: 1rem;
-  bottom: -200px;
-  max-width: 300px;
+  bottom: -300px;
+  width: 300px;
   background: -webkit-gradient(linear, left top, right top, color-stop(20%, rgba(218, 80, 239, 0.85)), color-stop(80%, rgba(43, 146, 254, 0.85)));
   background: -o-linear-gradient(left, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%);
   background: linear-gradient(90deg, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%);
@@ -1963,9 +1963,12 @@ span {
   -webkit-transition: all 0.5s;
   -o-transition: all 0.5s;
   transition: all 0.5s;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
 }
 
-.toast-styles-custom.show {
+.toast-custom.show {
   bottom: 1rem;
 }
 
