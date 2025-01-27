@@ -1490,7 +1490,7 @@ footer .payment-systems {
 footer {
   background: #292929;
   padding: 2rem 0;
-  padding-bottom: 0;
+  padding-bottom: 2rem;
 }
 
 footer p {
@@ -1500,12 +1500,20 @@ footer p {
   margin-bottom: 2rem;
 }
 
+.footer-pay-platforms {
+  min-width: 250px;
+  width: 30%;
+}
+
+.footer-pay-platforms .swiper-wrapper {
+  padding: 0;
+}
+
 .footer-content {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  row-gap: 1.5rem;
 }
 
 .track {
@@ -1578,7 +1586,7 @@ span.price {
 
 .pay-platforms img {
   width: 100%;
-  height: 2.5rem;
+  height: 3rem;
   -o-object-fit: contain;
   object-fit: contain;
 }
@@ -2043,10 +2051,6 @@ span {
     height: 2.5rem;
   }
 
-  footer {
-    padding-bottom: 2rem;
-  }
-
   footer .pay-platforms {
     width: auto;
   }
@@ -2113,10 +2117,6 @@ span {
     display: flex;
   }
 
-  footer .payment-slider {
-    display: none;
-  }
-
   footer p {
     margin: 0;
   }
@@ -2153,6 +2153,15 @@ span {
 @media screen and (min-width: 800px) {
   .button {
     font-size: 3rem;
+  }
+}
+
+@media screen and (min-width: 830px) {
+  .footer-content {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
   }
 }
 
@@ -2225,15 +2234,6 @@ span {
 
   .checkout-products.check-out-payment-method label img {
     max-width: 160px;
-  }
-}
-
-@media screen and (min-width: 1230px) {
-  .footer-content {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
   }
 }
 

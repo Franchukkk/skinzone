@@ -1157,12 +1157,8 @@ footer
 footer
   background: #292929
   padding: 2rem 0
-  padding-bottom: 0
-  +media(450)
-    padding-bottom: 2rem
-  .payment-slider
-    +media(630)
-      display: none
+  padding-bottom: 2rem
+
   p
     color: #FFF
     font-size: 1rem
@@ -1171,11 +1167,24 @@ footer
     +media(630)
       margin: 0
 
+.footer-pay-platforms
+  min-width: 250px
+  width: 30%
+
+  .swiper-wrapper
+    padding: 0
+
+
+// .footer-content
+//   column-gap: 50px
+//   row-gap: 1.5rem
+//   justify-content: center
+//   +media(830)
+//     justify-content: space-between
 
 .footer-content
   flex-direction: column
-  row-gap: 1.5rem
-  +media(1230)
+  +media(830)
     flex-direction: row
 
 .track
@@ -1234,7 +1243,7 @@ span.price
   column-gap: 0.9rem
   img
     width: 100%
-    height: 2.5rem
+    height: 3rem
     object-fit: contain
 
 .card-header
