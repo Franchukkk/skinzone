@@ -876,12 +876,12 @@ function addProductToCart(token, productID, addon= false ) {
         console.log('Add to Cart:', data)
         if (addon) {
           setTimeout(transferCartDataToCheckout(localStorage.getItem('userId')), 1000)
-          document.querySelector(".toast-body").innerHTML = "Successfully added"
-          document.querySelector(".toast").classList.add("show")
-          setTimeout(() => {
-            document.querySelector(".toast").classList.remove("show")
-          }, 2000)
         }
+        document.querySelector(".toast-body").innerHTML = "Successfully added"
+        document.querySelector(".toast").classList.add("show")
+        setTimeout(() => {
+          document.querySelector(".toast").classList.remove("show")
+        }, 2000)
       })
       .catch(error => console.error('Error:', error));
   }
