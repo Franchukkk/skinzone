@@ -370,7 +370,7 @@ function generateProductCards(data) {
                       <div class="d-flex justify-content-between relative w-100">
                           <div class="w-100">
                               <div class="relative">
-                                  <img src="${product.product.image}" alt="product-card">
+                                  <img src="${product.product.image}" alt="product-card" loading="lazy">
                               </div>
                           </div>
                       </div>
@@ -384,7 +384,7 @@ function generateProductCards(data) {
                       </div>
                       <div class="w-20">
                           <div onclick="disableProductHandle(localStorage.getItem('userId'), ${product.ID})" class="basket-delete-product">
-                              <img class="w-100" src="img/basketIcon.png" alt="">
+                              <img class="w-100" src="img/basketIcon.png" alt="" loading="lazy">
                           </div>
                       </div>
                   </div>
@@ -648,7 +648,7 @@ function updateProducts(arr, containerToUpdate) {
           <div class="product-card-content d-flex justify-content-center relative">
               <div>
                   <a href="product-card.html" class="relative" data-value="${element.ID}" onclick="openCardPage()">
-                      <img src="${element.image}" alt="product-card">
+                      <img src="${element.image}" alt="product-card" loading="lazy">
                   </a>
                   <hr>
                   <form action="" class="product-card__info">
@@ -877,7 +877,7 @@ function fetchSearchProducts(query) {
           <div class="product-card-content d-flex justify-content-center relative">
               <div>
                   <a href="product-card.html" class="relative" data-value="${product.ID}" onclick="openCardPage()">
-                      <img src="${product.image}" alt="product-card">
+                      <img src="${product.image}" alt="product-card" loading="lazy">
                   </a>
                   <hr>
                   <form action="" class="product-card__info">

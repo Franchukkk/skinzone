@@ -46,13 +46,10 @@ html(lang="en")
                                         label(for="surname") Last name
                                     input(id="surname" type="text" placeholder="write...") 
                             p 
-                                label(for="email") Country
-                            input(id="country" type="country" placeholder="write...") 
-                            p 
                                 label(for="email") Email
                             input(id="email" type="email" placeholder="write...") 
                             p 
-                                label(for="phone") Phone
+                                label(for="phone") Country
                             input(id="phone" type="tel" placeholder="write...") 
                             p 
                                 label(for="promo") Promocode
@@ -148,8 +145,8 @@ html(lang="en")
                                         img(src="img/black-coin-payments.png", alt="")
 
                                 .row 
-                                    .col-12.d-none
-                                        select(name="currency" id="currency" class="currency coinpayments-currency") 
+                                    .col-12
+                                        select(name="currency" id="currency" class="currency coinpayments-currency").d-none
                                             option(value="BTC") Bitcoin
                                             option(value="BNB") BNB Coin
                                             option(value="ETH") Ether
