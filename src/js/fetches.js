@@ -801,7 +801,8 @@ function buyButton () {
   event.preventDefault();
   console.log(localStorage.getItem('userId'), event.target.getAttribute('data-value'));
   addProductToCart(localStorage.getItem('userId'), event.target.getAttribute('data-value'))
-  setTimeout(getCart(localStorage.getItem('userId')), 100)
+  // setTimeout(getCart(localStorage.getItem('userId')), 100) 
+  // може цей кусочок треба вернути
 }
 
 function parseProductData() {
