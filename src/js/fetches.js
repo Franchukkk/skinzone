@@ -686,39 +686,69 @@ function updateProducts(arr, containerToUpdate) {
           if (containerToUpdate === "#productsSwiper") {
               productHTML = wrapInSwiperSlide(productHTML);
 
-              if (document.querySelector('.discounts-slider')) {
-                const discountsSlider = new Swiper('.discounts-slider', {
-                    loop: true,
-                    pagination: {
-                        el: '.swiper-pagination',
-                        clickable: true
-                    },
-                    navigation: {
-                        nextEl: '.products-button-next',
-                        prevEl: '.products-button-prev',
-                    },
-                    breakpoints: {
-                        320: {
-                            slidesPerView: 1,
-                            spaceBetween: 20
-                        },
-                        768: {
-                            slidesPerView: 2,
-                            spaceBetween: 30
-                        },
-                        1024: {
-                            slidesPerView: 3,
-                            spaceBetween: 30
-                        }
-                    }
-                });
+              // if (document.querySelector('.discounts-slider')) {
+              //   const discountsSlider = new Swiper('.discounts-slider', {
+              //       loop: true,
+              //       pagination: {
+              //           el: '.swiper-pagination',
+              //           clickable: true
+              //       },
+              //       navigation: {
+              //           nextEl: '.products-button-next',
+              //           prevEl: '.products-button-prev',
+              //       },
+              //       breakpoints: {
+              //           320: {
+              //               slidesPerView: 1,
+              //               spaceBetween: 20
+              //           },
+              //           768: {
+              //               slidesPerView: 2,
+              //               spaceBetween: 30
+              //           },
+              //           1024: {
+              //               slidesPerView: 3,
+              //               spaceBetween: 30
+              //           }
+              //       }
+              //   });
 
-              }
+              // }
           }
 
           container.innerHTML += productHTML;
       }
   });
+  // setTimeout (function () {
+  //   if (document.querySelector('.discounts-slider')) {
+  //       const discountsSlider = new Swiper('.discounts-slider', {
+  //           loop: true,
+  //           pagination: {
+  //               el: '.swiper-pagination',
+  //               clickable: true
+  //           },
+  //           navigation: {
+  //               nextEl: '.products-button-next',
+  //               prevEl: '.products-button-prev',
+  //           },
+  //           breakpoints: {
+  //               320: {
+  //                   slidesPerView: 1,
+  //                   spaceBetween: 20
+  //               },
+  //               768: {
+  //                   slidesPerView: 2,
+  //                   spaceBetween: 30
+  //               },
+  //               1024: {
+  //                   slidesPerView: 3,
+  //                   spaceBetween: 30
+  //               }
+  //           }
+  //       });
+
+  //     }
+  // }, 1000)
 }
 
 

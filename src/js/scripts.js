@@ -207,4 +207,35 @@ document.addEventListener("DOMContentLoaded", function() {
     const toastList = [...toastElList].map(toastEl => new bootstrap.Toast(toastEl, option))
 })
 
-
+document.addEventListener("DOMContentLoaded", function() {
+    setTimeout (function () {
+        if (document.querySelector('.discounts-slider')) {
+            const discountsSlider = new Swiper('.discounts-slider', {
+                loop: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true
+                },
+                navigation: {
+                    nextEl: '.products-button-next',
+                    prevEl: '.products-button-prev',
+                },
+                breakpoints: {
+                    320: {
+                        slidesPerView: 1,
+                        spaceBetween: 20
+                    },
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 30
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 30
+                    }
+                }
+            });
+    
+          }
+      }, 3000)
+})
