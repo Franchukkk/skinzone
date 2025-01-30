@@ -790,7 +790,7 @@ function updateProducts(arr, containerToUpdate) {
       if (
           (containerToUpdate === "#productsSwiper" && index < 6) || // Перші 12 товарів
           (containerToUpdate === "#random" && element.category === "random") ||
-          (containerToUpdate === "#guaranted" && element.category === "guaranted")
+          (containerToUpdate === "#guaranteed" && element.category === "guaranteed")
       ) {
           let productHTML = createProductCard(element);
 
