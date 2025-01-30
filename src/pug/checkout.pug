@@ -56,8 +56,8 @@ html(lang="en")
                             input(id="email" type="email" placeholder="write...") 
                             p
 
-                                label(for='country') Country
-                            select#country(style='width: 100%;')
+                                label(for='phone') Country
+                            select#phone(style='width: 100%;')
                                 <option value="us">United States</option>
                                 <option value="cn">China</option>
                                 <option value="in">India</option>
@@ -221,7 +221,7 @@ html(lang="en")
             p In case of issues with your purchase you will be eligible for a REPLACEMENT!
         script.
             $(document).ready(function() {
-                $('#country').select2({
+                $('#phone').select2({
                     placeholder: "Select a country...",
                     allowClear: true
                 });
