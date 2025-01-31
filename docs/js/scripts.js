@@ -510,7 +510,7 @@ function generateProductCards(data) {
   }).join('');
 
   container.innerHTML = productCardsHtml;
-  footerSpan.textContent = `$${totalSum}`;
+  footerSpan.textContent = `$${totalSum.toFixed(2)}`;
 }
 
 function disableProductHandle (token, productId, isAddon = false) {
