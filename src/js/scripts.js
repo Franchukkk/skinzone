@@ -239,3 +239,25 @@ document.addEventListener("DOMContentLoaded", function() {
           }
       }, 3000)
 })
+
+document.addEventListener("DOMContentLoaded", function() {
+    if (document.querySelector(".user-country")) {
+        fetch('/api/my-country')
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+
+                    const countryElement = document.querySelector('.user-country');
+                    console.log(data.data);
+                    if (countryElement) {
+                        countryElement.textContent = "Will work in " + data.data;
+                    }
+                } else {
+                    console.error('Не вдалося отримати країну');
+                }
+            })
+            .catch(error => {
+                console.error('Помилка при виконанні запиту:', error);
+            });
+    }
+})

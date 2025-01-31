@@ -1180,9 +1180,7 @@ footer
     color: #FFF
     font-size: 1rem
     font-weight: 400
-    margin-bottom: 2rem
-    +media(630)
-      margin: 0
+    margin: 0
 
 .footer-pay-platforms
   min-width: 250px
@@ -1201,7 +1199,8 @@ footer
 
 .footer-content
   flex-direction: column
-  +media(830)
+  row-gap: 1rem
+  +media(900)
     flex-direction: row
 
 .track
@@ -1583,4 +1582,38 @@ footer .pay-platforms
   border-radius: 1.5rem 1.5rem 0 0
 
 
+footer p a
+  font-size: 1.3rem
+  color: #fff
+  text-decoration: none
+  text-transform: uppercase
 
+.cg-2
+  column-gap: 3rem
+  row-gap: 2rem
+
+footer a.footer-logo
+  display: none
+  +media(900)
+    display: inline-block
+
+.c-white
+  color: #fff
+
+.user-country
+  font-size: 1.5rem
+
+.basket-counter
+  position: absolute
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 2rem
+  height: 2rem
+  font-size: 1rem
+  color: #fff
+  background: linear-gradient(90deg, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%)
+  border-radius: 1rem
+  bottom: -0.7rem
+  right: -0.7rem
+  z-index: 1

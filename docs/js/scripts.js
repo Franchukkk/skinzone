@@ -405,6 +405,8 @@ function getCart(token) {
     .then(res => res.json())
     .then(data => {
       console.log(data);
+      console.log(data.data.length);
+      document.querySelector(".basket-counter") = data.data.length
       if (data.data[0] == undefined) {
         console.log('Cart is empty');
         if (document.querySelector(".submit-order")) {
@@ -910,6 +912,7 @@ function addProductToCart(token, productID, addon= false ) {
           setTimeout(transferCartDataToCheckout(localStorage.getItem('userId')), 1000)
         }
         document.querySelector(".toast-custom-body").innerHTML = "Successfully added"
+        getCart(localStorage.getItem('userId'))
         document.querySelector(".toast-custom").classList.add("show")
         setTimeout(() => {
           document.querySelector(".toast-custom").classList.remove("show")
@@ -1520,4 +1523,26 @@ document.addEventListener("DOMContentLoaded", function() {
     
           }
       }, 3000)
+})
+
+document.addEventListener("DOMContentLoaded", function() {
+    if (document.querySelector(".user-country")) {
+        fetch('/api/my-country')
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+
+                    const countryElement = document.querySelector('.user-country');
+                    console.log(data.data);
+                    if (countryElement) {
+                        countryElement.textContent = "Will work in " + data.data;
+                    }
+                } else {
+                    console.error('Не вдалося отримати країну');
+                }
+            })
+            .catch(error => {
+                console.error('Помилка при виконанні запиту:', error);
+            });
+    }
 })

@@ -293,6 +293,8 @@ function getCart(token) {
     .then(res => res.json())
     .then(data => {
       console.log(data);
+      console.log(data.data.length);
+      document.querySelector(".basket-counter") = data.data.length
       if (data.data[0] == undefined) {
         console.log('Cart is empty');
         if (document.querySelector(".submit-order")) {
@@ -798,6 +800,7 @@ function addProductToCart(token, productID, addon= false ) {
           setTimeout(transferCartDataToCheckout(localStorage.getItem('userId')), 1000)
         }
         document.querySelector(".toast-custom-body").innerHTML = "Successfully added"
+        getCart(localStorage.getItem('userId'))
         document.querySelector(".toast-custom").classList.add("show")
         setTimeout(() => {
           document.querySelector(".toast-custom").classList.remove("show")

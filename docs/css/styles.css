@@ -1520,7 +1520,7 @@ footer p {
   color: #FFF;
   font-size: 1rem;
   font-weight: 400;
-  margin-bottom: 2rem;
+  margin: 0;
 }
 
 .footer-pay-platforms {
@@ -1537,6 +1537,7 @@ footer p {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+  row-gap: 1rem;
 }
 
 .track {
@@ -2044,6 +2045,56 @@ span {
   border-radius: 1.5rem 1.5rem 0 0;
 }
 
+footer p a {
+  font-size: 1.3rem;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.cg-2 {
+  -webkit-column-gap: 3rem;
+  -moz-column-gap: 3rem;
+  column-gap: 3rem;
+  row-gap: 2rem;
+}
+
+footer a.footer-logo {
+  display: none;
+}
+
+.c-white {
+  color: #fff;
+}
+
+.user-country {
+  font-size: 1.5rem;
+}
+
+.basket-counter {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1rem;
+  color: #fff;
+  background: -webkit-gradient(linear, left top, right top, color-stop(20%, rgba(218, 80, 239, 0.85)), color-stop(80%, rgba(43, 146, 254, 0.85)));
+  background: -o-linear-gradient(left, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%);
+  background: linear-gradient(90deg, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%);
+  border-radius: 1rem;
+  bottom: -0.7rem;
+  right: -0.7rem;
+  z-index: 1;
+}
+
 @media screen and (min-width: 370px) {
   .mini-advantage p {
     font-size: 2.3rem;
@@ -2211,10 +2262,6 @@ span {
     display: -ms-flexbox;
     display: flex;
   }
-
-  footer p {
-    margin: 0;
-  }
 }
 
 @media screen and (min-width: 640px) {
@@ -2251,15 +2298,6 @@ span {
   }
 }
 
-@media screen and (min-width: 830px) {
-  .footer-content {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-  }
-}
-
 @media screen and (min-width: 840px) {
   .header-line .burger {
     display: none;
@@ -2273,6 +2311,19 @@ span {
 @media screen and (min-width: 850px) {
   .hero-second {
     display: block;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .footer-content {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+
+  footer a.footer-logo {
+    display: inline-block;
   }
 }
 
