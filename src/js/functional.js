@@ -113,3 +113,28 @@ if (document.querySelector(".addon-item ")) {
     });
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(function() {
+        const link = document.querySelector('.header-line a[href="index.html#reviews"]');
+        console.log(link);
+
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+            
+            const targetHref = link.getAttribute('href');
+            const targetId = targetHref.split('#')[1];
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                const elementRect = targetElement.getBoundingClientRect();
+                const scrollToY = window.pageYOffset + elementRect.top;
+    
+                window.scrollTo(0, scrollToY);
+            }
+        });
+
+
+    }, 2000)
+
+})
+
