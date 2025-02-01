@@ -250,7 +250,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     const countryElement = document.querySelector('.user-country');
                     console.log(data.data);
                     if (countryElement) {
-                        countryElement.textContent = "Will work in " + data.data;
+                        countryElement.textContent = data.data;
                     }
                 } else {
                     console.error('Не вдалося отримати країну');

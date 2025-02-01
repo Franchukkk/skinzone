@@ -406,7 +406,7 @@ function getCart(token) {
     .then(data => {
       console.log(data);
       console.log(data.data.length);
-      document.querySelector(".basket-counter") = data.data.length
+      document.querySelector(".basket-counter").innerHTML = data.data.length
       if (data.data[0] == undefined) {
         console.log('Cart is empty');
         if (document.querySelector(".submit-order")) {
@@ -1535,7 +1535,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     const countryElement = document.querySelector('.user-country');
                     console.log(data.data);
                     if (countryElement) {
-                        countryElement.textContent = "Will work in " + data.data;
+                        countryElement.textContent = data.data;
                     }
                 } else {
                     console.error('Не вдалося отримати країну');

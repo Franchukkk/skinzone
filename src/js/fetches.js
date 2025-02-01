@@ -294,7 +294,7 @@ function getCart(token) {
     .then(data => {
       console.log(data);
       console.log(data.data.length);
-      document.querySelector(".basket-counter") = data.data.length
+      document.querySelector(".basket-counter").innerHTML = data.data.length
       if (data.data[0] == undefined) {
         console.log('Cart is empty');
         if (document.querySelector(".submit-order")) {
