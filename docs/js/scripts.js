@@ -1122,9 +1122,9 @@ forms.forEach((form) => {
 
 
 // Функція для отримання продуктів
-async function fetchProducts(start, end, addon = false) {
+async function fetchProductsDiapazon(start, end, addon = false) {
   try {
-    const url = `/api/fetch-products?addon=${addon}&start=${start}&end=${end}`;
+    const url = `/api/fetch-products?addon=${addon}&start=${start}&end=${end}&category=guaranteed`;
     const response = await fetch(url);
 
     if (!response.ok) {
@@ -1177,7 +1177,7 @@ function appendProducts(apiResponse) {
 
 async function loadAndAppendProducts(start, end) {
   try {
-    const apiResponse = await fetchProducts(start, end);
+    const apiResponse = await fetchProductsDiapazon(start, end);
     appendProducts(apiResponse);
   } catch (error) {
     console.error("Сталася помилка при завантаженні продуктів:", error);
