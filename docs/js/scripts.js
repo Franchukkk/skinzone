@@ -1197,6 +1197,30 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 })
+
+function getRandomProduct () {
+  fetch('/api/fetch-random-product')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log('Отриманий товар:', data);
+      document.querySelector(".toast-custom-bought img").src = data.image;
+      document.querySelector(".toast-custom-bought span").innerHTML = data.title;
+      document.querySelector(".toast-custom-bought").classList.add("show-bought")
+      setTimeout(function() {
+        document.querySelector(".toast-custom-bought").classList.remove("show-bought")
+      }, 2000)
+    })
+    .catch(error => {
+      console.error('Помилка при отриманні товару:', error);
+    });
+}
+
+setInterval(getRandomProduct, 15000);
 if (!localStorage.getItem('userId')) {
     const userId = crypto.randomUUID()
     localStorage.setItem('userId', userId);
