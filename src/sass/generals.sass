@@ -17,6 +17,32 @@ body
   background: #000
 
 
+.h1-order
+  color: #fff
+  font-size: 3.5rem
+  text-align: center
+
+.h1-order span
+  background: linear-gradient(90deg, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%)
+  background-clip: text
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent
+
+.p-order
+  color: #fff
+  margin-bottom: 2rem
+
+.thanks-for-order-container
+  display: flex
+  justify-content: center
+  height: 65vh
+  h1
+    padding-top: 10rem
+
+.button-order
+  font-size: 1.5rem !important
+  padding: 0.5rem 4rem !important
+
 .toast-custom, .toast-custom-bought
   display: block !important
   position: fixed
@@ -755,6 +781,7 @@ h2.text-center.title
     height: 18rem
 
 .product-card
+  position: relative
   img
     display: block
     margin: 0 auto
@@ -1646,3 +1673,14 @@ footer a.footer-logo
   bottom: -0.7rem
   right: -0.7rem
   z-index: 1
+
+.discount-label
+  position: absolute
+  left: 50%
+  top: -10px
+  font-size: 1rem
+  transform: translateX(-50%)
+  background: linear-gradient(90deg, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%)
+  background-clip: text
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent

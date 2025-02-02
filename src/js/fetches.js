@@ -645,6 +645,57 @@ function updateAddons(arr) {
 }
 
   // Оновлення списку продуктів на фронті
+// function updateProducts(arr, containerToUpdate) {
+//   const container = document.querySelector(containerToUpdate);
+//   console.log(container);
+//   container.innerHTML = "";
+
+//   // Функція для створення HTML-карточки продукту
+//   const createProductCard = (element) => `
+//       <div class="product-card col-sm-12 col-md-6 col-lg-4 d-flex justify-content-center">
+//           <div class="product-card-content d-flex justify-content-center relative">
+//               <div>
+//                   <a href="product-card.html" class="relative" data-value="${element.ID}" onclick="openCardPage()">
+//                       <img src="${element.image}" alt="product-card" loading="lazy">
+//                   </a>
+//                   <hr>
+//                   <form action="" class="product-card__info">
+//                       <h3>${element.title}</h3>
+//                       <p>${element.price}$</p>
+//                       <button onclick="buyButton()" data-value="${element.ID}">Buy</button>
+//                   </form>
+//               </div>
+//           </div>
+//       </div>
+//   `;
+
+//   // Функція для обгортання картки в .swiper-slide (для containerToUpdate === "#productsSwiper")
+//   const wrapInSwiperSlide = (html) => `
+//       <div class="swiper-slide">
+//           ${html}
+//       </div>
+//   `;
+
+//   arr.forEach((element, index) => {
+//       if (
+//           (containerToUpdate === "#productsSwiper" && index < 6) || // Перші 12 товарів
+//           (containerToUpdate === "#random" && element.category === "random") ||
+//           (containerToUpdate === "#guaranted" && element.category === "guaranteed") ||
+//           (containerToUpdate === "#guaranted" && element.category === "guaranted")
+//       ) {
+//           let productHTML = createProductCard(element);
+
+//           // Додаємо обгортку для .swiper-slide, якщо контейнер "#productsSwiper"
+//           if (containerToUpdate === "#productsSwiper") {
+//               productHTML = wrapInSwiperSlide(productHTML);
+//           }
+
+//           container.innerHTML += productHTML;
+//       }
+//   });
+// }
+
+// Оновлення списку продуктів на фронті
 function updateProducts(arr, containerToUpdate) {
   const container = document.querySelector(containerToUpdate);
   console.log(container);
@@ -654,6 +705,8 @@ function updateProducts(arr, containerToUpdate) {
   const createProductCard = (element) => `
       <div class="product-card col-sm-12 col-md-6 col-lg-4 d-flex justify-content-center">
           <div class="product-card-content d-flex justify-content-center relative">
+              ${element.discount ? '<span class="discount-label">Discount</span>' : ''}
+              <span class="bestseller">Bestseller</span>
               <div>
                   <a href="product-card.html" class="relative" data-value="${element.ID}" onclick="openCardPage()">
                       <img src="${element.image}" alt="product-card" loading="lazy">
@@ -678,7 +731,7 @@ function updateProducts(arr, containerToUpdate) {
 
   arr.forEach((element, index) => {
       if (
-          (containerToUpdate === "#productsSwiper" && index < 6) || // Перші 12 товарів
+          (containerToUpdate === "#productsSwiper" && index < 6) || 
           (containerToUpdate === "#random" && element.category === "random") ||
           (containerToUpdate === "#guaranted" && element.category === "guaranteed") ||
           (containerToUpdate === "#guaranted" && element.category === "guaranted")
@@ -688,72 +741,12 @@ function updateProducts(arr, containerToUpdate) {
           // Додаємо обгортку для .swiper-slide, якщо контейнер "#productsSwiper"
           if (containerToUpdate === "#productsSwiper") {
               productHTML = wrapInSwiperSlide(productHTML);
-
-              // if (document.querySelector('.discounts-slider')) {
-              //   const discountsSlider = new Swiper('.discounts-slider', {
-              //       loop: true,
-              //       pagination: {
-              //           el: '.swiper-pagination',
-              //           clickable: true
-              //       },
-              //       navigation: {
-              //           nextEl: '.products-button-next',
-              //           prevEl: '.products-button-prev',
-              //       },
-              //       breakpoints: {
-              //           320: {
-              //               slidesPerView: 1,
-              //               spaceBetween: 20
-              //           },
-              //           768: {
-              //               slidesPerView: 2,
-              //               spaceBetween: 30
-              //           },
-              //           1024: {
-              //               slidesPerView: 3,
-              //               spaceBetween: 30
-              //           }
-              //       }
-              //   });
-
-              // }
           }
 
           container.innerHTML += productHTML;
       }
   });
-  // setTimeout (function () {
-  //   if (document.querySelector('.discounts-slider')) {
-  //       const discountsSlider = new Swiper('.discounts-slider', {
-  //           loop: true,
-  //           pagination: {
-  //               el: '.swiper-pagination',
-  //               clickable: true
-  //           },
-  //           navigation: {
-  //               nextEl: '.products-button-next',
-  //               prevEl: '.products-button-prev',
-  //           },
-  //           breakpoints: {
-  //               320: {
-  //                   slidesPerView: 1,
-  //                   spaceBetween: 20
-  //               },
-  //               768: {
-  //                   slidesPerView: 2,
-  //                   spaceBetween: 30
-  //               },
-  //               1024: {
-  //                   slidesPerView: 3,
-  //                   spaceBetween: 30
-  //               }
-  //           }
-  //       });
-
-  //     }
-  // }, 1000)
 }
-
 
 
 // отримання детальної інформації про продукт
