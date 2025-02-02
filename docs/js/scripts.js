@@ -1019,7 +1019,7 @@ if (document.querySelector("#promo")) {
 // applyPromoCode("dfsdsf");
 
 function fetchSearchProducts(query) {
-  const url = `/api/search-product?query=${encodeURIComponent(query)}&category=guaranted`;
+  const url = `/api/search-product?query=${encodeURIComponent(query)}&category=guaranteed`;
 
   fetch(url, {
     method: 'GET',
@@ -1118,6 +1118,85 @@ forms.forEach((form) => {
     });
 });
 
+
+
+
+// Функція для отримання продуктів
+async function fetchProducts(start, end, addon = false) {
+  try {
+    const url = `/api/fetch-products?addon=${addon}&start=${start}&end=${end}`;
+    const response = await fetch(url);
+
+    if (!response.ok) {
+      throw new Error(`Помилка HTTP: статус ${response.status}`);
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Помилка при отриманні продуктів:', error);
+    throw error;
+  }
+}
+
+// функція для створення та додавання карточок продуктів до контейнера #guaranted
+function appendProducts(apiResponse) {
+  const container = document.querySelector('#guaranted');
+
+  const products = (apiResponse && Array.isArray(apiResponse.data))
+    ? apiResponse.data
+    : [];
+
+  if (!products.length) {
+    console.error("Неправильний формат даних або порожній масив:", apiResponse);
+    return;
+  }
+
+  const createProductCard = (element) => `
+      <div class="product-card col-sm-12 col-md-6 col-lg-4 d-flex justify-content-center">
+          <div class="product-card-content d-flex justify-content-center relative">
+              <div>
+                  <a href="product-card.html" class="relative" data-value="${element.ID}" onclick="openCardPage()">
+                      <img src="${element.image}" alt="product-card" loading="lazy">
+                  </a>
+                  <hr>
+                  <form action="" class="product-card__info">
+                      <h3>${element.title}</h3>
+                      <p>${element.price}$</p>
+                      <button onclick="buyButton()" data-value="${element.ID}">Buy</button>
+                  </form>
+              </div>
+          </div>
+      </div>
+  `;
+
+  products.forEach((element) => {
+    container.innerHTML += createProductCard(element);
+  });
+}
+
+async function loadAndAppendProducts(start, end) {
+  try {
+    const apiResponse = await fetchProducts(start, end);
+    appendProducts(apiResponse);
+  } catch (error) {
+    console.error("Сталася помилка при завантаженні продуктів:", error);
+  }
+}
+
+let lastProductsIndex = 9;
+
+loadAndAppendProducts(0, lastProductsIndex);
+
+document.addEventListener("DOMContentLoaded", function() {
+  if (document.querySelector('.more-btn')) {
+    let moreBtn = document.querySelector('.more-btn');
+    moreBtn.addEventListener('click', function() {
+      loadAndAppendProducts(lastProductsIndex, lastProductsIndex + 9);
+      lastProductsIndex += 9;
+    });
+  }
+})
 if (!localStorage.getItem('userId')) {
     const userId = crypto.randomUUID()
     localStorage.setItem('userId', userId);
@@ -1130,9 +1209,9 @@ document.addEventListener("DOMContentLoaded", function() {
     if (document.querySelector("#random")) {
         fetchProducts("#random")
     }
-    if (document.querySelector("#guaranted")) {
-        fetchProducts("#guaranted")
-    }
+    // if (document.querySelector("#guaranted")) {
+    //     fetchProducts("#guaranted")
+    // }
 
 
     if (document.querySelector(".addons-list")) {
@@ -1571,3 +1650,4 @@ document.addEventListener("DOMContentLoaded", function() {
             });
     }
 })
+

@@ -10,9 +10,9 @@ document.addEventListener("DOMContentLoaded", function() {
     if (document.querySelector("#random")) {
         fetchProducts("#random")
     }
-    if (document.querySelector("#guaranted")) {
-        fetchProducts("#guaranted")
-    }
+    // if (document.querySelector("#guaranted")) {
+    //     fetchProducts("#guaranted")
+    // }
 
 
     if (document.querySelector(".addons-list")) {
