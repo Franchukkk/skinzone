@@ -1089,9 +1089,20 @@ function getRandomProduct () {
     })
     .then(data => {
       console.log('Отриманий товар:', data);
-      document.querySelector(".toast-custom-bought img").src = data.image;
-      document.querySelector(".toast-custom-bought span").innerHTML = data.title;
+      document.querySelector(".toast-custom-bought img").src = data.data.image;
+      document.querySelector(".toast-custom-bought span").innerHTML = data.data.title + " ";
+
+      const countries = [
+        "Ukraine", "USA", "Canada", "Germany", "France", "Italy", 
+        "United Kingdom", "Spain", "Australia", "Japan", "India", "Brazil"
+      ];
+
+      const randomIndex = Math.floor(Math.random() * countries.length);
+      const randomCountry = countries[randomIndex];
+      document.querySelector(".toast-custom-bought blockquote").innerHTML = "from " + randomCountry;
+      
       document.querySelector(".toast-custom-bought").classList.add("show-bought")
+
       setTimeout(function() {
         document.querySelector(".toast-custom-bought").classList.remove("show-bought")
       }, 2000)

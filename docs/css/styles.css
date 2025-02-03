@@ -92,12 +92,19 @@ body {
   transition: all 0.5s;
 }
 
+.toast-custom-bought blockquote {
+  font-size: 0.85rem;
+  color: #afafaf;
+  margin-bottom: 0;
+}
+
 .toast-custom-bought img {
   width: 6.25rem;
 }
 
 .toast-custom-bought p {
   font-size: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .toast-custom-bought p span {
@@ -2197,6 +2204,23 @@ footer a.footer-logo {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.bestseller {
+  position: absolute;
+  font-size: 1.4rem;
+  background: -webkit-gradient(linear, left top, right top, color-stop(20%, rgba(218, 80, 239, 0.85)), color-stop(80%, rgba(43, 146, 254, 0.85)));
+  background: -o-linear-gradient(left, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%);
+  background: linear-gradient(90deg, rgba(218, 80, 239, 0.85) 20%, rgba(43, 146, 254, 0.85) 80%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  top: -10px;
+  left: 50%;
+  z-index: 2;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 @media screen and (min-width: 370px) {
