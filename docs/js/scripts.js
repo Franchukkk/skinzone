@@ -817,8 +817,7 @@ function updateProducts(arr, containerToUpdate) {
   const createProductCard = (element) => `
       <div class="product-card col-sm-12 col-md-6 col-lg-4 d-flex justify-content-center">
           <div class="product-card-content d-flex justify-content-center relative">
-              ${element.discount ? '<span class="discount-label">Discount</span>' : ''}
-              <span class="bestseller">Bestseller</span>
+              ${element.discount? '<span class="bestseller">Bestseller</span>' : ''}
               <div>
                   <a href="product-card.html" class="relative" data-value="${element.ID}" onclick="openCardPage()">
                       <img src="${element.image}" alt="product-card" loading="lazy">
@@ -1148,8 +1147,7 @@ function appendProducts(apiResponse) {
   const createProductCard = (element) => `
       <div class="product-card col-sm-12 col-md-6 col-lg-4 d-flex justify-content-center">
           <div class="product-card-content d-flex justify-content-center relative">
-              ${element.discount ? '<span class="discount-label">Discount</span>' : ''}
-              <span class="bestseller">Bestseller</span>
+              ${element.discount ? '<span class="bestseller">Bestseller</span>' : ''}
               <div>
                   <a href="product-card.html" class="relative" data-value="${element.ID}" onclick="openCardPage()">
                       <img src="${element.image}" alt="product-card" loading="lazy">
