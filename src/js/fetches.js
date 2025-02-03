@@ -844,18 +844,21 @@ function parseProductData() {
     const productData = JSON.parse(productDataRaw);
     console.log(productData);
     // Отримання потрібних полів
-    const { ID, title, description, price, active, image } = productData.data;
+    const { ID, title, description, price, isInStock, image } = productData.data;
     const img = productData.data.img || 'default_image.jpg';
 
     document.querySelector(".image-block img").src = image;
     document.querySelector(".text-block h2").innerHTML = title;
-    document.querySelector(".availability").innerHTML = active ? "IN STOK" : "NOT IN STOK";
+    document.querySelector(".availability").innerHTML = isInStock ? "IN STOK" : "SOLD OUT";
+    if (!isInStock) {
+      document.querySelector(".availability").style.color = "tomato";
+    }
     document.querySelector(".price").innerHTML = price + "$";
     document.querySelector(".product-description h3").innerHTML = description;
     document.querySelector(".text-block button").setAttribute('data-value', ID);
     document.querySelector(".text-block button").setAttribute('onclick', "buyButton()");
 
-    console.log({ title, description, price, active, img });
+    console.log({ title, description, price, isInStock, img });
   } catch (error) {
     console.error('Помилка при парсингу JSON:', error);
   }
