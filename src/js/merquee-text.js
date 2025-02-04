@@ -30,6 +30,7 @@ document.addEventListener("scroll", () => {
 if (document.querySelector(".reviews")) {
     const containerTop = document.querySelector(".reviews").offsetTop;
     
+    
     console.log(containerTop);
     
     document.addEventListener("scroll", () => {
